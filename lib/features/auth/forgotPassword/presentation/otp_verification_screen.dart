@@ -1,5 +1,6 @@
+// ignore_for_file: use_super_parameters, library_private_types_in_public_api
+
 import 'package:abdilahi/common_widgets/custom_button_one.dart';
-import 'package:abdilahi/common_widgets/custom_textformfield.dart';
 import 'package:abdilahi/common_widgets/otp_box.dart';
 import 'package:abdilahi/constants/text_font_style.dart';
 import 'package:abdilahi/gen/assets.gen.dart';

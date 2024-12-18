@@ -1,6 +1,4 @@
-
 // ignore_for_file: deprecated_member_use
-
 import 'package:auto_animated/auto_animated.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';

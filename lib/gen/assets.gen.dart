@@ -37,6 +37,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/arrow_back.svg
   String get arrowBack => 'assets/icons/arrow_back.svg';
 
+  /// File path: assets/icons/arrowforward.svg
+  String get arrowforward => 'assets/icons/arrowforward.svg';
+
   /// File path: assets/icons/google_icon.svg
   String get googleIcon => 'assets/icons/google_icon.svg';
 
@@ -49,6 +52,15 @@ class $AssetsIconsGen {
   /// File path: assets/icons/search_logo.svg
   String get searchLogo => 'assets/icons/search_logo.svg';
 
+  /// File path: assets/icons/setting.svg
+  String get setting => 'assets/icons/setting.svg';
+
+  /// File path: assets/icons/sortblack.svg
+  String get sortblack => 'assets/icons/sortblack.svg';
+
+  /// File path: assets/icons/square blue.svg
+  String get squareBlue => 'assets/icons/square blue.svg';
+
   /// List of all assets
   List<String> get values => [
         ebookName,
@@ -56,10 +68,14 @@ class $AssetsIconsGen {
         frame,
         alert,
         arrowBack,
+        arrowforward,
         googleIcon,
         notificationBell,
         pen,
-        searchLogo
+        searchLogo,
+        setting,
+        sortblack,
+        squareBlue
       ];
 }
 
@@ -78,8 +94,37 @@ class $AssetsImagesGen {
   AssetGenImage get downArrow =>
       const AssetGenImage('assets/images/down_arrow.png');
 
+  /// File path: assets/images/e1.png
+  AssetGenImage get e1 => const AssetGenImage('assets/images/e1.png');
+
+  /// File path: assets/images/e2.png
+  AssetGenImage get e2 => const AssetGenImage('assets/images/e2.png');
+
+  /// File path: assets/images/e3.png
+  AssetGenImage get e3 => const AssetGenImage('assets/images/e3.png');
+
+  /// File path: assets/images/e4.png
+  AssetGenImage get e4 => const AssetGenImage('assets/images/e4.png');
+
+  /// File path: assets/images/e5.png
+  AssetGenImage get e5 => const AssetGenImage('assets/images/e5.png');
+
+  /// File path: assets/images/e6.png
+  AssetGenImage get e6 => const AssetGenImage('assets/images/e6.png');
+
   /// File path: assets/images/profile.png
   AssetGenImage get profile => const AssetGenImage('assets/images/profile.png');
+
+  /// File path: assets/images/romantic.png
+  AssetGenImage get romantic =>
+      const AssetGenImage('assets/images/romantic.png');
+
+  /// File path: assets/images/setting.svg
+  String get setting => 'assets/images/setting.svg';
+
+  /// File path: assets/images/thriller.png
+  AssetGenImage get thriller =>
+      const AssetGenImage('assets/images/thriller.png');
 
   /// File path: assets/images/welcome2 screen.png
   AssetGenImage get welcome2Screen =>
@@ -90,11 +135,20 @@ class $AssetsImagesGen {
       const AssetGenImage('assets/images/welcome_pic.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [
+  List<dynamic> get values => [
         ebookEmpyreLogo13,
         calender,
         downArrow,
+        e1,
+        e2,
+        e3,
+        e4,
+        e5,
+        e6,
         profile,
+        romantic,
+        setting,
+        thriller,
         welcome2Screen,
         welcomePic
       ];

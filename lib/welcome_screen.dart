@@ -9,9 +9,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 class WelcomeScreen extends StatefulWidget {
-  const WelcomeScreen({Key? key}) : super(key: key);
+  const WelcomeScreen({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _WelcomeScreenState createState() => _WelcomeScreenState();
 }
 
