@@ -13,15 +13,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class HomeContentScreen extends StatefulWidget {
+  const HomeContentScreen({super.key});
 
   @override
   // ignore: library_private_types_in_public_api
-  _HomeScreenState createState() => _HomeScreenState();
+  _HomeContentScreenState createState() => _HomeContentScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeContentScreenState extends State<HomeContentScreen> {
   final List<BookModel> books = [
     BookModel(
         imageUrl: Assets.images.e1.path,
@@ -97,7 +97,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   Routes.notificationEmptyScreen);
                             },
                             child: SvgPicture.asset(Assets.icons.ebookSmall)),
-                        // UIHelper.verticalSpace(16.h),
+                        UIHelper.verticalSpace(16.h),
                         InkWell(
                             onTap: () {
                               NavigationService.navigateTo(

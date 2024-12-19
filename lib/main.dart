@@ -1,4 +1,3 @@
-// ignore_for_file: deprecated_member_use
 import 'package:auto_animated/auto_animated.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
@@ -38,6 +37,7 @@ class MyApp extends StatelessWidget {
         showItemInterval: const Duration(milliseconds: 150),
         child: PopScope(
           canPop: false,
+          // ignore: deprecated_member_use
           onPopInvoked: (bool didPop) async {
             showMaterialDialog(context);
           },
@@ -66,6 +66,7 @@ class UtillScreenMobile extends StatelessWidget {
       builder: (_, child) {
         return PopScope(
           canPop: false,
+          // ignore: deprecated_member_use
           onPopInvoked: (bool didPop) async {
             showMaterialDialog(context);
           },

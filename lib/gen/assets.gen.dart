@@ -31,8 +31,15 @@ class $AssetsIconsGen {
   /// File path: assets/icons/Frame.svg
   String get frame => 'assets/icons/Frame.svg';
 
+  /// File path: assets/icons/activity.svg
+  String get activity => 'assets/icons/activity.svg';
+
   /// File path: assets/icons/alert.svg
   String get alert => 'assets/icons/alert.svg';
+
+  /// File path: assets/icons/arrowRightNotification.svg
+  String get arrowRightNotification =>
+      'assets/icons/arrowRightNotification.svg';
 
   /// File path: assets/icons/arrow_back.svg
   String get arrowBack => 'assets/icons/arrow_back.svg';
@@ -40,8 +47,20 @@ class $AssetsIconsGen {
   /// File path: assets/icons/arrowforward.svg
   String get arrowforward => 'assets/icons/arrowforward.svg';
 
+  /// File path: assets/icons/discover_icon.svg
+  String get discoverIcon => 'assets/icons/discover_icon.svg';
+
+  /// File path: assets/icons/document-text.svg
+  String get documentText => 'assets/icons/document-text.svg';
+
+  /// File path: assets/icons/empty_notification.svg
+  String get emptyNotification => 'assets/icons/empty_notification.svg';
+
   /// File path: assets/icons/google_icon.svg
   String get googleIcon => 'assets/icons/google_icon.svg';
+
+  /// File path: assets/icons/home_icon.svg
+  String get homeIcon => 'assets/icons/home_icon.svg';
 
   /// File path: assets/icons/notification_bell.svg
   String get notificationBell => 'assets/icons/notification_bell.svg';
@@ -49,11 +68,20 @@ class $AssetsIconsGen {
   /// File path: assets/icons/pen.svg
   String get pen => 'assets/icons/pen.svg';
 
+  /// File path: assets/icons/profile_icon.svg
+  String get profileIcon => 'assets/icons/profile_icon.svg';
+
+  /// File path: assets/icons/purchased_icon.svg
+  String get purchasedIcon => 'assets/icons/purchased_icon.svg';
+
   /// File path: assets/icons/search_logo.svg
   String get searchLogo => 'assets/icons/search_logo.svg';
 
   /// File path: assets/icons/setting.svg
   String get setting => 'assets/icons/setting.svg';
+
+  /// File path: assets/icons/shield-tick.svg
+  String get shieldTick => 'assets/icons/shield-tick.svg';
 
   /// File path: assets/icons/sortblack.svg
   String get sortblack => 'assets/icons/sortblack.svg';
@@ -61,21 +89,38 @@ class $AssetsIconsGen {
   /// File path: assets/icons/square blue.svg
   String get squareBlue => 'assets/icons/square blue.svg';
 
+  /// File path: assets/icons/star.svg
+  String get star => 'assets/icons/star.svg';
+
+  /// File path: assets/icons/wishlist_icon.svg
+  String get wishlistIcon => 'assets/icons/wishlist_icon.svg';
+
   /// List of all assets
   List<String> get values => [
         ebookName,
         ebookSmall,
         frame,
+        activity,
         alert,
+        arrowRightNotification,
         arrowBack,
         arrowforward,
+        discoverIcon,
+        documentText,
+        emptyNotification,
         googleIcon,
+        homeIcon,
         notificationBell,
         pen,
+        profileIcon,
+        purchasedIcon,
         searchLogo,
         setting,
+        shieldTick,
         sortblack,
-        squareBlue
+        squareBlue,
+        star,
+        wishlistIcon
       ];
 }
 

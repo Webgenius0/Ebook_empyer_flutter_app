@@ -8,9 +8,14 @@ import 'package:abdilahi/features/auth/signup/presentation/create_account_screen
 import 'package:abdilahi/features/auth/signup/presentation/book_genre_screen.dart';
 import 'package:abdilahi/features/auth/signup/presentation/select_age_screen.dart';
 import 'package:abdilahi/features/auth/signup/presentation/gender_screen.dart';
+import 'package:abdilahi/features/discover/presentation/discover_screen.dart';
 import 'package:abdilahi/features/home/presentation/explore_by_genre_screen.dart';
+import 'package:abdilahi/features/home/presentation/home_content_screen.dart';
 import 'package:abdilahi/features/home/presentation/home_screen.dart';
+import 'package:abdilahi/features/home/presentation/specific1_gener_screen.dart';
 import 'package:abdilahi/features/home/presentation/specific_genre.screen.dart';
+import 'package:abdilahi/features/notification/presentation/empty_notification.dart';
+import 'package:abdilahi/features/notification/presentation/notification-screen.dart';
 import 'package:abdilahi/welcome_screen.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -35,6 +40,11 @@ final class Routes {
   static const String homeScreen = '/homeScreen';
   static const String exploreByGenreScreen = '/exploreByGenreScreen';
   static const String specificGenrescreen = '/SpecificGenrescreen';
+  static const String specific1GenerScreen = '/specific1GenerScreen';
+  static const String notificationEmptyScreen = '/notificationEmptyScreen';
+  static const String notificationScreen = '/notificationScreen';
+  static const String discoverScreen = '/discoverScreen';
+  static const String homeContentScreen = '/homeContentScreen';
 }
 
 final class RouteGenerator {
@@ -133,6 +143,40 @@ final class RouteGenerator {
                 widget: const SpecificGenrescreen(), settings: settings)
             : CupertinoPageRoute(
                 builder: (context) => const SpecificGenrescreen());
+
+      case Routes.specific1GenerScreen:
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(
+                widget: const Specific1GenerScreen(), settings: settings)
+            : CupertinoPageRoute(
+                builder: (context) => const Specific1GenerScreen());
+
+      case Routes.notificationEmptyScreen:
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(
+                widget: const NotificationEmptyScreen(), settings: settings)
+            : CupertinoPageRoute(
+                builder: (context) => const NotificationEmptyScreen());
+
+      case Routes.notificationScreen:
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(
+                widget: const NotificationScreen(), settings: settings)
+            : CupertinoPageRoute(
+                builder: (context) => const NotificationScreen());
+
+      case Routes.discoverScreen:
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(
+                widget: const DiscoverScreen(), settings: settings)
+            : CupertinoPageRoute(builder: (context) => const DiscoverScreen());
+
+      case Routes.homeContentScreen:
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(
+                widget: const HomeContentScreen(), settings: settings)
+            : CupertinoPageRoute(
+                builder: (context) => const HomeContentScreen());
 
       default:
         return null;

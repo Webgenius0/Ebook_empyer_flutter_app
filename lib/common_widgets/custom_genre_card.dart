@@ -1,54 +1,40 @@
 import 'package:abdilahi/constants/text_font_style.dart';
+import 'package:abdilahi/gen/colors.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomGenreCard extends StatelessWidget {
   final String imageUrl;
   final String text;
-  final double padding;
-  final double borderRadius;
+  final double? width;
 
   const CustomGenreCard({
     super.key,
     required this.text,
-    this.padding = 8.0,
     required this.imageUrl,
-    this.borderRadius = 8.0,
+    this.width,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 165.w,
+      // width: 165.w,
+      width: width,
       height: 72.h,
-      padding: EdgeInsets.symmetric(vertical: padding),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(borderRadius),
+        borderRadius: BorderRadius.circular(8.h),
+        image: DecorationImage(image: AssetImage(imageUrl), fit: BoxFit.cover),
       ),
-      child: Stack(
+      child: Align(
         alignment: Alignment.bottomLeft,
-        children: [
-          // Image with rounded corners
-          ClipRRect(
-            borderRadius: BorderRadius.circular(borderRadius),
-            child: Image.asset(
-              imageUrl,
-              width: double.infinity,
-              height: 72.h,
-              fit: BoxFit.cover,
-            ),
+        child: Padding(
+          padding: EdgeInsets.only(left: 9.w, bottom: 12.h),
+          child: Text(
+            text,
+            style: TextFontStyle.textStyle16cFFFFFFBUrbanistW500
+                .copyWith(color: AppColors.cFFFFFF),
           ),
-
-          Positioned(
-            bottom: 10.h,
-            left: 10.w,
-            child: Text(
-              text,
-              style: TextFontStyle
-                  .textStyle16cFFFFFFBUrbanistW500, // Your custom style
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }

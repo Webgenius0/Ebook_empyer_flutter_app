@@ -6,6 +6,7 @@ import 'package:abdilahi/constants/text_font_style.dart';
 import 'package:abdilahi/features/home/model/book_model.dart';
 import 'package:abdilahi/features/home/model/genre_model.dart';
 import 'package:abdilahi/gen/assets.gen.dart';
+import 'package:abdilahi/gen/colors.gen.dart';
 import 'package:abdilahi/helpers/all_routes.dart';
 import 'package:abdilahi/helpers/navigation_service.dart';
 import 'package:abdilahi/helpers/ui_helpers.dart';
@@ -13,15 +14,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class DiscoverScreen extends StatefulWidget {
+  const DiscoverScreen({super.key});
 
   @override
   // ignore: library_private_types_in_public_api
-  _HomeScreenState createState() => _HomeScreenState();
+  _DiscoverScreenState createState() => _DiscoverScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _DiscoverScreenState extends State<DiscoverScreen> {
   final List<BookModel> books = [
     BookModel(
         imageUrl: Assets.images.e1.path,
@@ -75,7 +76,6 @@ class _HomeScreenState extends State<HomeScreen> {
       title: "Inspiration",
     ),
   ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -88,119 +88,42 @@ class _HomeScreenState extends State<HomeScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        InkWell(
-                            onTap: () {
-                              NavigationService.navigateTo(
-                                  Routes.notificationEmptyScreen);
-                            },
-                            child: SvgPicture.asset(Assets.icons.ebookSmall)),
-                        // UIHelper.verticalSpace(16.h),
-                        InkWell(
-                            onTap: () {
-                              NavigationService.navigateTo(
-                                  Routes.discoverScreen);
-                            },
-                            child: SvgPicture.asset(Assets.icons.ebookName)),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        InkWell(
-                            onTap: () {
-                              NavigationService.navigateTo(
-                                  Routes.specificGenrescreen);
-                            },
-                            child: Padding(
-                                padding: EdgeInsets.only(right: 18.w),
-                                child:
-                                    SvgPicture.asset(Assets.icons.searchLogo))),
-                        SizedBox(width: 16.h),
-                        InkWell(
-                            onTap: () {
-                              // NavigationService.navigateTo(
-                              //     Routes.specificGenrescreen);
-                              NavigationService.navigateTo(
-                                  Routes.exploreByGenreScreen);
-                            },
-                            child: Padding(
-                              padding: EdgeInsets.only(right: 18.w),
-                              child: SvgPicture.asset(
-                                  Assets.icons.notificationBell),
-                            )),
-                      ],
-                    ),
-                  ],
-                ),
-                UIHelper.verticalSpace(12.h),
-
-                SizedBox(
-                  height: 302.h,
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: books.length,
-                    itemBuilder: (context, idx) {
-                      final book = books[idx];
-                      return Padding(
-                        padding: EdgeInsets.only(
-                            right: 16.w), // Padding between cards
-                        child: BookCard(
-                          imageUrl: book.imageUrl,
-                          title: book.title,
-                          rating: book.rating,
-                          price: book.price,
-                        ),
-                      );
-                    },
-                  ),
-                ),
-                SizedBox(height: 20.h),
-
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
+                    InkWell(
+                        onDoubleTap: () {
+                          NavigationService.navigateTo(
+                              Routes.notificationEmptyScreen);
+                        },
+                        child: SvgPicture.asset(Assets.icons.ebookSmall)),
                     Text(
-                      "Explore by Genre",
-                      style: TextFontStyle.textStyle20c212121UrbanistW600,
+                      'Discover',
+                      style: TextFontStyle.textStyle20c2B2B2BUrbanistW600
+                          .copyWith(
+                              color: AppColors.c2B2B2B,
+                              fontSize: 20.sp,
+                              letterSpacing: -0.4),
                     ),
-                    SvgPicture.asset(Assets.icons.arrowforward)
+                    InkWell(
+                        onTap: () {
+                          NavigationService.navigateTo(
+                              Routes.specificGenrescreen);
+                        },
+                        child: Padding(
+                            padding: EdgeInsets.only(right: 18.w),
+                            child: SvgPicture.asset(Assets.icons.searchLogo))),
                   ],
-                ),
-                UIHelper.verticalSpace(20.h),
-                SizedBox(
-                  height: 74.h,
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: genres.length,
-                    itemBuilder: (context, idx) {
-                      final genre = genres[idx];
-                      return Padding(
-                        padding: EdgeInsets.only(
-                            right: 8.w), // Padding between cards
-                        child: CustomGenreCard(
-                          text: genre.title,
-                          imageUrl: genre.imageUrl!,
-                          width: 128,
-                        ),
-                      );
-                    },
-                  ),
                 ),
                 UIHelper.verticalSpace(20.h),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "Recommended For you",
+                      "Top Selling",
                       style: TextFontStyle.textStyle20c212121UrbanistW600,
                     ),
                     SvgPicture.asset(Assets.icons.arrowforward)
                   ],
                 ),
                 UIHelper.verticalSpace(20.h),
-
                 SizedBox(
                   height: 650,
                   child: GridView.builder(
@@ -224,19 +147,18 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                   ),
                 ),
-                //Recommended for you
+                UIHelper.verticalSpace(12.h),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "Recommended For you",
+                      "New Releases",
                       style: TextFontStyle.textStyle20c212121UrbanistW600,
                     ),
                     SvgPicture.asset(Assets.icons.arrowforward)
                   ],
                 ),
-
-                SizedBox(height: 20.h),
+                UIHelper.verticalSpace(12.h),
                 SizedBox(
                   height: 302.h,
                   child: ListView.builder(
@@ -257,18 +179,18 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                   ),
                 ),
-
+                UIHelper.verticalSpace(12.h),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "On Your Wishlist",
+                      "Top Chart",
                       style: TextFontStyle.textStyle20c212121UrbanistW600,
                     ),
                     SvgPicture.asset(Assets.icons.arrowforward)
                   ],
                 ),
-                SizedBox(height: 20.h),
+                UIHelper.verticalSpace(12.h),
                 SizedBox(
                   height: 302.h,
                   child: ListView.builder(
@@ -285,6 +207,41 @@ class _HomeScreenState extends State<HomeScreen> {
                           rating: book.rating,
                           price: book.price,
                         ),
+                      );
+                    },
+                  ),
+                ),
+                UIHelper.verticalSpace(20.h),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Free Books",
+                      style: TextFontStyle.textStyle20c212121UrbanistW600,
+                    ),
+                    SvgPicture.asset(Assets.icons.arrowforward)
+                  ],
+                ),
+                UIHelper.verticalSpace(20.h),
+                SizedBox(
+                  height: 650,
+                  child: GridView.builder(
+                    physics: const BouncingScrollPhysics(),
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 10,
+                      mainAxisSpacing: 10,
+                      childAspectRatio: 2 / 3.5,
+                    ),
+                    itemCount: min(books.length, 4),
+                    itemBuilder: (context, idx) {
+                      final book = books[idx];
+                      return BookCard(
+                        imageUrl: book.imageUrl,
+                        title: book.title,
+                        rating: book.rating,
+                        price: book.price,
                       );
                     },
                   ),

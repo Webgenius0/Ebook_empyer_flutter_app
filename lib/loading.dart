@@ -1,6 +1,4 @@
-import 'package:abdilahi/features/auth/signup/presentation/gender_screen.dart';
-import 'package:abdilahi/features/home/presentation/explore_by_genre_screen.dart';
-import 'package:abdilahi/welcome_screen.dart';
+
 import 'package:flutter/material.dart';
 import 'package:abdilahi/features/home/presentation/home_screen.dart';
 import 'package:abdilahi/helpers/helper_methods.dart';

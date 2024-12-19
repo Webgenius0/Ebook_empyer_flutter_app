@@ -1,61 +1,69 @@
+import 'package:abdilahi/common_widgets/custom_bookcard2.dart';
+import 'package:abdilahi/constants/text_font_style.dart';
+import 'package:abdilahi/features/home/model/book_model.dart';
+import 'package:abdilahi/features/home/model/genre_model.dart';
+import 'package:abdilahi/gen/assets.gen.dart';
 import 'package:abdilahi/gen/colors.gen.dart';
 import 'package:abdilahi/helpers/all_routes.dart';
 import 'package:abdilahi/helpers/navigation_service.dart';
 import 'package:abdilahi/helpers/ui_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:abdilahi/constants/text_font_style.dart';
-import 'package:abdilahi/features/home/model/book_model.dart';
-import 'package:abdilahi/gen/assets.gen.dart';
-import 'package:abdilahi/common_widgets/custom_bookcard.dart';
+import 'package:flutter_svg/svg.dart';
 
-class SpecificGenrescreen extends StatefulWidget {
-  const SpecificGenrescreen({super.key});
+class Specific1GenerScreen extends StatefulWidget {
+  const Specific1GenerScreen({super.key});
 
   @override
-  // ignore: library_private_types_in_public_api
-  _SpecificGenrescreenState createState() => _SpecificGenrescreenState();
+  _Specific1GenerScreenState createState() => _Specific1GenerScreenState();
 }
 
-class _SpecificGenrescreenState extends State<SpecificGenrescreen> {
+class _Specific1GenerScreenState extends State<Specific1GenerScreen> {
   final List<BookModel> books = [
     BookModel(
         imageUrl: Assets.images.e1.path,
         title: "One Hundred Years of Solitude",
         rating: 4.5,
         price: 29.99,
-        author: "Author: Douglas Adams"),
+        author: "Author: Gabriel Garcia Marquez",
+        genres: [
+          GenreModel(title: "Romantic", imageUrl: Assets.images.e2.path),
+          GenreModel(title: "Thriller", imageUrl: Assets.images.e2.path),
+          GenreModel(title: "Thriller", imageUrl: Assets.images.e2.path)
+        ]),
     BookModel(
         imageUrl: Assets.images.e2.path,
         title: "Adventures of Huckleberry Finn",
         rating: 4.8,
         price: 39.99,
-        author: "Author: Douglas Adams"),
+        author: "Author: Mark Twain",
+        genres: [
+          GenreModel(title: "Romantic", imageUrl: Assets.images.e2.path),
+          GenreModel(title: "Thriller", imageUrl: Assets.images.e2.path),
+          GenreModel(title: "Adventure", imageUrl: Assets.images.e2.path)
+        ]),
     BookModel(
         imageUrl: Assets.images.e3.path,
-        title: "One Hundred Years of Solitude",
+        title: "Moby Dick",
         rating: 4.3,
         price: 24.99,
-        author: "Author: Douglas Adams"),
+        author: "Author: Herman Melville",
+        genres: [
+          GenreModel(title: "Adventure", imageUrl: Assets.images.e2.path),
+          GenreModel(title: "Classic", imageUrl: Assets.images.e2.path),
+          GenreModel(title: "Romantic", imageUrl: Assets.images.e2.path),
+        ]),
     BookModel(
         imageUrl: Assets.images.e4.path,
-        title: "One Hundred Years of Solitude",
+        title: "Adventures of Huckleberry Finn",
         rating: 4.3,
         price: 24.99,
-        author: "Author: Douglas Adams"),
-    BookModel(
-        imageUrl: Assets.images.e5.path,
-        title: "One Hundred Years of Solitude",
-        rating: 4.3,
-        price: 24.99,
-        author: "Author: Douglas Adams"),
-    BookModel(
-        imageUrl: Assets.images.e3.path,
-        title: "One Hundred Years of Solitude",
-        rating: 4.3,
-        price: 24.99,
-        author: "Author: Douglas Adams"),
+        author: "Author: George Orwell",
+        genres: [
+          GenreModel(title: "Dystopian", imageUrl: Assets.images.e2.path),
+          GenreModel(
+              title: "Political Fiction", imageUrl: Assets.images.e2.path)
+        ]),
   ];
 
   @override
@@ -98,6 +106,7 @@ class _SpecificGenrescreenState extends State<SpecificGenrescreen> {
           padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 20.w),
           child: Column(
             children: [
+              UIHelper.verticalSpace(12.h),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -111,41 +120,29 @@ class _SpecificGenrescreenState extends State<SpecificGenrescreen> {
                       SizedBox(
                         width: 12.w,
                       ),
-                      GestureDetector(
-                          onTap: () {
-                            NavigationService.navigateTo(
-                                Routes.specific1GenerScreen);
-                          },
-                          child: Padding(
-                              padding: EdgeInsets.symmetric(
-                                  vertical: 16.h, horizontal: 20.w),
-                              child: SvgPicture.asset(Assets.icons.sortblack))),
+                      SvgPicture.asset(Assets.icons.sortblack),
                     ],
                   ),
                 ],
               ),
-              UIHelper.verticalSpace(12.h),
+              UIHelper.verticalSpace(20.h),
               Expanded(
-                child: GridView.builder(
-                  physics: const BouncingScrollPhysics(),
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 10,
-                    mainAxisSpacing: 10,
-                    childAspectRatio: 2 / 3.5,
-                  ),
-                  itemCount: books.length,
-                  itemBuilder: (context, idx) {
-                    final book = books[idx];
-                    return BookCard(
-                      imageUrl: book.imageUrl,
-                      title: book.title,
-                      rating: book.rating,
-                      price: book.price,
-                    );
-                  },
-                ),
-              ),
+                child: ListView.builder(
+                    itemCount: books.length,
+                    itemBuilder: (context, idx) {
+                      final book = books[idx];
+                      final genreTitles =
+                          book.genres?.map((genre) => genre.title).toList();
+
+                      return BookItem(
+                          imagePath: book.imageUrl,
+                          title: book.title,
+                          author: book.title,
+                          labels: genreTitles!,
+                          rating: book.rating,
+                          price: book.price);
+                    }),
+              )
             ],
           ),
         ),
