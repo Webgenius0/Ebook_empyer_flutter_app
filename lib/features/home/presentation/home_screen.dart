@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:abdilahi/common_widgets/custom_bookcard.dart';
 import 'package:abdilahi/common_widgets/custom_genre_card.dart';
 import 'package:abdilahi/constants/text_font_style.dart';
@@ -91,19 +90,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        InkWell(
-                            onTap: () {
-                              NavigationService.navigateTo(
-                                  Routes.notificationEmptyScreen);
-                            },
-                            child: SvgPicture.asset(Assets.icons.ebookSmall)),
-                        // UIHelper.verticalSpace(16.h),
-                        InkWell(
-                            onTap: () {
-                              NavigationService.navigateTo(
-                                  Routes.discoverScreen);
-                            },
-                            child: SvgPicture.asset(Assets.icons.ebookName)),
+                        SvgPicture.asset(Assets.icons.ebookSmall),
+                        UIHelper.verticalSpace(16.h),
+                        SvgPicture.asset(Assets.icons.ebookName),
                       ],
                     ),
                     Row(
@@ -121,10 +110,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         SizedBox(width: 16.h),
                         InkWell(
                             onTap: () {
-                              // NavigationService.navigateTo(
-                              //     Routes.specificGenrescreen);
                               NavigationService.navigateTo(
-                                  Routes.exploreByGenreScreen);
+                                  Routes.notificationEmptyScreen);
                             },
                             child: Padding(
                               padding: EdgeInsets.only(right: 18.w),
