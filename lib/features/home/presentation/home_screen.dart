@@ -113,7 +113,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               // NavigationService.navigateTo(
                               //     Routes.notificationEmptyScreen);
                               NavigationService.navigateTo(
-                                  Routes.bookDetailsScreen);
+                                  Routes.ebookDetailsScreen);
                             },
                             child: Padding(
                               padding: EdgeInsets.only(right: 18.w),
