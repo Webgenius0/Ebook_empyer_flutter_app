@@ -1,4 +1,5 @@
 import 'dart:math';
+
 import 'package:abdilahi/common_widgets/custom_bookcard.dart';
 import 'package:abdilahi/common_widgets/custom_genre_card.dart';
 import 'package:abdilahi/constants/text_font_style.dart';
@@ -12,15 +13,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class HomeContentScreen extends StatefulWidget {
+  const HomeContentScreen({super.key});
 
   @override
   // ignore: library_private_types_in_public_api
-  _HomeScreenState createState() => _HomeScreenState();
+  _HomeContentScreenState createState() => _HomeContentScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeContentScreenState extends State<HomeContentScreen> {
   final List<BookModel> books = [
     BookModel(
         imageUrl: Assets.images.e1.path,
@@ -90,18 +91,27 @@ class _HomeScreenState extends State<HomeScreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        SvgPicture.asset(Assets.icons.ebookSmall),
+                        InkWell(
+                            onTap: () {
+                              NavigationService.navigateTo(
+                                  Routes.notificationEmptyScreen);
+                            },
+                            child: SvgPicture.asset(Assets.icons.ebookSmall)),
                         UIHelper.verticalSpace(16.h),
-                        SvgPicture.asset(Assets.icons.ebookName),
+                        InkWell(
+                            onTap: () {
+                              NavigationService.navigateTo(
+                                  Routes.discoverScreen);
+                            },
+                            child: SvgPicture.asset(Assets.icons.ebookName)),
                       ],
                     ),
                     Row(
                       children: [
                         InkWell(
                             onTap: () {
-                              // NavigationService.navigateTo(
-                              //     Routes.specificGenrescreen);
-                              NavigationService.navigateTo(Routes.searchScreen);
+                              NavigationService.navigateTo(
+                                  Routes.specificGenrescreen);
                             },
                             child: Padding(
                                 padding: EdgeInsets.only(right: 18.w),
@@ -110,8 +120,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         SizedBox(width: 16.h),
                         InkWell(
                             onTap: () {
+                              // NavigationService.navigateTo(
+                              //     Routes.specificGenrescreen);
                               NavigationService.navigateTo(
-                                  Routes.notificationEmptyScreen);
+                                  Routes.exploreByGenreScreen);
                             },
                             child: Padding(
                               padding: EdgeInsets.only(right: 18.w),
@@ -153,12 +165,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       "Explore by Genre",
                       style: TextFontStyle.textStyle20c212121UrbanistW600,
                     ),
-                    InkWell(
-                        onTap: () {
-                          NavigationService.navigateTo(
-                              Routes.exploreByGenreScreen);
-                        },
-                        child: SvgPicture.asset(Assets.icons.arrowforward))
+                    SvgPicture.asset(Assets.icons.arrowforward)
                   ],
                 ),
                 UIHelper.verticalSpace(20.h),
