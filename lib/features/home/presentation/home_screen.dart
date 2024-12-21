@@ -112,8 +112,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             onTap: () {
                               // NavigationService.navigateTo(
                               //     Routes.notificationEmptyScreen);
-                              // NavigationService.navigateTo(
-                              //   Routes.);
+                              NavigationService.navigateTo(
+                                  Routes.bookDetailsScreen);
                             },
                             child: Padding(
                               padding: EdgeInsets.only(right: 18.w),

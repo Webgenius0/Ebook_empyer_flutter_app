@@ -22,7 +22,7 @@ class _BookDetailsScreenState extends State<BookDetailsScreen> {
             Row(
               children: [
                 SvgPicture.asset(Assets.icons.arrowBack),
-                SvgPicture.asset(Assets.icons.addIcon),
+                SvgPicture.asset(Assets.icons.arrowBack),
               ],
             )
           ],
