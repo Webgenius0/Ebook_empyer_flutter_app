@@ -1,8 +1,8 @@
 import 'dart:io';
-import 'package:abdilahi/features/auth/forgotPassword/presentation/create_new_Password_screen.dart';
-import 'package:abdilahi/features/auth/forgotPassword/presentation/forgot_password_screen.dart';
-import 'package:abdilahi/features/auth/forgotPassword/presentation/otp_verification_screen.dart';
-import 'package:abdilahi/features/auth/signin/presentation/signin_screen.dart';
+import 'package:abdilahi/features/auth/presentataion/forgotPassword/presentation/create_new_Password_screen.dart';
+import 'package:abdilahi/features/auth/presentataion/forgotPassword/presentation/forgot_password_screen.dart';
+import 'package:abdilahi/features/auth/presentataion/forgotPassword/presentation/otp_verification_screen.dart';
+import 'package:abdilahi/features/auth/presentataion/signin/presentation/signin_screen.dart';
 import 'package:abdilahi/features/onboarding/presentation/complete_profile_screen.dart';
 import 'package:abdilahi/features/onboarding/presentation/create_account_screen.dart';
 import 'package:abdilahi/features/onboarding/presentation/book_genre_screen.dart';
