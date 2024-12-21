@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:abdilahi/helpers/all_routes.dart';
 import 'package:abdilahi/helpers/navigation_service.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +13,7 @@ import 'package:flutter_svg/svg.dart';
 import 'dart:ui'; // For blur effect
 
 class CreateNewPasswordScreen extends StatefulWidget {
+  // ignore: use_super_parameters
   const CreateNewPasswordScreen({Key? key}) : super(key: key);
 
   @override
@@ -25,7 +28,7 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
       context: context,
       barrierDismissible: false,
       builder: (BuildContext context) {
-        Future.delayed(Duration(seconds: 1), () {
+        Future.delayed(const Duration(seconds: 1), () {
           NavigationService.navigateTo(Routes.welcomeScreen);
         });
         return Stack(
@@ -117,7 +120,7 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
                       style: TextFontStyle.textStyle14c212121UrbanistW600,
                     ),
                     SizedBox(height: 16.h),
-                    CustomTextFormField(
+                    const CustomTextFormField(
                       hintText: "************",
                       isPasswordField: true,
                     ),
@@ -127,7 +130,7 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
                       style: TextFontStyle.textStyle14c212121UrbanistW600,
                     ),
                     SizedBox(height: 16.h),
-                    CustomTextFormField(
+                    const CustomTextFormField(
                       hintText: "************",
                       isPasswordField: true,
                     ),

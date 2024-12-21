@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:abdilahi/helpers/all_routes.dart';
 import 'package:abdilahi/helpers/navigation_service.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +13,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class ForgotPasswordScreen extends StatefulWidget {
+  // ignore: use_super_parameters
   const ForgotPasswordScreen({Key? key}) : super(key: key);
 
   @override
@@ -61,7 +64,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                     SizedBox(
                       height: 16.h,
                     ),
-                    CustomTextFormField(
+                    const CustomTextFormField(
                       hintText: "abc@gmail.com",
                     ),
                     SizedBox(height: 435.h),

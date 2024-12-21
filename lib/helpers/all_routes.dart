@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:abdilahi/features/account_and_setting/presentation/payment_method_screen.dart';
 import 'package:abdilahi/features/auth/presentataion/forgotPassword/presentation/create_new_Password_screen.dart';
 import 'package:abdilahi/features/auth/presentataion/forgotPassword/presentation/forgot_password_screen.dart';
 import 'package:abdilahi/features/auth/presentataion/forgotPassword/presentation/otp_verification_screen.dart';
@@ -48,6 +49,7 @@ final class Routes {
   static const String homeContentScreen = '/homeContentScreen';
   static const String searchScreen = '/SearchScreen';
   static const String filterScreen = '/filterScreen';
+  static const String paymentMethodScreen = '/paymentMethodScreen';
 }
 
 final class RouteGenerator {
@@ -184,6 +186,13 @@ final class RouteGenerator {
         return Platform.isAndroid
             ? _FadedTransitionRoute(widget: FilterScreen(), settings: settings)
             : CupertinoPageRoute(builder: (context) => FilterScreen());
+
+      case Routes.paymentMethodScreen:
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(
+                widget: const PaymentMethodScreen(), settings: settings)
+            : CupertinoPageRoute(
+                builder: (context) => const PaymentMethodScreen());
 
       default:
         return null;

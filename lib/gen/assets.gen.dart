@@ -31,15 +31,24 @@ class $AssetsIconsGen {
   /// File path: assets/icons/Frame.svg
   String get frame => 'assets/icons/Frame.svg';
 
+  /// File path: assets/icons/about_us.svg
+  String get aboutUs => 'assets/icons/about_us.svg';
+
   /// File path: assets/icons/activity.svg
   String get activity => 'assets/icons/activity.svg';
 
   /// File path: assets/icons/alert.svg
   String get alert => 'assets/icons/alert.svg';
 
+  /// File path: assets/icons/apple_pay.svg
+  String get applePay => 'assets/icons/apple_pay.svg';
+
   /// File path: assets/icons/arrowRightNotification.svg
   String get arrowRightNotification =>
       'assets/icons/arrowRightNotification.svg';
+
+  /// File path: assets/icons/arrowRightTwo.svg
+  String get arrowRightTwo => 'assets/icons/arrowRightTwo.svg';
 
   /// File path: assets/icons/arrow_back.svg
   String get arrowBack => 'assets/icons/arrow_back.svg';
@@ -65,14 +74,44 @@ class $AssetsIconsGen {
   /// File path: assets/icons/google_icon.svg
   String get googleIcon => 'assets/icons/google_icon.svg';
 
+  /// File path: assets/icons/google_pay.svg
+  String get googlePay => 'assets/icons/google_pay.svg';
+
+  /// File path: assets/icons/helpCenter.svg
+  String get helpCenter => 'assets/icons/helpCenter.svg';
+
   /// File path: assets/icons/home_icon.svg
   String get homeIcon => 'assets/icons/home_icon.svg';
+
+  /// File path: assets/icons/logout.svg
+  String get logout => 'assets/icons/logout.svg';
+
+  /// File path: assets/icons/master_card.svg
+  String get masterCard => 'assets/icons/master_card.svg';
+
+  /// File path: assets/icons/notification.svg
+  String get notification => 'assets/icons/notification.svg';
 
   /// File path: assets/icons/notification_bell.svg
   String get notificationBell => 'assets/icons/notification_bell.svg';
 
+  /// File path: assets/icons/payment.svg
+  String get payment => 'assets/icons/payment.svg';
+
+  /// File path: assets/icons/payments.svg
+  String get payments => 'assets/icons/payments.svg';
+
   /// File path: assets/icons/pen.svg
   String get pen => 'assets/icons/pen.svg';
+
+  /// File path: assets/icons/personal_info.svg
+  String get personalInfo => 'assets/icons/personal_info.svg';
+
+  /// File path: assets/icons/profile.svg
+  String get profile => 'assets/icons/profile.svg';
+
+  /// File path: assets/icons/profileEdit.svg
+  String get profileEdit => 'assets/icons/profileEdit.svg';
 
   /// File path: assets/icons/profile_icon.svg
   String get profileIcon => 'assets/icons/profile_icon.svg';
@@ -98,6 +137,12 @@ class $AssetsIconsGen {
   /// File path: assets/icons/star.svg
   String get star => 'assets/icons/star.svg';
 
+  /// File path: assets/icons/subscription_img.svg
+  String get subscriptionImg => 'assets/icons/subscription_img.svg';
+
+  /// File path: assets/icons/visa.svg
+  String get visa => 'assets/icons/visa.svg';
+
   /// File path: assets/icons/wishlist_icon.svg
   String get wishlistIcon => 'assets/icons/wishlist_icon.svg';
 
@@ -106,9 +151,12 @@ class $AssetsIconsGen {
         ebookName,
         ebookSmall,
         frame,
+        aboutUs,
         activity,
         alert,
+        applePay,
         arrowRightNotification,
+        arrowRightTwo,
         arrowBack,
         arrowforward,
         boxIcon,
@@ -117,9 +165,19 @@ class $AssetsIconsGen {
         documentText,
         emptyNotification,
         googleIcon,
+        googlePay,
+        helpCenter,
         homeIcon,
+        logout,
+        masterCard,
+        notification,
         notificationBell,
+        payment,
+        payments,
         pen,
+        personalInfo,
+        profile,
+        profileEdit,
         profileIcon,
         purchasedIcon,
         searchLogo,
@@ -128,6 +186,8 @@ class $AssetsIconsGen {
         sortblack,
         squareBlue,
         star,
+        subscriptionImg,
+        visa,
         wishlistIcon
       ];
 }
@@ -138,6 +198,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/Ebook empyre logo_1 3.png
   AssetGenImage get ebookEmpyreLogo13 =>
       const AssetGenImage('assets/images/Ebook empyre logo_1 3.png');
+
+  /// File path: assets/images/apple_pay.png
+  AssetGenImage get applePay =>
+      const AssetGenImage('assets/images/apple_pay.png');
 
   /// File path: assets/images/calender.png
   AssetGenImage get calender =>
@@ -165,6 +229,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/e6.png
   AssetGenImage get e6 => const AssetGenImage('assets/images/e6.png');
 
+  /// File path: assets/images/person.png
+  AssetGenImage get person => const AssetGenImage('assets/images/person.png');
+
   /// File path: assets/images/profile.png
   AssetGenImage get profile => const AssetGenImage('assets/images/profile.png');
 
@@ -190,6 +257,7 @@ class $AssetsImagesGen {
   /// List of all assets
   List<dynamic> get values => [
         ebookEmpyreLogo13,
+        applePay,
         calender,
         downArrow,
         e1,
@@ -198,6 +266,7 @@ class $AssetsImagesGen {
         e4,
         e5,
         e6,
+        person,
         profile,
         romantic,
         setting,

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <colors>
 
-
   <color name="c5312F8">#FF5312F8</color>
   <color name="cFFFFFF">#FFFFFFFF</color>
   <color name="c743DFF">#FF743DFF</color>
@@ -18,23 +17,12 @@
    <color name="cF0F0F0">#FFF0F0F0</color>
    <color name="cE7E7E7">#FFE7E7E7</color>
     <color name="c717171">#FF717171</color>
-    
-
-
-   
-
-
-
-   
-
-       
-    
-
-   
-   
-
-  
-
-  
-    
+    <color name="cF4F5F6">#FFF4F5F6</color>
+    <color name="c545A63">#FF545A63</color>
+    <color name="cEBEBEB">#FFEBEBEB</color>
+    <color name="cFF0000">#FFFF0000</color>
+    <color name="c6636EE">#FF6636EE</color>
+    <color name="cF3F3F3">#FFF3F3F3</color>
+    <color name="c55d0ff">#FF55d0ff</color>
+     
 </colors>

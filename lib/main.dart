@@ -1,10 +1,10 @@
+import 'package:abdilahi/features/account_and_setting/presentation/account_full_screen.dart';
 import 'package:auto_animated/auto_animated.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:abdilahi/loading.dart';
 import 'package:provider/provider.dart';
 import '/helpers/all_routes.dart';
 import 'helpers/di.dart';
@@ -83,7 +83,7 @@ class UtillScreenMobile extends StatelessWidget {
             },
             navigatorKey: NavigationService.navigatorKey,
             onGenerateRoute: RouteGenerator.generateRoute,
-            home: const Loading(),
+            home: const AccountFullScreen(),
           ),
         );
       },
