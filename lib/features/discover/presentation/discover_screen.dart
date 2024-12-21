@@ -104,8 +104,7 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
                     ),
                     InkWell(
                         onTap: () {
-                          NavigationService.navigateTo(
-                              Routes.specificGenrescreen);
+                          NavigationService.navigateTo(Routes.searchScreen);
                         },
                         child: Padding(
                             padding: EdgeInsets.only(right: 18.w),

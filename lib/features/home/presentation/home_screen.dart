@@ -110,8 +110,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       children: [
                         InkWell(
                             onTap: () {
-                              NavigationService.navigateTo(
-                                  Routes.specificGenrescreen);
+                              // NavigationService.navigateTo(
+                              //     Routes.specificGenrescreen);
+                              NavigationService.navigateTo(Routes.searchScreen);
                             },
                             child: Padding(
                                 padding: EdgeInsets.only(right: 18.w),
@@ -165,7 +166,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       "Explore by Genre",
                       style: TextFontStyle.textStyle20c212121UrbanistW600,
                     ),
-                    SvgPicture.asset(Assets.icons.arrowforward)
+                    InkWell(
+                        onTap: () {
+                          NavigationService.navigateTo(
+                              Routes.exploreByGenreScreen);
+                        },
+                        child: SvgPicture.asset(Assets.icons.arrowforward))
                   ],
                 ),
                 UIHelper.verticalSpace(20.h),

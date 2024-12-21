@@ -9,50 +9,76 @@ class Navigation extends StatefulWidget {
   const Navigation({super.key});
 
   @override
-  // ignore: library_private_types_in_public_api
   _NavigationState createState() => _NavigationState();
 }
 
 class _NavigationState extends State<Navigation> {
+  int selectedIndex = 0;
+
+  final List<Widget> screens = [
+    const HomeScreen(),
+    const DiscoverScreen(),
+    Placeholder(), // WishlistScreen
+    Placeholder(), // PurchasedScreen
+    Placeholder(), // ProfileScreen
+  ];
+
+  void onItemTapped(int index) {
+    setState(() {
+      selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    int selectedIndex = 0;
-
-    final List<Widget> screens = [const HomeScreen(), const DiscoverScreen()];
-
-    void onItemTapped(int index) {
-      setState(() {
-        selectedIndex = index;
-      });
-    }
-
     return Scaffold(
       body: screens[selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: selectedIndex,
         onTap: onItemTapped,
         type: BottomNavigationBarType.fixed,
+        backgroundColor: AppColors.cFFFFFF,
         selectedItemColor: AppColors.c743DFF,
-        // unselectedItemColor: Colors.grey,
+        unselectedItemColor: Colors.grey,
         items: [
           BottomNavigationBarItem(
             icon: SvgPicture.asset(Assets.icons.homeIcon),
+            activeIcon: SvgPicture.asset(
+              Assets.icons.homeIcon,
+              color: AppColors.c743DFF,
+            ),
             label: "Home",
           ),
           BottomNavigationBarItem(
             icon: SvgPicture.asset(Assets.icons.discoverIcon),
+            activeIcon: SvgPicture.asset(
+              Assets.icons.discoverIcon,
+              color: AppColors.c743DFF,
+            ),
             label: "Discover",
           ),
           BottomNavigationBarItem(
             icon: SvgPicture.asset(Assets.icons.wishlistIcon),
-            label: "wishlist",
+            activeIcon: SvgPicture.asset(
+              Assets.icons.wishlistIcon,
+              color: AppColors.c743DFF,
+            ),
+            label: "Wishlist",
           ),
           BottomNavigationBarItem(
             icon: SvgPicture.asset(Assets.icons.purchasedIcon),
+            activeIcon: SvgPicture.asset(
+              Assets.icons.purchasedIcon,
+              color: AppColors.c743DFF,
+            ),
             label: "Purchased",
           ),
           BottomNavigationBarItem(
             icon: SvgPicture.asset(Assets.icons.profileIcon),
+            activeIcon: SvgPicture.asset(
+              Assets.icons.profileIcon,
+              color: AppColors.c743DFF,
+            ),
             label: "Profile",
           ),
         ],

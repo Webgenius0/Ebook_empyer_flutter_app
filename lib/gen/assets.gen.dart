@@ -47,6 +47,12 @@ class $AssetsIconsGen {
   /// File path: assets/icons/arrowforward.svg
   String get arrowforward => 'assets/icons/arrowforward.svg';
 
+  /// File path: assets/icons/box_icon.svg
+  String get boxIcon => 'assets/icons/box_icon.svg';
+
+  /// File path: assets/icons/close.svg
+  String get close => 'assets/icons/close.svg';
+
   /// File path: assets/icons/discover_icon.svg
   String get discoverIcon => 'assets/icons/discover_icon.svg';
 
@@ -105,6 +111,8 @@ class $AssetsIconsGen {
         arrowRightNotification,
         arrowBack,
         arrowforward,
+        boxIcon,
+        close,
         discoverIcon,
         documentText,
         emptyNotification,

@@ -111,38 +111,7 @@ class _ExploreByGenreScreenState extends State<ExploreByGenreScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: 16.h),
-              // Container(
-              //   width: 165.w,
-              //   height: 72.h,
-              //   decoration: BoxDecoration(
-              //     border: Border.all(color: Colors.black),
-              //     borderRadius: BorderRadius.circular(8.h),
-              //   ),
-              //   child: Stack(
-              //     alignment: Alignment.bottomLeft,
-              //     children: [
-              //       // Image with rounded corners
-              //       ClipRRect(
-              //         borderRadius: BorderRadius.circular(8.h),
-              //         child: Image.asset(
-              //           Assets.images.thriller.path,
-              //           width: double.infinity,
-              //           height: 72.h,
-              //           fit: BoxFit.cover,
-              //         ),
-              //       ),
 
-              //       Positioned(
-              //         bottom: 10.h,
-              //         left: 10.w,
-              //         child: Text(
-              //           "Titanic",
-              //           style: TextFontStyle
-              //               .textStyle16cFFFFFFBUrbanistW500, // Your custom style
-              //         ),
-              //       ),
-              //     ],
-              //   ),
               // ),
 
               // Genre Grid
@@ -159,10 +128,16 @@ class _ExploreByGenreScreenState extends State<ExploreByGenreScreen> {
                   itemCount: genres.length,
                   itemBuilder: (context, idx) {
                     final genre = genres[idx];
-                    return CustomGenreCard(
-                      text: genre.title,
-                      imageUrl: genre.imageUrl!,
-                      width: 165.w,
+                    return GestureDetector(
+                      onTap: () {
+                        NavigationService.navigateTo(
+                            Routes.specificGenrescreen);
+                      },
+                      child: CustomGenreCard(
+                        text: genre.title,
+                        imageUrl: genre.imageUrl!,
+                        width: 165.w,
+                      ),
                     );
                   },
                 ),

@@ -1,3 +1,4 @@
+import 'package:abdilahi/common_widgets/custom_bookcard2.dart';
 import 'package:abdilahi/gen/colors.gen.dart';
 import 'package:abdilahi/helpers/all_routes.dart';
 import 'package:abdilahi/helpers/navigation_service.dart';
@@ -19,6 +20,13 @@ class SpecificGenrescreen extends StatefulWidget {
 }
 
 class _SpecificGenrescreenState extends State<SpecificGenrescreen> {
+  bool _isToogle = false;
+  void _toggleState() {
+    setState(() {
+      _isToogle = !_isToogle; // Toggles the state
+    });
+  }
+
   final List<BookModel> books = [
     BookModel(
         imageUrl: Assets.images.e1.path,
@@ -107,44 +115,68 @@ class _SpecificGenrescreenState extends State<SpecificGenrescreen> {
                   ),
                   Row(
                     children: [
-                      SvgPicture.asset(Assets.icons.squareBlue),
+                      GestureDetector(
+                        onTap: _toggleState,
+                        child: SvgPicture.asset(
+                          Assets.icons.boxIcon,
+                          color:
+                              _isToogle ? AppColors.c743DFF : AppColors.c2B2B2B,
+                        ),
+                      ),
                       SizedBox(
                         width: 12.w,
                       ),
                       GestureDetector(
-                          onTap: () {
-                            NavigationService.navigateTo(
-                                Routes.specific1GenerScreen);
-                          },
-                          child: Padding(
-                              padding: EdgeInsets.symmetric(
-                                  vertical: 16.h, horizontal: 20.w),
-                              child: SvgPicture.asset(Assets.icons.sortblack))),
+                        onTap: _toggleState,
+                        child: SvgPicture.asset(
+                          Assets.icons.sortblack,
+                          color: !_isToogle
+                              ? AppColors.c743DFF
+                              : AppColors.c2B2B2B,
+                        ),
+                      ),
                     ],
                   ),
                 ],
               ),
               UIHelper.verticalSpace(12.h),
               Expanded(
-                child: GridView.builder(
-                  physics: const BouncingScrollPhysics(),
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 10,
-                    mainAxisSpacing: 10,
-                    childAspectRatio: 2 / 3.5,
-                  ),
-                  itemCount: books.length,
-                  itemBuilder: (context, idx) {
-                    final book = books[idx];
-                    return BookCard(
-                      imageUrl: book.imageUrl,
-                      title: book.title,
-                      rating: book.rating,
-                      price: book.price,
-                    );
-                  },
-                ),
+                child: _isToogle
+                    ? GridView.builder(
+                        physics: const BouncingScrollPhysics(),
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2,
+                          crossAxisSpacing: 10,
+                          mainAxisSpacing: 10,
+                          childAspectRatio: 2 / 3.5,
+                        ),
+                        itemCount: books.length,
+                        itemBuilder: (context, idx) {
+                          final book = books[idx];
+                          return BookCard(
+                            imageUrl: book.imageUrl,
+                            title: book.title,
+                            rating: book.rating,
+                            price: book.price,
+                          );
+                        },
+                      )
+                    : ListView.builder(
+                        itemCount: books.length,
+                        itemBuilder: (context, idx) {
+                          final book = books[idx];
+                          return BookItem(
+                            imagePath: book.imageUrl,
+                            title: book.title,
+                            author: book.author,
+                            labels:
+                                book.genres?.map((g) => g.title).toList() ?? [],
+                            rating: book.rating,
+                            price: book.price,
+                          );
+                        },
+                      ),
               ),
             ],
           ),

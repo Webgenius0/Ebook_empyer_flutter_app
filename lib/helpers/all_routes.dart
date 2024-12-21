@@ -9,10 +9,11 @@ import 'package:abdilahi/features/auth/signup/presentation/book_genre_screen.dar
 import 'package:abdilahi/features/auth/signup/presentation/select_age_screen.dart';
 import 'package:abdilahi/features/auth/signup/presentation/gender_screen.dart';
 import 'package:abdilahi/features/discover/presentation/discover_screen.dart';
+import 'package:abdilahi/features/filter/presentation/filter_screen.dart';
+import 'package:abdilahi/features/filter/presentation/search_screen.dart';
 import 'package:abdilahi/features/home/presentation/explore_by_genre_screen.dart';
 import 'package:abdilahi/features/home/presentation/home_content_screen.dart';
 import 'package:abdilahi/features/home/presentation/home_screen.dart';
-import 'package:abdilahi/features/home/presentation/specific1_gener_screen.dart';
 import 'package:abdilahi/features/home/presentation/specific_genre.screen.dart';
 import 'package:abdilahi/features/notification/presentation/empty_notification.dart';
 import 'package:abdilahi/features/notification/presentation/notification-screen.dart';
@@ -45,6 +46,8 @@ final class Routes {
   static const String notificationScreen = '/notificationScreen';
   static const String discoverScreen = '/discoverScreen';
   static const String homeContentScreen = '/homeContentScreen';
+  static const String searchScreen = '/SearchScreen';
+  static const String filterScreen = '/filterScreen';
 }
 
 final class RouteGenerator {
@@ -144,13 +147,6 @@ final class RouteGenerator {
             : CupertinoPageRoute(
                 builder: (context) => const SpecificGenrescreen());
 
-      case Routes.specific1GenerScreen:
-        return Platform.isAndroid
-            ? _FadedTransitionRoute(
-                widget: const Specific1GenerScreen(), settings: settings)
-            : CupertinoPageRoute(
-                builder: (context) => const Specific1GenerScreen());
-
       case Routes.notificationEmptyScreen:
         return Platform.isAndroid
             ? _FadedTransitionRoute(
@@ -177,6 +173,17 @@ final class RouteGenerator {
                 widget: const HomeContentScreen(), settings: settings)
             : CupertinoPageRoute(
                 builder: (context) => const HomeContentScreen());
+
+      case Routes.searchScreen:
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(
+                widget: const SearchScreen(), settings: settings)
+            : CupertinoPageRoute(builder: (context) => const SearchScreen());
+
+      case Routes.filterScreen:
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(widget: FilterScreen(), settings: settings)
+            : CupertinoPageRoute(builder: (context) => FilterScreen());
 
       default:
         return null;
