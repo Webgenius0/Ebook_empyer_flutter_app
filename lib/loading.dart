@@ -1,4 +1,6 @@
+import 'package:abdilahi/features/home/presentation/home_screen.dart';
 import 'package:abdilahi/navigation.dart';
+import 'package:abdilahi/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:abdilahi/helpers/helper_methods.dart';
 import 'package:abdilahi/splash_screen.dart';
@@ -32,7 +34,7 @@ class _LoadingState extends State<Loading> {
     if (_isLoading) {
       return const SplashScreen();
     } else {
-      return const Navigation();
+      return const HomeScreen();
     }
   }
 }
