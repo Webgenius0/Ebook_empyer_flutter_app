@@ -110,8 +110,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         SizedBox(width: 16.h),
                         InkWell(
                             onTap: () {
-                              NavigationService.navigateTo(
-                                  Routes.notificationEmptyScreen);
+                              // NavigationService.navigateTo(
+                              //     Routes.notificationEmptyScreen);
+                              // NavigationService.navigateTo(
+                              //   Routes.);
                             },
                             child: Padding(
                               padding: EdgeInsets.only(right: 18.w),

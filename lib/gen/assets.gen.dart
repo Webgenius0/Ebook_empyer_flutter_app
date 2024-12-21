@@ -34,6 +34,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/activity.svg
   String get activity => 'assets/icons/activity.svg';
 
+  /// File path: assets/icons/add_icon.svg
+  String get addIcon => 'assets/icons/add_icon.svg';
+
   /// File path: assets/icons/alert.svg
   String get alert => 'assets/icons/alert.svg';
 
@@ -107,6 +110,7 @@ class $AssetsIconsGen {
         ebookSmall,
         frame,
         activity,
+        addIcon,
         alert,
         arrowRightNotification,
         arrowBack,

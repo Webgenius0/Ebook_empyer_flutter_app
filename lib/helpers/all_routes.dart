@@ -11,6 +11,7 @@ import 'package:abdilahi/features/auth/signup/presentation/gender_screen.dart';
 import 'package:abdilahi/features/discover/presentation/discover_screen.dart';
 import 'package:abdilahi/features/filter/presentation/filter_screen.dart';
 import 'package:abdilahi/features/filter/presentation/search_screen.dart';
+import 'package:abdilahi/features/home/presentation/book_details_screen.dart';
 import 'package:abdilahi/features/home/presentation/explore_by_genre_screen.dart';
 import 'package:abdilahi/features/home/presentation/home_content_screen.dart';
 import 'package:abdilahi/features/home/presentation/home_screen.dart';
@@ -48,6 +49,7 @@ final class Routes {
   static const String homeContentScreen = '/homeContentScreen';
   static const String searchScreen = '/SearchScreen';
   static const String filterScreen = '/filterScreen';
+  static const String bookDetailsScreen = '/bookDetailsScreen';
 }
 
 final class RouteGenerator {
@@ -184,6 +186,13 @@ final class RouteGenerator {
         return Platform.isAndroid
             ? _FadedTransitionRoute(widget: FilterScreen(), settings: settings)
             : CupertinoPageRoute(builder: (context) => FilterScreen());
+
+      case Routes.bookDetailsScreen:
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(
+                widget: const BookDetailsScreen(), settings: settings)
+            : CupertinoPageRoute(
+                builder: (context) => const BookDetailsScreen());
 
       default:
         return null;

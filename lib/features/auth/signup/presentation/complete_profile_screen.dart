@@ -15,9 +15,10 @@ import 'package:flutter_svg/svg.dart';
 import 'package:image_picker/image_picker.dart';
 
 class CompleteProfileScreen extends StatefulWidget {
-  const CompleteProfileScreen({Key? key}) : super(key: key);
+  const CompleteProfileScreen({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _CompleteProfileScreenState createState() => _CompleteProfileScreenState();
 }
 
