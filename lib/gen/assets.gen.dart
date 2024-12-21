@@ -71,6 +71,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/home_icon.svg
   String get homeIcon => 'assets/icons/home_icon.svg';
 
+  /// File path: assets/icons/like_icon.svg
+  String get likeIcon => 'assets/icons/like_icon.svg';
+
   /// File path: assets/icons/notification_bell.svg
   String get notificationBell => 'assets/icons/notification_bell.svg';
 
@@ -122,6 +125,7 @@ class $AssetsIconsGen {
         emptyNotification,
         googleIcon,
         homeIcon,
+        likeIcon,
         notificationBell,
         pen,
         profileIcon,
@@ -169,6 +173,15 @@ class $AssetsImagesGen {
   /// File path: assets/images/e6.png
   AssetGenImage get e6 => const AssetGenImage('assets/images/e6.png');
 
+  /// File path: assets/images/person1.png
+  AssetGenImage get person1 => const AssetGenImage('assets/images/person1.png');
+
+  /// File path: assets/images/person2.png
+  AssetGenImage get person2 => const AssetGenImage('assets/images/person2.png');
+
+  /// File path: assets/images/person3.png
+  AssetGenImage get person3 => const AssetGenImage('assets/images/person3.png');
+
   /// File path: assets/images/profile.png
   AssetGenImage get profile => const AssetGenImage('assets/images/profile.png');
 
@@ -202,6 +215,9 @@ class $AssetsImagesGen {
         e4,
         e5,
         e6,
+        person1,
+        person2,
+        person3,
         profile,
         romantic,
         setting,

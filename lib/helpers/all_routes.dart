@@ -9,9 +9,11 @@ import 'package:abdilahi/features/auth/signup/presentation/book_genre_screen.dar
 import 'package:abdilahi/features/auth/signup/presentation/select_age_screen.dart';
 import 'package:abdilahi/features/auth/signup/presentation/gender_screen.dart';
 import 'package:abdilahi/features/discover/presentation/discover_screen.dart';
+import 'package:abdilahi/features/ebook_details/presentaion/about_book_screen.dart';
+import 'package:abdilahi/features/ebook_details/presentaion/ebook_details_screen.dart';
+import 'package:abdilahi/features/ebook_details/presentaion/rating_and_review_screen.dart';
 import 'package:abdilahi/features/filter/presentation/filter_screen.dart';
 import 'package:abdilahi/features/filter/presentation/search_screen.dart';
-import 'package:abdilahi/features/home/presentation/book_details_screen.dart';
 import 'package:abdilahi/features/home/presentation/explore_by_genre_screen.dart';
 import 'package:abdilahi/features/home/presentation/home_content_screen.dart';
 import 'package:abdilahi/features/home/presentation/home_screen.dart';
@@ -49,7 +51,9 @@ final class Routes {
   static const String homeContentScreen = '/homeContentScreen';
   static const String searchScreen = '/SearchScreen';
   static const String filterScreen = '/filterScreen';
-  static const String bookDetailsScreen = '/bookDetailsScreen';
+  static const String ebookDetailsScreen = '/ebookDetailsScreen';
+  static const String aboutBookScreen = '/AboutBookScreen';
+  static const String ratingAndReviewScreen = '/ratingAndReviewScreen';
 }
 
 final class RouteGenerator {
@@ -187,12 +191,25 @@ final class RouteGenerator {
             ? _FadedTransitionRoute(widget: FilterScreen(), settings: settings)
             : CupertinoPageRoute(builder: (context) => FilterScreen());
 
-      case Routes.bookDetailsScreen:
+      case Routes.ebookDetailsScreen:
         return Platform.isAndroid
             ? _FadedTransitionRoute(
-                widget: const BookDetailsScreen(), settings: settings)
+                widget: const EbookDetailsScreen(), settings: settings)
             : CupertinoPageRoute(
-                builder: (context) => const BookDetailsScreen());
+                builder: (context) => const EbookDetailsScreen());
+
+      case Routes.aboutBookScreen:
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(
+                widget: const AboutBookScreen(), settings: settings)
+            : CupertinoPageRoute(builder: (context) => const AboutBookScreen());
+
+      case Routes.ratingAndReviewScreen:
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(
+                widget: const RatingAndReviewScreen(), settings: settings)
+            : CupertinoPageRoute(
+                builder: (context) => const RatingAndReviewScreen());
 
       default:
         return null;

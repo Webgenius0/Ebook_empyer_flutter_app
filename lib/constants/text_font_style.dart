@@ -45,7 +45,7 @@ class TextFontStyle {
       color: AppColors.c212121, fontSize: 14.sp, fontWeight: FontWeight.w500);
 
   static final textStyle14c743DFFUrbanistW600 = GoogleFonts.urbanist(
-      color: AppColors.c743DFF, fontSize: 18.sp, fontWeight: FontWeight.w600);
+      color: AppColors.c743DFF, fontSize: 14.sp, fontWeight: FontWeight.w600);
 
   static final textStyle12c000000UrbanistW500 = GoogleFonts.urbanist(
       color: AppColors.c000000, fontSize: 12.sp, fontWeight: FontWeight.w500);
@@ -81,6 +81,20 @@ class TextFontStyle {
 
   static final textStyle14c717171UrbanistW400 = GoogleFonts.urbanist(
       color: AppColors.c717171, fontSize: 14.sp, fontWeight: FontWeight.w400);
+
+  static final textStyle12c4B586BUrbanistW500 = GoogleFonts.urbanist(
+      color: AppColors.c4B586B, fontSize: 12.sp, fontWeight: FontWeight.w500);
+
+  static final textStyle14c545A63UrbanistW400 = GoogleFonts.urbanist(
+      color: AppColors.c545A63, fontSize: 14.sp, fontWeight: FontWeight.w400);
+
+  static final textStyle14c743DFFUrbanistW400 = GoogleFonts.urbanist(
+      color: AppColors.c743DFF, fontSize: 14.sp, fontWeight: FontWeight.w400);
+
+
+
+
+
 
   //   static final textStyle20c2B2B2BUrbanistW400 = GoogleFonts.urbanist(
   // color: AppColors.c2, fontSize: 14.sp, fontWeight: FontWeight.w400);
