@@ -1,18 +1,20 @@
-import 'package:abdilahi/features/discover/presentation/discover_screen.dart';
+// ignore_for_file: library_private_types_in_public_api
+
+import 'package:abdilahi/features/discover_and_search/presentation/discover_screen.dart';
 import 'package:abdilahi/features/home/presentation/home_screen.dart';
 import 'package:abdilahi/gen/assets.gen.dart';
 import 'package:abdilahi/gen/colors.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class Navigation extends StatefulWidget {
-  const Navigation({super.key});
+class NavigationScreen extends StatefulWidget {
+  const NavigationScreen({super.key});
 
   @override
-  _NavigationState createState() => _NavigationState();
+  _NavigationScreenState createState() => _NavigationScreenState();
 }
 
-class _NavigationState extends State<Navigation> {
+class _NavigationScreenState extends State<NavigationScreen> {
   int selectedIndex = 0;
 
   final List<Widget> screens = [

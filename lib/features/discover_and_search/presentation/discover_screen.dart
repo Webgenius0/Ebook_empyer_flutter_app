@@ -1,7 +1,5 @@
 import 'dart:math';
-
 import 'package:abdilahi/common_widgets/custom_bookcard.dart';
-import 'package:abdilahi/common_widgets/custom_genre_card.dart';
 import 'package:abdilahi/constants/text_font_style.dart';
 import 'package:abdilahi/features/home/model/book_model.dart';
 import 'package:abdilahi/features/home/model/genre_model.dart';
