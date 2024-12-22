@@ -157,8 +157,8 @@ class _BookGenreScreenState extends State<BookGenreScreen> {
                         ),
                       ),
                       onPressed: () {
-                        // Navigate to the next route (e.g., skipping the genre selection)
-                        Navigator.pushNamed(context, '/createAccountScreen');
+                        NavigationService.navigateTo(
+                            Routes.completeProfileScreen);
                       },
                       child: Text(
                         "Skip",

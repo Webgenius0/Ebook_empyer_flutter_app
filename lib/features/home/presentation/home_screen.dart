@@ -110,10 +110,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         SizedBox(width: 16.h),
                         InkWell(
                             onTap: () {
-                              // NavigationService.navigateTo(
-                              //     Routes.notificationEmptyScreen);
                               NavigationService.navigateTo(
-                                  Routes.ebookDetailsScreen);
+                                  Routes.notificationEmptyScreen);
                             },
                             child: Padding(
                               padding: EdgeInsets.only(right: 18.w),
@@ -136,11 +134,17 @@ class _HomeScreenState extends State<HomeScreen> {
                       return Padding(
                         padding: EdgeInsets.only(
                             right: 16.w), // Padding between cards
-                        child: BookCard(
-                          imageUrl: book.imageUrl,
-                          title: book.title,
-                          rating: book.rating,
-                          price: book.price,
+                        child: InkWell(
+                          onTap: () {
+                            NavigationService.navigateTo(
+                                Routes.ebookDetailsScreen);
+                          },
+                          child: BookCard(
+                            imageUrl: book.imageUrl,
+                            title: book.title,
+                            rating: book.rating,
+                            price: book.price,
+                          ),
                         ),
                       );
                     },
@@ -174,10 +178,16 @@ class _HomeScreenState extends State<HomeScreen> {
                       return Padding(
                         padding: EdgeInsets.only(
                             right: 8.w), // Padding between cards
-                        child: CustomGenreCard(
-                          text: genre.title,
-                          imageUrl: genre.imageUrl!,
-                          width: 128,
+                        child: InkWell(
+                          onTap: () {
+                            NavigationService.navigateTo(
+                                Routes.specificGenrescreen);
+                          },
+                          child: CustomGenreCard(
+                            text: genre.title,
+                            imageUrl: genre.imageUrl!,
+                            width: 128,
+                          ),
                         ),
                       );
                     },
@@ -210,11 +220,17 @@ class _HomeScreenState extends State<HomeScreen> {
                     itemCount: min(books.length, 4),
                     itemBuilder: (context, idx) {
                       final book = books[idx];
-                      return BookCard(
-                        imageUrl: book.imageUrl,
-                        title: book.title,
-                        rating: book.rating,
-                        price: book.price,
+                      return InkWell(
+                        onTap: () {
+                          NavigationService.navigateTo(
+                              Routes.ebookDetailsScreen);
+                        },
+                        child: BookCard(
+                          imageUrl: book.imageUrl,
+                          title: book.title,
+                          rating: book.rating,
+                          price: book.price,
+                        ),
                       );
                     },
                   ),
@@ -231,7 +247,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
 
-                SizedBox(height: 20.h),
+                UIHelper.verticalSpace(20),
                 SizedBox(
                   height: 302.h,
                   child: ListView.builder(
@@ -242,11 +258,17 @@ class _HomeScreenState extends State<HomeScreen> {
                       return Padding(
                         padding: EdgeInsets.only(
                             right: 16.w), // Padding between cards
-                        child: BookCard(
-                          imageUrl: book.imageUrl,
-                          title: book.title,
-                          rating: book.rating,
-                          price: book.price,
+                        child: InkWell(
+                          onTap: () {
+                            NavigationService.navigateTo(
+                                Routes.ebookDetailsScreen);
+                          },
+                          child: BookCard(
+                            imageUrl: book.imageUrl,
+                            title: book.title,
+                            rating: book.rating,
+                            price: book.price,
+                          ),
                         ),
                       );
                     },
@@ -274,11 +296,17 @@ class _HomeScreenState extends State<HomeScreen> {
                       return Padding(
                         padding: EdgeInsets.only(
                             right: 16.w), // Padding between cards
-                        child: BookCard(
-                          imageUrl: book.imageUrl,
-                          title: book.title,
-                          rating: book.rating,
-                          price: book.price,
+                        child: InkWell(
+                          onTap: () {
+                            NavigationService.navigateTo(
+                                Routes.ebookDetailsScreen);
+                          },
+                          child: BookCard(
+                            imageUrl: book.imageUrl,
+                            title: book.title,
+                            rating: book.rating,
+                            price: book.price,
+                          ),
                         ),
                       );
                     },

@@ -34,7 +34,7 @@ class _LoadingState extends State<Loading> {
     if (_isLoading) {
       return const SplashScreen();
     } else {
-      return const HomeScreen();
+      return const WelcomeScreen();
     }
   }
 }

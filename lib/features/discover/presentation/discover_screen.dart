@@ -1,7 +1,6 @@
 import 'dart:math';
 
 import 'package:abdilahi/common_widgets/custom_bookcard.dart';
-import 'package:abdilahi/common_widgets/custom_genre_card.dart';
 import 'package:abdilahi/constants/text_font_style.dart';
 import 'package:abdilahi/features/home/model/book_model.dart';
 import 'package:abdilahi/features/home/model/genre_model.dart';
@@ -29,37 +28,37 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
         title: "One Hundred Years of Solitude",
         rating: 4.5,
         price: 29.99,
-        author: "Author: Douglas Adams"),
+        author: " Douglas Adams"),
     BookModel(
         imageUrl: Assets.images.e2.path,
         title: "Adventures of Huckleberry Finn",
         rating: 4.8,
         price: 39.99,
-        author: "Author: Douglas Adams"),
+        author: "Douglas Adams"),
     BookModel(
         imageUrl: Assets.images.e3.path,
         title: "One Hundred Years of Solitude",
         rating: 4.3,
         price: 24.99,
-        author: "Author: Douglas Adams"),
+        author: "Douglas Adams"),
     BookModel(
         imageUrl: Assets.images.e4.path,
         title: "One Hundred Years of Solitude",
         rating: 4.3,
         price: 24.99,
-        author: "Author: Douglas Adams"),
+        author: "Douglas Adams"),
     BookModel(
         imageUrl: Assets.images.e5.path,
         title: "One Hundred Years of Solitude",
         rating: 4.3,
         price: 24.99,
-        author: "Author: Douglas Adams"),
+        author: "Douglas Adams"),
     BookModel(
         imageUrl: Assets.images.e3.path,
         title: "One Hundred Years of Solitude",
         rating: 4.3,
         price: 24.99,
-        author: "Author: Douglas Adams"),
+        author: "Douglas Adams"),
   ];
 
   List<GenreModel> genres = [
@@ -137,11 +136,17 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
                     itemCount: min(books.length, 4),
                     itemBuilder: (context, idx) {
                       final book = books[idx];
-                      return BookCard(
-                        imageUrl: book.imageUrl,
-                        title: book.title,
-                        rating: book.rating,
-                        price: book.price,
+                      return GestureDetector(
+                        onTap: () {
+                          NavigationService.navigateTo(
+                              Routes.ebookDetailsScreen);
+                        },
+                        child: BookCard(
+                          imageUrl: book.imageUrl,
+                          title: book.title,
+                          rating: book.rating,
+                          price: book.price,
+                        ),
                       );
                     },
                   ),
@@ -168,11 +173,17 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
                       return Padding(
                         padding: EdgeInsets.only(
                             right: 16.w), // Padding between cards
-                        child: BookCard(
-                          imageUrl: book.imageUrl,
-                          title: book.title,
-                          rating: book.rating,
-                          price: book.price,
+                        child: GestureDetector(
+                          onTap: () {
+                            NavigationService.navigateTo(
+                                Routes.ebookDetailsScreen);
+                          },
+                          child: BookCard(
+                            imageUrl: book.imageUrl,
+                            title: book.title,
+                            rating: book.rating,
+                            price: book.price,
+                          ),
                         ),
                       );
                     },
@@ -200,11 +211,17 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
                       return Padding(
                         padding: EdgeInsets.only(
                             right: 16.w), // Padding between cards
-                        child: BookCard(
-                          imageUrl: book.imageUrl,
-                          title: book.title,
-                          rating: book.rating,
-                          price: book.price,
+                        child: GestureDetector(
+                          onTap: () {
+                            NavigationService.navigateTo(
+                                Routes.ebookDetailsScreen);
+                          },
+                          child: BookCard(
+                            imageUrl: book.imageUrl,
+                            title: book.title,
+                            rating: book.rating,
+                            price: book.price,
+                          ),
                         ),
                       );
                     },
@@ -236,11 +253,17 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
                     itemCount: min(books.length, 4),
                     itemBuilder: (context, idx) {
                       final book = books[idx];
-                      return BookCard(
-                        imageUrl: book.imageUrl,
-                        title: book.title,
-                        rating: book.rating,
-                        price: book.price,
+                      return GestureDetector(
+                        onTap: () {
+                          NavigationService.navigateTo(
+                              Routes.ebookDetailsScreen);
+                        },
+                        child: BookCard(
+                          imageUrl: book.imageUrl,
+                          title: book.title,
+                          rating: book.rating,
+                          price: book.price,
+                        ),
                       );
                     },
                   ),

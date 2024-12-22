@@ -79,7 +79,7 @@ class _SelectAgeScreenState extends State<SelectAgeScreen> {
                       crossAxisCount: 2,
                       crossAxisSpacing: 12.w,
                       mainAxisSpacing: 12.h,
-                      childAspectRatio: 2.5,
+                      childAspectRatio: 3.8,
                     ),
                     itemCount: ageRanges.length,
                     itemBuilder: (context, index) {

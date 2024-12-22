@@ -1,5 +1,6 @@
 import 'package:abdilahi/helpers/all_routes.dart';
 import 'package:abdilahi/helpers/navigation_service.dart';
+import 'package:abdilahi/navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:abdilahi/common_widgets/custom_button_one.dart';
 import 'package:abdilahi/common_widgets/custom_textformfield.dart';
@@ -11,9 +12,10 @@ import 'package:flutter_svg/svg.dart';
 import 'dart:ui'; // For blur effect
 
 class CreateNewPasswordScreen extends StatefulWidget {
-  const CreateNewPasswordScreen({Key? key}) : super(key: key);
+  const CreateNewPasswordScreen({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _CreateNewPasswordScreenState createState() =>
       _CreateNewPasswordScreenState();
 }
@@ -26,7 +28,7 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
       barrierDismissible: false,
       builder: (BuildContext context) {
         Future.delayed(Duration(seconds: 1), () {
-          NavigationService.navigateTo(Routes.welcomeScreen);
+          NavigationService.navigateTo(Routes.navigationScreen);
         });
         return Stack(
           children: [

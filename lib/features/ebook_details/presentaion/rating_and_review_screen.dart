@@ -1,4 +1,5 @@
 import 'package:abdilahi/constants/text_font_style.dart';
+import 'package:abdilahi/features/ebook_details/model/review_model.dart';
 import 'package:abdilahi/gen/assets.gen.dart';
 import 'package:abdilahi/gen/colors.gen.dart';
 import 'package:abdilahi/helpers/ui_helpers.dart';
@@ -16,8 +17,31 @@ class RatingAndReviewScreen extends StatefulWidget {
 }
 
 class _RatingAndReviewScreenState extends State<RatingAndReviewScreen> {
+  List<Review> reviews = [
+    Review(
+      reviewerName: "Charlotte Hanlin",
+      reviewText:
+          "As a person who has a hard time picking up a book to read. I very much enjoy this book and definitely wouldn't mind reading it again.",
+      starRating: 5,
+      likes: 678,
+      timeAgo: "6 Months ago",
+    ),
+    Review(
+      reviewerName: "Devon Lane",
+      reviewText: "This book was very enjoyable and engaging.",
+      starRating: 4,
+      likes: 123,
+      timeAgo: "3 Months ago",
+    ),
+    // Add more reviews here
+  ];
+
   @override
   Widget build(BuildContext context) {
+    int? selectedStar;
+    List<Review> filteredReviews = selectedStar == null
+        ? reviews
+        : reviews.where((review) => review.starRating == selectedStar).toList();
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.transparent,
@@ -59,7 +83,7 @@ class _RatingAndReviewScreenState extends State<RatingAndReviewScreen> {
                 Center(
                   child: Container(
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: AppColors.cFFFFFF,
                       borderRadius: BorderRadius.circular(12.0),
                     ),
                     child: Column(
@@ -128,6 +152,38 @@ class _RatingAndReviewScreenState extends State<RatingAndReviewScreen> {
                                 )),
                           ],
                         ),
+                        Container(
+                          width: 100.w,
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 12.w, vertical: 10.h),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30.r),
+                            border: Border.all(color: AppColors.c743DFF),
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const Icon(
+                                Icons.star,
+                                color: AppColors
+                                    .c743DFF, // Optional: Add color to the icon.
+                              ),
+
+                              UIHelper.horizontalSpace(8
+                                  .w), // Add spacing between the icon and text.
+                              Text(
+                                "5",
+                                style: TextStyle(
+                                    fontSize:
+                                        16.sp, // Adjust font size responsively.
+                                    fontWeight: FontWeight.bold,
+                                    color: AppColors
+                                        .c743DFF // Change to your preferred color.
+                                    ),
+                              ),
+                            ],
+                          ),
+                        )
                       ],
                     ),
                   ),
