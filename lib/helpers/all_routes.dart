@@ -20,6 +20,11 @@ import 'package:abdilahi/features/home/presentation/home_screen.dart';
 import 'package:abdilahi/features/home/presentation/specific_genre.screen.dart';
 import 'package:abdilahi/features/notification/presentation/empty_notification.dart';
 import 'package:abdilahi/features/notification/presentation/notification-screen.dart';
+import 'package:abdilahi/features/payment/presentation/add_new_payment_screen.dart';
+import 'package:abdilahi/features/payment/presentation/payment_summary_screen.dart';
+import 'package:abdilahi/features/payment/presentation/select_payment_method_screen.dart';
+import 'package:abdilahi/features/payment/presentation/select_payment_two_screen.dart';
+import 'package:abdilahi/navigation.dart';
 import 'package:abdilahi/welcome_screen.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -54,6 +59,14 @@ final class Routes {
   static const String ebookDetailsScreen = '/ebookDetailsScreen';
   static const String aboutBookScreen = '/AboutBookScreen';
   static const String ratingAndReviewScreen = '/ratingAndReviewScreen';
+  static const String navigationScreen = '/navigation';
+  static const String selectPaymentMethodScreen = '/selectPaymentMethodScreen';
+  static const String paymentSummaryScreen = '/paymentSummaryScreen';
+  static const String addNewPaymentScreen = '/addNewPaymentScreen';
+  static const String selectPaymentTwoScreen = '/selectPaymentTwoScreen';
+
+  // static const String pa = '/navigation';
+  //  static const String navigationScreen = '/navigation';
 }
 
 final class RouteGenerator {
@@ -210,6 +223,40 @@ final class RouteGenerator {
                 widget: const RatingAndReviewScreen(), settings: settings)
             : CupertinoPageRoute(
                 builder: (context) => const RatingAndReviewScreen());
+
+      case Routes.navigationScreen:
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(
+                widget: const Navigation(), settings: settings)
+            : CupertinoPageRoute(builder: (context) => const Navigation());
+
+      case Routes.selectPaymentMethodScreen:
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(
+                widget: const SelectPaymentMethodScreen(), settings: settings)
+            : CupertinoPageRoute(
+                builder: (context) => const SelectPaymentMethodScreen());
+
+      case Routes.addNewPaymentScreen:
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(
+                widget: const AddNewPaymentScreen(), settings: settings)
+            : CupertinoPageRoute(
+                builder: (context) => const AddNewPaymentScreen());
+
+      case Routes.paymentSummaryScreen:
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(
+                widget: const PaymentSummaryScreen(), settings: settings)
+            : CupertinoPageRoute(
+                builder: (context) => const PaymentSummaryScreen());
+
+      case Routes.selectPaymentTwoScreen:
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(
+                widget: const SelectPaymentTwoScreen(), settings: settings)
+            : CupertinoPageRoute(
+                builder: (context) => const SelectPaymentTwoScreen());
 
       default:
         return null;

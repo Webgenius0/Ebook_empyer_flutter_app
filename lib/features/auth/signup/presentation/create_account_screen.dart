@@ -12,9 +12,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class CreateAccountScreen extends StatefulWidget {
-  const CreateAccountScreen({Key? key}) : super(key: key);
+  const CreateAccountScreen({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _CreateAccountState createState() => _CreateAccountState();
 }
 
@@ -24,9 +25,10 @@ class _CreateAccountState extends State<CreateAccountScreen> {
       context: context,
       barrierDismissible: false,
       builder: (BuildContext context) {
-        Future.delayed(Duration(seconds: 1), () {
+        Future.delayed(const Duration(seconds: 1), () {
+          // ignore: use_build_context_synchronously
           Navigator.of(context).pop();
-          NavigationService.navigateTo(Routes.welcomeScreen);
+          NavigationService.navigateTo(Routes.navigationScreen);
         });
         return Stack(
           children: [

@@ -90,6 +90,8 @@ class TextFontStyle {
 
   static final textStyle14c743DFFUrbanistW400 = GoogleFonts.urbanist(
       color: AppColors.c743DFF, fontSize: 14.sp, fontWeight: FontWeight.w400);
+      
+      
 
 
 

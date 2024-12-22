@@ -33,37 +33,37 @@ class _SpecificGenrescreenState extends State<SpecificGenrescreen> {
         title: "One Hundred Years of Solitude",
         rating: 4.5,
         price: 29.99,
-        author: "Author: Douglas Adams"),
+        author: "Douglas Adams"),
     BookModel(
         imageUrl: Assets.images.e2.path,
         title: "Adventures of Huckleberry Finn",
         rating: 4.8,
         price: 39.99,
-        author: "Author: Douglas Adams"),
+        author: "Douglas Adams"),
     BookModel(
         imageUrl: Assets.images.e3.path,
         title: "One Hundred Years of Solitude",
         rating: 4.3,
         price: 24.99,
-        author: "Author: Douglas Adams"),
+        author: "Douglas Adams"),
     BookModel(
         imageUrl: Assets.images.e4.path,
         title: "One Hundred Years of Solitude",
         rating: 4.3,
         price: 24.99,
-        author: "Author: Douglas Adams"),
+        author: "Douglas Adams"),
     BookModel(
         imageUrl: Assets.images.e5.path,
         title: "One Hundred Years of Solitude",
         rating: 4.3,
         price: 24.99,
-        author: "Author: Douglas Adams"),
+        author: "Douglas Adams"),
     BookModel(
         imageUrl: Assets.images.e3.path,
         title: "One Hundred Years of Solitude",
         rating: 4.3,
         price: 24.99,
-        author: "Author: Douglas Adams"),
+        author: "Douglas Adams"),
   ];
 
   @override

@@ -4,6 +4,7 @@ import 'package:abdilahi/gen/assets.gen.dart';
 import 'package:abdilahi/gen/colors.gen.dart';
 import 'package:abdilahi/helpers/all_routes.dart';
 import 'package:abdilahi/helpers/navigation_service.dart';
+import 'package:abdilahi/helpers/ui_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -28,7 +29,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             fit: BoxFit.cover,
           )),
           Positioned(
-            top: 470.h,
+            top: 440.h,
             left: 0,
             right: 0,
             child: Padding(
@@ -55,9 +56,11 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   Text(
                     "The Number One Best Ebook Store & Reader\n Application in this Century",
                     textAlign: TextAlign.center,
-                    style: TextFontStyle.textStyle16c212121UrbanistW400,
+                    style: TextFontStyle.textStyle16c212121UrbanistW400
+                        .copyWith(height: 1.8),
                   ),
-                  SizedBox(height: 20.h),
+
+                  UIHelper.verticalSpace(50),
 
                   GestureDetector(
                     onTap: () {},

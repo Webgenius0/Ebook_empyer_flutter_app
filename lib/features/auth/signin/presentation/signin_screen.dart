@@ -182,8 +182,7 @@ class _SigninScreenState extends State<SigninScreen> {
                       text: "Sign In",
                       backgroundColor: AppColors.c743DFF,
                       onPressed: () {
-                        // NavigationService.navigateTo(Routes.signupBookGenre);
-                        NavigationService.navigateTo(Routes.signinScreen);
+                        NavigationService.navigateTo(Routes.navigationScreen);
                       },
                       style: TextFontStyle.textStyle16cFFFFFFUrbanistW600,
                     ),
