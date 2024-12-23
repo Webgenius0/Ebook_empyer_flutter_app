@@ -7,13 +7,16 @@ class BookModel {
   final double rating;
   final double price;
   final List<GenreModel>? genres;
+  final List<String>? labels;
+  bool isDownloaded;
 
-  BookModel({
-    required this.imageUrl,
-    required this.title,
-    required this.author,
-    required this.rating,
-    required this.price,
-    this.genres,
-  });
+  BookModel(
+      {required this.imageUrl,
+      required this.title,
+      required this.author,
+      required this.rating,
+      required this.price,
+      this.genres,
+      this.labels,
+      this.isDownloaded = false});
 }

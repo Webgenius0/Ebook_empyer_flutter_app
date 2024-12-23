@@ -67,9 +67,9 @@ class _EbookDetailsScreenState extends State<EbookDetailsScreen> {
     return Scaffold(
       backgroundColor: AppColors.cF5F6F7,
       appBar: AppBar(
-        backgroundColor: Colors.transparent, // Transparent background
+        backgroundColor: Colors.transparent,
         elevation: 0, // Remove shadow
-        automaticallyImplyLeading: false, // Remove default back button
+        automaticallyImplyLeading: false,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -278,23 +278,18 @@ class _EbookDetailsScreenState extends State<EbookDetailsScreen> {
                       ],
                     ),
                     //rate button
-                    InkWell(
-                      onTap: () {
-                        NavigationService.navigateTo(Routes.writeReviewScreen);
-                      },
-                      child: Container(
-                        width: 142,
-                        padding: EdgeInsets.symmetric(vertical: 10.h),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20.r),
-                            border: Border.all(color: AppColors.c743DFF)),
-                        child: Center(
-                          child: Text(
-                            'Write a Review',
-                            style: TextFontStyle.textStyle13c743DFFUrbanistW600
-                                .copyWith(
-                              fontSize: 12.sp,
-                            ),
+                    Container(
+                      width: 142,
+                      padding: EdgeInsets.symmetric(vertical: 10.h),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20.r),
+                          border: Border.all(color: AppColors.c743DFF)),
+                      child: Center(
+                        child: Text(
+                          'Write a Review',
+                          style: TextFontStyle.textStyle13c743DFFUrbanistW600
+                              .copyWith(
+                            fontSize: 12.sp,
                           ),
                         ),
                       ),

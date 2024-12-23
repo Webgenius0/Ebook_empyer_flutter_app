@@ -18,6 +18,7 @@ class _AboutBookScreenState extends State<AboutBookScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.cFFFFFF,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,

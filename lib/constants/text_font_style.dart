@@ -32,6 +32,10 @@ class TextFontStyle {
   static final textStyle13c743DFFUrbanistW600 = GoogleFonts.urbanist(
       color: AppColors.c743DFF, fontSize: 13.sp, fontWeight: FontWeight.w600);
 
+
+      
+      
+
   static final textStyle13cFFFFFFUrbanistW600 = GoogleFonts.urbanist(
       color: AppColors.cFFFFFF, fontSize: 13.sp, fontWeight: FontWeight.w600);
 
@@ -90,10 +94,14 @@ class TextFontStyle {
 
   static final textStyle14c743DFFUrbanistW400 = GoogleFonts.urbanist(
       color: AppColors.c743DFF, fontSize: 14.sp, fontWeight: FontWeight.w400);
+
+      
+  static final textStyle48c333333UrbanistW600 = GoogleFonts.urbanist(
+      color: AppColors.c333333, fontSize: 48.sp, fontWeight: FontWeight.w600);
+
       
       
-
-
+      
 
 
 

@@ -1,9 +1,6 @@
 import 'dart:ui';
-
 import 'package:abdilahi/common_widgets/custom_button_one.dart';
 import 'package:abdilahi/common_widgets/custom_horizontal_divider.dart';
-import 'package:abdilahi/helpers/all_routes.dart';
-import 'package:abdilahi/helpers/navigation_service.dart';
 import 'package:flutter/material.dart';
 import 'package:abdilahi/common_widgets/custom_payment_bookItem.dart';
 import 'package:abdilahi/constants/text_font_style.dart';
@@ -99,6 +96,7 @@ class _PaymentSummaryScreenState extends State<PaymentSummaryScreen> {
                                     .textStyle16c000000UrbanistW400
                                     .copyWith(
                                         fontSize: 14.sp,
+                                        decoration: TextDecoration.none,
                                         fontWeight: FontWeight.w500),
                               ),
                             ),
