@@ -31,6 +31,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/Frame.svg
   String get frame => 'assets/icons/Frame.svg';
 
+  /// File path: assets/icons/about.svg
+  String get about => 'assets/icons/about.svg';
+
   /// File path: assets/icons/activity.svg
   String get activity => 'assets/icons/activity.svg';
 
@@ -65,8 +68,14 @@ class $AssetsIconsGen {
   /// File path: assets/icons/document-text.svg
   String get documentText => 'assets/icons/document-text.svg';
 
+  /// File path: assets/icons/download.svg
+  String get download => 'assets/icons/download.svg';
+
   /// File path: assets/icons/empty_notification.svg
   String get emptyNotification => 'assets/icons/empty_notification.svg';
+
+  /// File path: assets/icons/finished.svg
+  String get finished => 'assets/icons/finished.svg';
 
   /// File path: assets/icons/google_icon.svg
   String get googleIcon => 'assets/icons/google_icon.svg';
@@ -92,6 +101,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/purchased_icon.svg
   String get purchasedIcon => 'assets/icons/purchased_icon.svg';
 
+  /// File path: assets/icons/remove.svg
+  String get remove => 'assets/icons/remove.svg';
+
   /// File path: assets/icons/search_logo.svg
   String get searchLogo => 'assets/icons/search_logo.svg';
 
@@ -110,6 +122,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/star.svg
   String get star => 'assets/icons/star.svg';
 
+  /// File path: assets/icons/tik_blue.svg
+  String get tikBlue => 'assets/icons/tik_blue.svg';
+
   /// File path: assets/icons/wishlist_icon.svg
   String get wishlistIcon => 'assets/icons/wishlist_icon.svg';
 
@@ -118,6 +133,7 @@ class $AssetsIconsGen {
         ebookName,
         ebookSmall,
         frame,
+        about,
         activity,
         addFoloder,
         addIcon,
@@ -129,7 +145,9 @@ class $AssetsIconsGen {
         close,
         discoverIcon,
         documentText,
+        download,
         emptyNotification,
+        finished,
         googleIcon,
         homeIcon,
         likeIcon,
@@ -138,12 +156,14 @@ class $AssetsIconsGen {
         pen,
         profileIcon,
         purchasedIcon,
+        remove,
         searchLogo,
         setting,
         shieldTick,
         sortblack,
         squareBlue,
         star,
+        tikBlue,
         wishlistIcon
       ];
 }
@@ -220,6 +240,9 @@ class $AssetsImagesGen {
   AssetGenImage get romantic =>
       const AssetGenImage('assets/images/romantic.png');
 
+  /// File path: assets/images/scarlet.png
+  AssetGenImage get scarlet => const AssetGenImage('assets/images/scarlet.png');
+
   /// File path: assets/images/setting.svg
   String get setting => 'assets/images/setting.svg';
 
@@ -258,6 +281,7 @@ class $AssetsImagesGen {
         relax,
         reviewStar,
         romantic,
+        scarlet,
         setting,
         thriller,
         welcome2Screen,

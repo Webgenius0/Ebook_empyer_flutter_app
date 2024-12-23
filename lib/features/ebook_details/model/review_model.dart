@@ -4,6 +4,7 @@ class Review {
   final int starRating;
   final int likes;
   final String timeAgo;
+  final String imageUrl;
 
   Review({
     required this.reviewerName,
@@ -11,5 +12,6 @@ class Review {
     required this.starRating,
     required this.likes,
     required this.timeAgo,
+    required this.imageUrl,
   });
 }

@@ -5,6 +5,7 @@ import 'package:abdilahi/constants/text_font_style.dart';
 import 'package:abdilahi/features/home/model/book_model.dart';
 import 'package:abdilahi/features/home/model/genre_model.dart';
 import 'package:abdilahi/gen/assets.gen.dart';
+import 'package:abdilahi/gen/colors.gen.dart';
 import 'package:abdilahi/helpers/all_routes.dart';
 import 'package:abdilahi/helpers/navigation_service.dart';
 import 'package:abdilahi/helpers/ui_helpers.dart';
@@ -78,6 +79,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.cF5F6F7,
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.all(UIHelper.kDefaulutPadding()),

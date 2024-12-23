@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:abdilahi/features/Purchased%20Ebook/presentation/purchased_ebook_screen.dart';
 import 'package:abdilahi/features/auth/forgotPassword/presentation/create_new_Password_screen.dart';
 import 'package:abdilahi/features/auth/forgotPassword/presentation/forgot_password_screen.dart';
 import 'package:abdilahi/features/auth/forgotPassword/presentation/otp_verification_screen.dart';
@@ -12,6 +13,7 @@ import 'package:abdilahi/features/discover/presentation/discover_screen.dart';
 import 'package:abdilahi/features/ebook_details/presentaion/about_book_screen.dart';
 import 'package:abdilahi/features/ebook_details/presentaion/ebook_details_screen.dart';
 import 'package:abdilahi/features/ebook_details/presentaion/rating_and_review_screen.dart';
+import 'package:abdilahi/features/ebook_details/presentaion/write_review_screen.dart';
 import 'package:abdilahi/features/filter/presentation/filter_screen.dart';
 import 'package:abdilahi/features/filter/presentation/search_screen.dart';
 import 'package:abdilahi/features/home/presentation/explore_by_genre_screen.dart';
@@ -24,6 +26,7 @@ import 'package:abdilahi/features/payment/presentation/add_new_payment_screen.da
 import 'package:abdilahi/features/payment/presentation/payment_summary_screen.dart';
 import 'package:abdilahi/features/payment/presentation/select_payment_method_screen.dart';
 import 'package:abdilahi/features/payment/presentation/select_payment_two_screen.dart';
+import 'package:abdilahi/features/wishlist/presentation/wishlist_screen.dart';
 import 'package:abdilahi/navigation.dart';
 import 'package:abdilahi/welcome_screen.dart';
 import 'package:flutter/cupertino.dart';
@@ -64,9 +67,9 @@ final class Routes {
   static const String paymentSummaryScreen = '/paymentSummaryScreen';
   static const String addNewPaymentScreen = '/addNewPaymentScreen';
   static const String selectPaymentTwoScreen = '/selectPaymentTwoScreen';
-
-  // static const String pa = '/navigation';
-  //  static const String navigationScreen = '/navigation';
+  static const String wishlistScreen = '/WishlistScreen';
+  static const String purchasedEbookScreen = '/purchasedEbookScreen';
+  static const String writeReviewScreen = '/writeReviewScreen';
 }
 
 final class RouteGenerator {
@@ -257,6 +260,25 @@ final class RouteGenerator {
                 widget: const SelectPaymentTwoScreen(), settings: settings)
             : CupertinoPageRoute(
                 builder: (context) => const SelectPaymentTwoScreen());
+
+      case Routes.wishlistScreen:
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(
+                widget: const WishlistScreen(), settings: settings)
+            : CupertinoPageRoute(builder: (context) => const WishlistScreen());
+      case Routes.purchasedEbookScreen:
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(
+                widget: const PurchasedEbookScreen(), settings: settings)
+            : CupertinoPageRoute(
+                builder: (context) => const PurchasedEbookScreen());
+
+      case Routes.writeReviewScreen:
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(
+                widget: const WriteReviewScreen(), settings: settings)
+            : CupertinoPageRoute(
+                builder: (context) => const WriteReviewScreen());
 
       default:
         return null;

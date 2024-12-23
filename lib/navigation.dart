@@ -1,5 +1,7 @@
+import 'package:abdilahi/features/Purchased%20Ebook/presentation/purchased_ebook_screen.dart';
 import 'package:abdilahi/features/discover/presentation/discover_screen.dart';
 import 'package:abdilahi/features/home/presentation/home_screen.dart';
+import 'package:abdilahi/features/wishlist/presentation/wishlist_screen.dart';
 import 'package:abdilahi/gen/assets.gen.dart';
 import 'package:abdilahi/gen/colors.gen.dart';
 import 'package:flutter/material.dart';
@@ -18,8 +20,8 @@ class _NavigationState extends State<Navigation> {
   final List<Widget> screens = [
     const HomeScreen(),
     const DiscoverScreen(),
-    Placeholder(), // WishlistScreen
-    Placeholder(), // PurchasedScreen
+    const WishlistScreen(), // WishlistScreen
+    const PurchasedEbookScreen(), // PurchasedScreen
     Placeholder(), // ProfileScreen
   ];
 
