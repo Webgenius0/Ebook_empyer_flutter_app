@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 import 'package:abdilahi/common_widgets/custom_button_one.dart';
 import 'package:abdilahi/common_widgets/custom_textformfield.dart';
@@ -10,6 +12,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class SigninScreen extends StatefulWidget {
+  // ignore: use_super_parameters
   const SigninScreen({Key? key}) : super(key: key);
 
   @override
@@ -61,7 +64,7 @@ class _SigninScreenState extends State<SigninScreen> {
                     SizedBox(
                       height: 16.h,
                     ),
-                    CustomTextFormField(
+                    const CustomTextFormField(
                       hintText: "Saklain",
                     ),
                     SizedBox(
@@ -77,7 +80,7 @@ class _SigninScreenState extends State<SigninScreen> {
                     SizedBox(
                       height: 16.h,
                     ),
-                    CustomTextFormField(
+                    const CustomTextFormField(
                         hintText: "************", isPasswordField: true),
                     SizedBox(
                       height: 16.h,

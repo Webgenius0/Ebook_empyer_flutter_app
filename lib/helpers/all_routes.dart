@@ -1,5 +1,7 @@
 import 'dart:io';
+import 'package:abdilahi/features/account_and_setting/presentation/faq_screen.dart';
 import 'package:abdilahi/features/account_and_setting/presentation/payment_method_screen.dart';
+import 'package:abdilahi/features/account_and_setting/presentation/personal_info_screen.dart';
 import 'package:abdilahi/features/auth/presentataion/forgotPassword/presentation/create_new_Password_screen.dart';
 import 'package:abdilahi/features/auth/presentataion/forgotPassword/presentation/forgot_password_screen.dart';
 import 'package:abdilahi/features/auth/presentataion/forgotPassword/presentation/otp_verification_screen.dart';
@@ -20,7 +22,6 @@ import 'package:abdilahi/features/notification/presentation/empty_notification.d
 import 'package:abdilahi/features/notification/presentation/notification-screen.dart';
 import 'package:abdilahi/welcome_screen.dart';
 import 'package:flutter/cupertino.dart';
-
 import '../loading.dart';
 
 final class Routes {
@@ -50,6 +51,8 @@ final class Routes {
   static const String searchScreen = '/SearchScreen';
   static const String filterScreen = '/filterScreen';
   static const String paymentMethodScreen = '/paymentMethodScreen';
+  static const String personalInfoScreen = '/personalInfoScreen';
+  static const String faqScreen = '/faqScreen';
 }
 
 final class RouteGenerator {
@@ -184,8 +187,22 @@ final class RouteGenerator {
 
       case Routes.filterScreen:
         return Platform.isAndroid
-            ? _FadedTransitionRoute(widget: FilterScreen(), settings: settings)
-            : CupertinoPageRoute(builder: (context) => FilterScreen());
+            ? _FadedTransitionRoute(
+                widget: const FilterScreen(), settings: settings)
+            : CupertinoPageRoute(builder: (context) => const FilterScreen());
+
+      case Routes.personalInfoScreen:
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(
+                widget: const PersonalInfoScreen(), settings: settings)
+            : CupertinoPageRoute(
+                builder: (context) => const PersonalInfoScreen());
+
+      case Routes.faqScreen:
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(
+                widget: const FaqScreen(), settings: settings)
+            : CupertinoPageRoute(builder: (context) => const FaqScreen());
 
       case Routes.paymentMethodScreen:
         return Platform.isAndroid
@@ -193,6 +210,13 @@ final class RouteGenerator {
                 widget: const PaymentMethodScreen(), settings: settings)
             : CupertinoPageRoute(
                 builder: (context) => const PaymentMethodScreen());
+
+      // case Routes.paymentMethodScreen:
+      //   return Platform.isAndroid
+      //       ? _FadedTransitionRoute(
+      //           widget: const PaymentMethodScreen(), settings: settings)
+      //       : CupertinoPageRoute(
+      //           builder: (context) => const PaymentMethodScreen());
 
       default:
         return null;

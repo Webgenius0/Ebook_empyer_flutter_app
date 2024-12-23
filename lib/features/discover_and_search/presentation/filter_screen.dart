@@ -1,6 +1,10 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 
 class FilterScreen extends StatefulWidget {
+  const FilterScreen({super.key});
+
   @override
   _FilterScreenState createState() => _FilterScreenState();
 }
@@ -37,18 +41,18 @@ class _FilterScreenState extends State<FilterScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         children: [
-          Text("Sort",
+          const Text("Sort",
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-          ListTile(title: Text("Trending")),
-          ListTile(title: Text("New Releases")),
-          ListTile(title: Text("Highest Rating")),
-          ListTile(title: Text("Lowest Rating")),
-          ListTile(title: Text("Highest Price")),
-          ListTile(title: Text("Lowest Price")),
-          SizedBox(height: 16),
-          Text("Price",
+          const ListTile(title: Text("Trending")),
+          const ListTile(title: Text("New Releases")),
+          const ListTile(title: Text("Highest Rating")),
+          const ListTile(title: Text("Lowest Rating")),
+          const ListTile(title: Text("Highest Price")),
+          const ListTile(title: Text("Lowest Price")),
+          const SizedBox(height: 16),
+          const Text("Price",
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
           Slider(
             value: priceValue,
@@ -62,14 +66,14 @@ class _FilterScreenState extends State<FilterScreen> {
               });
             },
           ),
-          SizedBox(height: 16),
-          Text("Rating",
+          const SizedBox(height: 16),
+          const Text("Rating",
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-          ListTile(title: Text("All")),
-          ListTile(title: Text("4.5+")),
-          ListTile(title: Text("4.0+")),
-          SizedBox(height: 16),
-          Text("Genre",
+          const ListTile(title: Text("All")),
+          const ListTile(title: Text("4.5+")),
+          const ListTile(title: Text("4.0+")),
+          const SizedBox(height: 16),
+          const Text("Genre",
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
           ...genres.keys.map((genre) {
             return CheckboxListTile(
@@ -81,9 +85,9 @@ class _FilterScreenState extends State<FilterScreen> {
                 });
               },
             );
-          }).toList(),
-          SizedBox(height: 16),
-          Text("Language",
+          }),
+          const SizedBox(height: 16),
+          const Text("Language",
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
           ...languages.keys.map((language) {
             return CheckboxListTile(
@@ -95,9 +99,9 @@ class _FilterScreenState extends State<FilterScreen> {
                 });
               },
             );
-          }).toList(),
-          SizedBox(height: 16),
-          Text("Age",
+          }),
+          const SizedBox(height: 16),
+          const Text("Age",
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
           ...ages.keys.map((age) {
             return CheckboxListTile(
@@ -109,8 +113,8 @@ class _FilterScreenState extends State<FilterScreen> {
                 });
               },
             );
-          }).toList(),
-          SizedBox(height: 24),
+          }),
+          const SizedBox(height: 24),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -124,7 +128,7 @@ class _FilterScreenState extends State<FilterScreen> {
                     ages.updateAll((key, value) => false);
                   });
                 },
-                child: Text("Reset"),
+                child: const Text("Reset"),
               ),
               ElevatedButton(
                 onPressed: () {
@@ -133,7 +137,7 @@ class _FilterScreenState extends State<FilterScreen> {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.purple,
                 ),
-                child: Text("Apply"),
+                child: const Text("Apply"),
               ),
             ],
           )

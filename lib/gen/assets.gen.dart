@@ -43,6 +43,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/apple_pay.svg
   String get applePay => 'assets/icons/apple_pay.svg';
 
+  /// File path: assets/icons/arrow-up.svg
+  String get arrowUp => 'assets/icons/arrow-up.svg';
+
   /// File path: assets/icons/arrowRightNotification.svg
   String get arrowRightNotification =>
       'assets/icons/arrowRightNotification.svg';
@@ -53,14 +56,26 @@ class $AssetsIconsGen {
   /// File path: assets/icons/arrow_back.svg
   String get arrowBack => 'assets/icons/arrow_back.svg';
 
+  /// File path: assets/icons/arrow_bottom.svg
+  String get arrowBottom => 'assets/icons/arrow_bottom.svg';
+
   /// File path: assets/icons/arrowforward.svg
   String get arrowforward => 'assets/icons/arrowforward.svg';
+
+  /// File path: assets/icons/audio.svg
+  String get audio => 'assets/icons/audio.svg';
 
   /// File path: assets/icons/box_icon.svg
   String get boxIcon => 'assets/icons/box_icon.svg';
 
+  /// File path: assets/icons/chapter.svg
+  String get chapter => 'assets/icons/chapter.svg';
+
   /// File path: assets/icons/close.svg
   String get close => 'assets/icons/close.svg';
+
+  /// File path: assets/icons/date_of_birth.svg
+  String get dateOfBirth => 'assets/icons/date_of_birth.svg';
 
   /// File path: assets/icons/discover_icon.svg
   String get discoverIcon => 'assets/icons/discover_icon.svg';
@@ -68,8 +83,14 @@ class $AssetsIconsGen {
   /// File path: assets/icons/document-text.svg
   String get documentText => 'assets/icons/document-text.svg';
 
+  /// File path: assets/icons/email.svg
+  String get email => 'assets/icons/email.svg';
+
   /// File path: assets/icons/empty_notification.svg
   String get emptyNotification => 'assets/icons/empty_notification.svg';
+
+  /// File path: assets/icons/eye_protection.svg
+  String get eyeProtection => 'assets/icons/eye_protection.svg';
 
   /// File path: assets/icons/google_icon.svg
   String get googleIcon => 'assets/icons/google_icon.svg';
@@ -140,9 +161,6 @@ class $AssetsIconsGen {
   /// File path: assets/icons/subscription_img.svg
   String get subscriptionImg => 'assets/icons/subscription_img.svg';
 
-  /// File path: assets/icons/visa.svg
-  String get visa => 'assets/icons/visa.svg';
-
   /// File path: assets/icons/wishlist_icon.svg
   String get wishlistIcon => 'assets/icons/wishlist_icon.svg';
 
@@ -155,15 +173,22 @@ class $AssetsIconsGen {
         activity,
         alert,
         applePay,
+        arrowUp,
         arrowRightNotification,
         arrowRightTwo,
         arrowBack,
+        arrowBottom,
         arrowforward,
+        audio,
         boxIcon,
+        chapter,
         close,
+        dateOfBirth,
         discoverIcon,
         documentText,
+        email,
         emptyNotification,
+        eyeProtection,
         googleIcon,
         googlePay,
         helpCenter,
@@ -187,7 +212,6 @@ class $AssetsIconsGen {
         squareBlue,
         star,
         subscriptionImg,
-        visa,
         wishlistIcon
       ];
 }
@@ -198,6 +222,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/Ebook empyre logo_1 3.png
   AssetGenImage get ebookEmpyreLogo13 =>
       const AssetGenImage('assets/images/Ebook empyre logo_1 3.png');
+
+  /// File path: assets/images/apple.png
+  AssetGenImage get apple => const AssetGenImage('assets/images/apple.png');
 
   /// File path: assets/images/apple_pay.png
   AssetGenImage get applePay =>
@@ -229,11 +256,25 @@ class $AssetsImagesGen {
   /// File path: assets/images/e6.png
   AssetGenImage get e6 => const AssetGenImage('assets/images/e6.png');
 
+  /// File path: assets/images/google.png
+  AssetGenImage get google => const AssetGenImage('assets/images/google.png');
+
+  /// File path: assets/images/mastercard.png
+  AssetGenImage get mastercard =>
+      const AssetGenImage('assets/images/mastercard.png');
+
+  /// File path: assets/images/paypal.png
+  AssetGenImage get paypal => const AssetGenImage('assets/images/paypal.png');
+
   /// File path: assets/images/person.png
   AssetGenImage get person => const AssetGenImage('assets/images/person.png');
 
   /// File path: assets/images/profile.png
   AssetGenImage get profile => const AssetGenImage('assets/images/profile.png');
+
+  /// File path: assets/images/profiles.png
+  AssetGenImage get profiles =>
+      const AssetGenImage('assets/images/profiles.png');
 
   /// File path: assets/images/romantic.png
   AssetGenImage get romantic =>
@@ -246,6 +287,9 @@ class $AssetsImagesGen {
   AssetGenImage get thriller =>
       const AssetGenImage('assets/images/thriller.png');
 
+  /// File path: assets/images/visa.png
+  AssetGenImage get visa => const AssetGenImage('assets/images/visa.png');
+
   /// File path: assets/images/welcome2 screen.png
   AssetGenImage get welcome2Screen =>
       const AssetGenImage('assets/images/welcome2 screen.png');
@@ -257,6 +301,7 @@ class $AssetsImagesGen {
   /// List of all assets
   List<dynamic> get values => [
         ebookEmpyreLogo13,
+        apple,
         applePay,
         calender,
         downArrow,
@@ -266,11 +311,16 @@ class $AssetsImagesGen {
         e4,
         e5,
         e6,
+        google,
+        mastercard,
+        paypal,
         person,
         profile,
+        profiles,
         romantic,
         setting,
         thriller,
+        visa,
         welcome2Screen,
         welcomePic
       ];

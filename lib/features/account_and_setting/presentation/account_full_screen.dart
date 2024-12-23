@@ -24,37 +24,22 @@ class _AccountFullScreenState extends State<AccountFullScreen> {
     {
       'icon': Assets.icons.profile, // Replace with your asset path
       'text': 'Personal Info',
-      // 'iconColor': AppColors.c743DFF,
-      // 'route': PersonalInfoScreen(),
-      // Replace with your actual screen.
     },
     {
       'icon': Assets.icons.notification, // Replace with your asset path
       'text': 'Notification',
-      // 'iconColor': AppColors.c743DFF,
-      // 'route': NotificationScreeen(),
-      // Replace with your actual screen.
     },
     {
       'icon': Assets.icons.payment, // Replace with your asset path
       'text': 'Payment Methods',
-      // 'iconColor': AppColors.c743DFF,
-      // 'route': FaqScreen(),
-      // Replace with your actual screen.
     },
     {
       'icon': Assets.icons.helpCenter, // Replace with your asset path
       'text': 'Help Center',
-      // 'iconColor': AppColors.c743DFF,
-      // 'route': FaqScreen(),
-      // Replace with your actual screen.
     },
     {
       'icon': Assets.icons.aboutUs, // Replace with your asset path
       'text': 'About Us',
-      // 'iconColor': Colors.blue,
-      // 'route': FaqScreen(),
-      // Replace with your actual screen.
     },
   ];
 
@@ -67,9 +52,7 @@ class _AccountFullScreenState extends State<AccountFullScreen> {
           leadingWidth: 85,
           backgroundColor: AppColors.cF4F5F6,
           leading: IconButton(
-            onPressed: () {
-              // Get.back();
-            },
+            onPressed: () {},
             icon: SvgPicture.asset(
               Assets.icons.ebookSmall,
               width: 40.w,
@@ -134,7 +117,7 @@ class _AccountFullScreenState extends State<AccountFullScreen> {
                 // andrew anisley section start
                 GestureDetector(
                   onTap: () {
-                    // NavigationService.navigateTo(Routes.paymentMethodScreen);
+                    NavigationService.navigateTo(Routes.personalInfoScreen);
                   },
                   child: Container(
                     height: 90.h,
@@ -211,7 +194,7 @@ class _AccountFullScreenState extends State<AccountFullScreen> {
                               switch (index) {
                                 case 0: // Personal Info
                                   NavigationService.navigateTo(
-                                      Routes.notificationScreen);
+                                      Routes.personalInfoScreen);
                                   break;
                                 case 1: // Notification
                                   NavigationService.navigateTo(
@@ -223,11 +206,11 @@ class _AccountFullScreenState extends State<AccountFullScreen> {
                                   break;
                                 case 3: // Help Center
                                   NavigationService.navigateTo(
-                                      Routes.notificationScreen);
+                                      Routes.faqScreen);
                                   break;
                                 case 4: // About Us
-                                  NavigationService.navigateTo(
-                                      Routes.notificationScreen);
+                                  // NavigationService.navigateTo(
+                                  //     Routes.notificationScreen);
                                   break;
                                 default:
                                   break;

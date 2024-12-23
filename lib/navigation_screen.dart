@@ -1,5 +1,6 @@
 // ignore_for_file: library_private_types_in_public_api
 
+import 'package:abdilahi/features/account_and_setting/presentation/account_full_screen.dart';
 import 'package:abdilahi/features/discover_and_search/presentation/discover_screen.dart';
 import 'package:abdilahi/features/home/presentation/home_screen.dart';
 import 'package:abdilahi/gen/assets.gen.dart';
@@ -22,7 +23,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
     const DiscoverScreen(),
     Placeholder(), // WishlistScreen
     Placeholder(), // PurchasedScreen
-    Placeholder(), // ProfileScreen
+    const AccountFullScreen(), // ProfileScreen
   ];
 
   void onItemTapped(int index) {
