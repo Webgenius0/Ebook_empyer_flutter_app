@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'dart:ui';
 
 import 'package:abdilahi/common_widgets/custom_button_one.dart';
@@ -7,6 +9,7 @@ import 'package:abdilahi/gen/assets.gen.dart';
 import 'package:abdilahi/gen/colors.gen.dart';
 import 'package:abdilahi/helpers/all_routes.dart';
 import 'package:abdilahi/helpers/navigation_service.dart';
+import 'package:abdilahi/helpers/ui_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -56,18 +59,16 @@ class _CreateAccountState extends State<CreateAccountScreen> {
                       style: TextFontStyle.textStyle24c743DFFUrbanistW700
                           .copyWith(decoration: TextDecoration.none),
                     ),
-                    SizedBox(height: 20.h),
+                    UIHelper.verticalSpace(20.h),
                     Text(
                       "Your account has been created\nPlease wait a moment, we are\npreparing for you...",
                       textAlign: TextAlign.center,
                       style: TextFontStyle.textStyle16c000000UrbanistW400
                           .copyWith(decoration: TextDecoration.none),
                     ),
-                    SizedBox(
-                      height: 20.h,
-                    ),
+                    UIHelper.verticalSpace(20.h),
                     const CircularProgressIndicator(),
-                    SizedBox(height: 40.h),
+                    UIHelper.verticalSpace(40.h),
                   ],
                 ),
               ),
@@ -88,7 +89,7 @@ class _CreateAccountState extends State<CreateAccountScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 35.w, vertical: 25.h),
+                padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 25.h),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -104,67 +105,51 @@ class _CreateAccountState extends State<CreateAccountScreen> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 16.h),
+                    UIHelper.verticalSpace(16.h),
                     Text(
                       "Create an Account",
                       style: TextFontStyle.textStyle24c000000UrbanistW600,
                     ),
-                    SizedBox(height: 16.h),
+                    UIHelper.verticalSpace(16.h),
                     Text(
                       "Enter your username, email & password. If you\nforget it, then you have to do forgot password.",
                       style: TextFontStyle.textStyle14c4B586BUrbanistW400,
                     ),
-                    SizedBox(height: 40.h),
+                    UIHelper.verticalSpace(40.h),
                     Text(
                       "User Name",
                       style: TextFontStyle.textStyle14c212121UrbanistW600,
                     ),
-                    SizedBox(
-                      height: 16.h,
-                    ),
+                    UIHelper.verticalSpace(16.h),
                     CustomTextFormField(
                       hintText: "Saklain",
                     ),
-                    SizedBox(
-                      height: 16.h,
-                    ),
+                    UIHelper.verticalSpace(16.h),
                     Text(
                       "Email",
                       style: TextFontStyle.textStyle14c212121UrbanistW600,
                     ),
-                    SizedBox(
-                      height: 16.h,
-                    ),
+                    UIHelper.verticalSpace(16.h),
                     CustomTextFormField(
                       hintText: "Email",
                     ),
-                    SizedBox(
-                      height: 16.h,
-                    ),
+                    UIHelper.verticalSpace(16.h),
                     Text(
                       "Password",
                       style: TextFontStyle.textStyle14c212121UrbanistW600,
                     ),
-                    SizedBox(
-                      height: 16.h,
-                    ),
+                    UIHelper.verticalSpace(16.h),
                     CustomTextFormField(
                         hintText: "************", isPasswordField: true),
-                    SizedBox(
-                      height: 16.h,
-                    ),
+                    UIHelper.verticalSpace(16.h),
                     Text(
                       "Confirm Password",
                       style: TextFontStyle.textStyle14c212121UrbanistW600,
                     ),
-                    SizedBox(
-                      height: 16.h,
-                    ),
+                    UIHelper.verticalSpace(16.h),
                     CustomTextFormField(
                         hintText: "************", isPasswordField: true),
-                    SizedBox(
-                      height: 10.h,
-                    ),
+                    UIHelper.verticalSpace(10.h),
                     Transform.translate(
                       offset: Offset(-10.w, 0),
                       child: Row(
@@ -186,7 +171,7 @@ class _CreateAccountState extends State<CreateAccountScreen> {
                         ],
                       ),
                     ),
-                    SizedBox(height: 60.h),
+                    UIHelper.verticalSpace(60.h),
                     CustomButtonOne(
                       text: "Continue",
                       backgroundColor: AppColors.c743DFF,

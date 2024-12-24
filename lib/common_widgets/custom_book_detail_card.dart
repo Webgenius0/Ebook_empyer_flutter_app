@@ -41,7 +41,8 @@ class CustomBookDetailCard extends StatelessWidget {
               children: [
                 Text(
                   title,
-                  style: TextFontStyle.textStyle14c212121UrbanistW600,
+                  style: TextFontStyle.textStyle14c212121UrbanistW600
+                      .copyWith(fontSize: 18.sp),
                 ),
                 Text(
                   "Author: $author",

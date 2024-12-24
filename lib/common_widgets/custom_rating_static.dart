@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:abdilahi/constants/text_font_style.dart';
 import 'package:abdilahi/gen/colors.gen.dart';
 import 'package:abdilahi/helpers/ui_helpers.dart';

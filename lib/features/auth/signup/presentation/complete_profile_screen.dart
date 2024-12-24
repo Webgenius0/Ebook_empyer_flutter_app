@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:abdilahi/common_widgets/custom_button_one.dart';
 import 'package:abdilahi/common_widgets/custom_country.dart';
 import 'package:abdilahi/common_widgets/custom_datepicker_screen.dart';
@@ -9,6 +8,7 @@ import 'package:abdilahi/gen/assets.gen.dart';
 import 'package:abdilahi/gen/colors.gen.dart';
 import 'package:abdilahi/helpers/all_routes.dart';
 import 'package:abdilahi/helpers/navigation_service.dart';
+import 'package:abdilahi/helpers/ui_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -80,18 +80,18 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                         ),
                       ),
                     ),
-
-                    SizedBox(height: 16.h),
+                    UIHelper.verticalSpace(16.h),
                     Text(
                       "Complete Your Profile.",
                       style: TextFontStyle.textStyle24c000000UrbanistW600,
                     ),
-                    SizedBox(height: 16.h),
+                    UIHelper.verticalSpace(16.h),
                     Text(
                       "Don't worry, only you can see your personal\ndata. NO one else will be able to see it.",
-                      style: TextFontStyle.textStyle14c4B586BUrbanistW400,
+                      style: TextFontStyle.textStyle14c4B586BUrbanistW400
+                          .copyWith(height: 1.5.h),
                     ),
-                    SizedBox(height: 30.h),
+                    UIHelper.verticalSpace(30.h),
                     Center(
                       child: Stack(
                         children: [
@@ -126,48 +126,34 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                         ],
                       ),
                     ),
-
-                    SizedBox(height: 30.h),
+                    UIHelper.verticalSpace(12.h),
                     Text(
                       "Full Name",
                       style: TextFontStyle.textStyle14c212121UrbanistW600,
                     ),
-                    SizedBox(
-                      height: 14.h,
-                    ),
+                    UIHelper.verticalSpace(12.h),
                     const CustomTextFormField(
                       hintText: "Saklain Sarowor",
                     ),
-                    SizedBox(
-                      height: 16.h,
-                    ),
+                    UIHelper.verticalSpace(16.h),
                     Text(
                       "Date of Birth",
                       style: TextFontStyle.textStyle14c212121UrbanistW600,
                     ),
-                    SizedBox(
-                      height: 14.h,
-                    ),
-                    // CustomTextFormField(
-                    //   hintText: "1 January, 2003",
-                    // ),
+                    UIHelper.verticalSpace(14.h),
                     const CustomDatePickerField(
                       hintText: "1 January, 2003",
                     ),
-                    SizedBox(
-                      height: 16.h,
-                    ),
+                    UIHelper.verticalSpace(16.h),
                     Text(
                       "Country",
                       style: TextFontStyle.textStyle14c212121UrbanistW600,
                     ),
-                    SizedBox(
-                      height: 14.h,
-                    ),
+                    UIHelper.verticalSpace(14.h),
                     CustomCountryPickerField(
                       countries: countries,
                     ),
-                    SizedBox(height: 120.h),
+                    UIHelper.verticalSpace(120.h),
                     CustomButtonOne(
                       text: "Continue",
                       backgroundColor: AppColors.c743DFF,

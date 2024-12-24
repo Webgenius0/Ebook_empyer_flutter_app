@@ -5,6 +5,8 @@ import 'package:abdilahi/constants/text_font_style.dart';
 import 'package:abdilahi/features/ebook_details/model/review_model.dart';
 import 'package:abdilahi/gen/assets.gen.dart';
 import 'package:abdilahi/gen/colors.gen.dart';
+import 'package:abdilahi/helpers/all_routes.dart';
+import 'package:abdilahi/helpers/navigation_service.dart';
 import 'package:abdilahi/helpers/ui_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -74,7 +76,7 @@ class _RatingAndReviewScreenState extends State<RatingAndReviewScreen> {
           children: [
             InkWell(
               onTap: () {
-                Navigator.pop(context); // Navigate back when tapped
+                NavigationService.navigateTo(Routes.ebookDetailsScreen);
               },
               child: SvgPicture.asset(
                 Assets.icons.arrowBack,
@@ -94,135 +96,133 @@ class _RatingAndReviewScreenState extends State<RatingAndReviewScreen> {
           ],
         ),
       ),
-      body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
-          child: Column(
-            children: [
-              UIHelper.verticalSpace(20.h),
-              const CustomRatingStatic(),
-              UIHelper.verticalSpace(20.h),
-              const CustomHorizontalDivider(),
-              UIHelper.verticalSpace(20.h),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    CustomChip(
-                      text: " All",
-                      isSelected: selectedStar == null,
-                      onPressed: () {
-                        setState(() {
-                          selectedStar = null; // Show all reviews
-                        });
-                      },
-                    ),
-                    UIHelper.horizontalSpace(4.w),
-                    ...List.generate(5, (index) {
-                      int star = 5 - index;
-                      return Padding(
-                        padding: EdgeInsets.only(left: 8.w),
-                        child: CustomChip(
-                          text: " $star",
-                          isSelected: selectedStar == star,
-                          onPressed: () {
-                            setState(() {
-                              selectedStar = star; // Filter by selected star
-                            });
-                          },
-                        ),
-                      );
-                    }),
-                  ],
-                ),
-              ),
-              UIHelper.verticalSpace(20.h),
-              const CustomHorizontalDivider(),
-              // Reviews List
-              Expanded(
-                child: filteredReviews.isEmpty
-                    ? Center(
-                        child: Text(
-                          "No reviews available.",
-                          style: TextFontStyle.textStyle16c212121UrbanistW400,
-                        ),
-                      )
-                    : ListView.builder(
-                        itemCount: filteredReviews.length,
-                        itemBuilder: (context, index) {
-                          final review = filteredReviews[index];
-                          return Container(
-                            margin: EdgeInsets.only(bottom: 12.h),
-                            padding: EdgeInsets.all(12.w),
-                            decoration: BoxDecoration(
-                              color: AppColors.cFFFFFF,
-                              borderRadius: BorderRadius.circular(12.0),
-                            ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  children: [
-                                    CircleAvatar(
-                                      backgroundImage:
-                                          AssetImage(review.imageUrl),
-                                      radius: 20.r,
-                                    ),
-                                    UIHelper.horizontalSpace(10.w),
-                                    Text(
-                                      review.reviewerName,
-                                      style: TextFontStyle
-                                          .textStyle14c212121UrbanistW600,
-                                    ),
-                                    const Spacer(),
-                                    CustomChip(
-                                      text: '${review.starRating}',
-                                      isSelected: false,
-                                      onPressed: null, // Non-clickable
-                                    ),
-                                  ],
-                                ),
-                                UIHelper.verticalSpace(12.h),
-                                Text(
-                                  review.reviewText,
-                                  style: TextFontStyle
-                                      .textStyle16c212121UrbanistW400
-                                      .copyWith(height: 1.3),
-                                ),
-                                UIHelper.verticalSpace(12.h),
-                                Row(
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Icon(Icons.thumb_up_alt_outlined,
-                                            size: 16.sp,
-                                            color: AppColors.c545A63),
-                                        UIHelper.horizontalSpace(4.w),
-                                        Text(
-                                          '${review.likes}',
-                                          style: TextFontStyle
-                                              .textStyle16c212121UrbanistW400
-                                              .copyWith(fontSize: 10),
-                                        ),
-                                      ],
-                                    ),
-                                    UIHelper.horizontalSpace(50.w),
-                                    Text(
-                                      review.timeAgo,
-                                      style: TextFontStyle
-                                          .textStyle16c212121UrbanistW400
-                                          .copyWith(fontSize: 10),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          );
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
+        child: Column(
+          children: [
+            UIHelper.verticalSpace(20.h),
+            const CustomRatingStatic(),
+            UIHelper.verticalSpace(20.h),
+            const CustomHorizontalDivider(),
+            UIHelper.verticalSpace(20.h),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  CustomChip(
+                    text: " All",
+                    isSelected: selectedStar == null,
+                    onPressed: () {
+                      setState(() {
+                        selectedStar = null; // Show all reviews
+                      });
+                    },
+                  ),
+                  UIHelper.horizontalSpace(4.w),
+                  ...List.generate(5, (index) {
+                    int star = 5 - index;
+                    return Padding(
+                      padding: EdgeInsets.only(left: 8.w),
+                      child: CustomChip(
+                        text: " $star",
+                        isSelected: selectedStar == star,
+                        onPressed: () {
+                          setState(() {
+                            selectedStar = star; // Filter by selected star
+                          });
                         },
                       ),
+                    );
+                  }),
+                ],
               ),
-            ],
-          ),
+            ),
+            UIHelper.verticalSpace(20.h),
+            const CustomHorizontalDivider(),
+            // Reviews List
+            Expanded(
+              child: filteredReviews.isEmpty
+                  ? Center(
+                      child: Text(
+                        "No reviews available.",
+                        style: TextFontStyle.textStyle16c212121UrbanistW400,
+                      ),
+                    )
+                  : ListView.builder(
+                      itemCount: filteredReviews.length,
+                      itemBuilder: (context, index) {
+                        final review = filteredReviews[index];
+                        return Container(
+                          margin: EdgeInsets.only(bottom: 12.h),
+                          padding: EdgeInsets.all(12.w),
+                          decoration: BoxDecoration(
+                            color: AppColors.cFFFFFF,
+                            borderRadius: BorderRadius.circular(12.0),
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: [
+                                  CircleAvatar(
+                                    backgroundImage:
+                                        AssetImage(review.imageUrl),
+                                    radius: 20.r,
+                                  ),
+                                  UIHelper.horizontalSpace(10.w),
+                                  Text(
+                                    review.reviewerName,
+                                    style: TextFontStyle
+                                        .textStyle14c212121UrbanistW600,
+                                  ),
+                                  const Spacer(),
+                                  CustomChip(
+                                    text: '${review.starRating}',
+                                    isSelected: false,
+                                    onPressed: null, // Non-clickable
+                                  ),
+                                ],
+                              ),
+                              UIHelper.verticalSpace(12.h),
+                              Text(
+                                review.reviewText,
+                                style: TextFontStyle
+                                    .textStyle16c212121UrbanistW400
+                                    .copyWith(height: 1.3),
+                              ),
+                              UIHelper.verticalSpace(12.h),
+                              Row(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Icon(Icons.thumb_up_alt_outlined,
+                                          size: 16.sp,
+                                          color: AppColors.c545A63),
+                                      UIHelper.horizontalSpace(4.w),
+                                      Text(
+                                        '${review.likes}',
+                                        style: TextFontStyle
+                                            .textStyle16c212121UrbanistW400
+                                            .copyWith(fontSize: 10),
+                                      ),
+                                    ],
+                                  ),
+                                  UIHelper.horizontalSpace(50.w),
+                                  Text(
+                                    review.timeAgo,
+                                    style: TextFontStyle
+                                        .textStyle16c212121UrbanistW400
+                                        .copyWith(fontSize: 10),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        );
+                      },
+                    ),
+            ),
+          ],
         ),
       ),
     );

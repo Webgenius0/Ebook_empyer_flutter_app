@@ -25,8 +25,14 @@ class _WishlistScreenState extends State<WishlistScreen> {
       title: "I Killed Zoe Spanos",
       rating: 4.7,
       price: 76.00,
-      author: "Author: Douglas Adams",
+      author: "Douglas Adams",
       labels: [
+        " Galaxy",
+        "Comedy",
+        "Science fiction",
+        " Galaxy",
+        "Comedy",
+        "Science fiction",
         " Galaxy",
         "Comedy",
         "Science fiction",
@@ -37,7 +43,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
       title: "The Scarlet Letter",
       rating: 4.8,
       price: 39.99,
-      author: "Author: Douglas Adams",
+      author: "Douglas Adams",
       labels: [
         " Galaxy",
         "Comedy",
@@ -61,7 +67,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
       title: "One Hundred Years of Solitude",
       rating: 4.3,
       price: 24.99,
-      author: "Author: Douglas Adams",
+      author: " Douglas Adams",
       labels: [
         " Galaxy",
         "Comedy",
@@ -73,13 +79,13 @@ class _WishlistScreenState extends State<WishlistScreen> {
         title: "One Hundred Years of Solitude",
         rating: 4.3,
         price: 24.99,
-        author: "Author: Douglas Adams"),
+        author: "Douglas Adams"),
     BookModel(
       imageUrl: Assets.images.e3.path,
       title: "One Hundred Years of Solitude",
       rating: 4.3,
       price: 24.99,
-      author: "Author: Douglas Adams",
+      author: " Douglas Adams",
       labels: [
         " Galaxy",
         "Comedy",
@@ -123,7 +129,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
                             child: SvgPicture.asset(Assets.icons.searchLogo))),
                   ],
                 ),
-                UIHelper.verticalSpace(20.h),
+                UIHelper.verticalSpace(24.h),
                 ListView.builder(
                   shrinkWrap:
                       true, // This prevents ListView from taking up infinite space

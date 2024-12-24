@@ -51,7 +51,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 20.h),
+
+                  UIHelper.verticalSpace(20.h),
 
                   Text(
                     "The Number One Best Ebook Store & Reader\n Application in this Century",
@@ -60,7 +61,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         .copyWith(height: 1.8),
                   ),
 
-                  UIHelper.verticalSpace(50),
+                  UIHelper.verticalSpace(50.h),
 
                   GestureDetector(
                     onTap: () {},
@@ -83,7 +84,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               SvgPicture.asset(Assets.icons.googleIcon),
-                              SizedBox(width: 8.w),
+                              UIHelper.horizontalSpace(8.w),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 mainAxisSize: MainAxisSize.min,
@@ -106,7 +107,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 16.h),
+
+                  UIHelper.verticalSpace(16.h),
 
                   CustomButtonOne(
                     text: "Get Started",
@@ -116,7 +118,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     },
                     style: TextFontStyle.textStyle14cFFFFFFUrbanistW500,
                   ),
-                  SizedBox(height: 16.h),
+
+                  UIHelper.verticalSpace(16.h),
 
                   CustomButtonOne(
                     text: "I Have Already an Account",

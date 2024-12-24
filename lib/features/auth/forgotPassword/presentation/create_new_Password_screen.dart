@@ -1,6 +1,6 @@
 import 'package:abdilahi/helpers/all_routes.dart';
 import 'package:abdilahi/helpers/navigation_service.dart';
-import 'package:abdilahi/navigation.dart';
+import 'package:abdilahi/helpers/ui_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:abdilahi/common_widgets/custom_button_one.dart';
 import 'package:abdilahi/common_widgets/custom_textformfield.dart';
@@ -27,7 +27,7 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
       context: context,
       barrierDismissible: false,
       builder: (BuildContext context) {
-        Future.delayed(Duration(seconds: 1), () {
+        Future.delayed(const Duration(seconds: 1), () {
           NavigationService.navigateTo(Routes.navigationScreen);
         });
         return Stack(
@@ -56,18 +56,16 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
                       style: TextFontStyle.textStyle24c743DFFUrbanistW700
                           .copyWith(decoration: TextDecoration.none),
                     ),
-                    SizedBox(height: 20.h),
+                    UIHelper.verticalSpace(20.h),
                     Text(
                       "Your password has been restored\nPlease wait a moment, we are\npreparing for you...",
                       textAlign: TextAlign.center,
                       style: TextFontStyle.textStyle16c000000UrbanistW400
                           .copyWith(decoration: TextDecoration.none),
                     ),
-                    SizedBox(
-                      height: 20.h,
-                    ),
+                    UIHelper.verticalSpace(20.h),
                     const CircularProgressIndicator(),
-                    SizedBox(height: 40.h),
+                    UIHelper.verticalSpace(40.h),
                   ],
                 ),
               ),
@@ -103,37 +101,37 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 16.h),
+                    UIHelper.verticalSpace(16.h),
                     Text(
                       "Create New Password",
                       style: TextFontStyle.textStyle24c000000UrbanistW600,
                     ),
-                    SizedBox(height: 16.h),
+                    UIHelper.verticalSpace(16.h),
                     Text(
                       "Enter your new password. If you forget it, then\nyou have to do forgot password.",
                       style: TextFontStyle.textStyle14c4B586BUrbanistW400,
                     ),
-                    SizedBox(height: 20.h),
+                    UIHelper.verticalSpace(20.h),
                     Text(
                       "Password",
                       style: TextFontStyle.textStyle14c212121UrbanistW600,
                     ),
-                    SizedBox(height: 16.h),
-                    CustomTextFormField(
+                    UIHelper.verticalSpace(16.h),
+                    const CustomTextFormField(
                       hintText: "************",
                       isPasswordField: true,
                     ),
-                    SizedBox(height: 16.h),
+                    UIHelper.verticalSpace(16.h),
                     Text(
                       "Confirm Password",
                       style: TextFontStyle.textStyle14c212121UrbanistW600,
                     ),
-                    SizedBox(height: 16.h),
-                    CustomTextFormField(
+                    UIHelper.verticalSpace(16.h),
+                    const CustomTextFormField(
                       hintText: "************",
                       isPasswordField: true,
                     ),
-                    SizedBox(height: 320.h),
+                    UIHelper.verticalSpace(320.h),
                     CustomButtonOne(
                       text: "Continue",
                       backgroundColor: AppColors.c743DFF,

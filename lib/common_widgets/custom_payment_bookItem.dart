@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:abdilahi/constants/text_font_style.dart';
 import 'package:abdilahi/gen/assets.gen.dart';
 import 'package:abdilahi/gen/colors.gen.dart';
@@ -71,7 +73,8 @@ class CustomPaymentBookCard extends StatelessWidget {
                     for (int i = 0; i < labels.length; i++) ...[
                       buildLabel(labels[i]),
                       if (i != labels.length - 1)
-                        const SizedBox(width: 10), // Add width between labels
+                        UIHelper.horizontalSpace(
+                            10.w), // Add width between labels
                     ],
                   ],
                 )

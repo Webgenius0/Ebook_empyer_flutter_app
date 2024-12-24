@@ -82,7 +82,7 @@ class _SelectPaymentMethodScreenState extends State<SelectPaymentMethodScreen> {
               rating: 4.7,
               price: 76,
               author: 'Douglas Adams',
-              labels: [
+              labels: const [
                 " Galaxy",
                 "Comedy",
                 "Science fiction",

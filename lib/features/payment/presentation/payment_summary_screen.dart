@@ -1,6 +1,8 @@
 import 'dart:ui';
 import 'package:abdilahi/common_widgets/custom_button_one.dart';
 import 'package:abdilahi/common_widgets/custom_horizontal_divider.dart';
+import 'package:abdilahi/helpers/all_routes.dart';
+import 'package:abdilahi/helpers/navigation_service.dart';
 import 'package:flutter/material.dart';
 import 'package:abdilahi/common_widgets/custom_payment_bookItem.dart';
 import 'package:abdilahi/constants/text_font_style.dart';
@@ -60,7 +62,8 @@ class _PaymentSummaryScreenState extends State<PaymentSummaryScreen> {
                                 decoration: TextDecoration.none,
                                 color: AppColors.c743DFF),
                       ),
-                      SizedBox(height: 20.h),
+
+                      UIHelper.verticalSpace(20.h),
                       Text(
                         "You have successfully  purchased Harry Potter and the Deathly Hallows.",
                         textAlign: TextAlign.center,
@@ -68,9 +71,7 @@ class _PaymentSummaryScreenState extends State<PaymentSummaryScreen> {
                             .copyWith(
                                 decoration: TextDecoration.none, height: 1.6),
                       ),
-                      SizedBox(
-                        height: 20.h,
-                      ),
+                      UIHelper.verticalSpace(20.h),
 
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -103,7 +104,8 @@ class _PaymentSummaryScreenState extends State<PaymentSummaryScreen> {
                           ),
                           GestureDetector(
                             onTap: () async {
-                              // Add logic to open eBook or navigate
+                              NavigationService.navigateTo(
+                                  Routes.readEbookNavigaationScreen);
                             },
                             child: Container(
                               width: 135.w,
@@ -128,7 +130,7 @@ class _PaymentSummaryScreenState extends State<PaymentSummaryScreen> {
                         ],
                       ),
 
-                      SizedBox(height: 40.h),
+                      UIHelper.verticalSpace(40.h),
                     ],
                   ),
                 ),
@@ -147,7 +149,7 @@ class _PaymentSummaryScreenState extends State<PaymentSummaryScreen> {
         leading: IconButton(
           onPressed: () => Navigator.pop(context),
           icon: Padding(
-            padding: EdgeInsets.all(10.0),
+            padding: EdgeInsets.all(10.sp),
             child: SvgPicture.asset(
               Assets.icons.arrowBack,
               height: 24.h,
@@ -292,7 +294,7 @@ class _PaymentSummaryScreenState extends State<PaymentSummaryScreen> {
                 ),
                 const Spacer(),
                 Text(
-                  "Chnage",
+                  "Change",
                   style: TextFontStyle.textStyle14c743DFFUrbanistW400.copyWith(
                     fontWeight: FontWeight.w600,
                   ),

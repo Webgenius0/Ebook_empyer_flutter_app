@@ -80,7 +80,7 @@ class _SelectPaymentTwoScreenState extends State<SelectPaymentTwoScreen> {
               rating: 4.7,
               price: 76,
               author: 'Douglas Adams',
-              labels: [
+              labels: const [
                 " Galaxy",
                 "Comedy",
                 "Science fiction",

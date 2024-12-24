@@ -58,14 +58,15 @@ class CustomWishlistCard extends StatelessWidget {
                       for (int i = 0; i < labels.length; i++) ...[
                         buildLabel(labels[i]),
                         if (i != labels.length - 1)
-                          const SizedBox(width: 10), // Add width between labels
+                          UIHelper.horizontalSpace(
+                              4.w), // Add width between labels
                       ],
                     ],
                   ),
                 ),
                 Row(
                   children: [
-                    Icon(Icons.star, color: AppColors.c4B586B, size: 14.sp),
+                    SvgPicture.asset(Assets.icons.star1),
                     UIHelper.horizontalSpace(4.h),
                     Text(
                       rating.toStringAsFixed(1),

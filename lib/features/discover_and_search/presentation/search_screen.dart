@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, deprecated_member_use
+
 import 'package:abdilahi/common_widgets/custom_bookcard.dart';
 import 'package:abdilahi/common_widgets/custom_bookcard2.dart';
 import 'package:abdilahi/constants/text_font_style.dart';
@@ -42,19 +44,31 @@ class _SearchScreenState extends State<SearchScreen> {
         title: "One Hundred Years of Solitude",
         rating: 4.5,
         price: 29.99,
-        author: "Author: Douglas Adams"),
+        author: " Douglas Adams"),
     BookModel(
         imageUrl: Assets.images.e2.path,
         title: "Adventures of Huckleberry Finn",
         rating: 4.8,
         price: 39.99,
-        author: "Author: Douglas Adams"),
+        author: "Douglas Adams"),
+    BookModel(
+        imageUrl: Assets.images.e2.path,
+        title: "Adventures of Huckleberry Finn",
+        rating: 4.8,
+        price: 39.99,
+        author: "Douglas Adams"),
     BookModel(
         imageUrl: Assets.images.e3.path,
         title: "One Hundred Years of Solitude",
         rating: 4.3,
         price: 24.99,
-        author: "Author: Douglas Adams"),
+        author: ": Douglas Adams"),
+    BookModel(
+        imageUrl: Assets.images.e3.path,
+        title: "One Hundred Years of Solitude",
+        rating: 4.3,
+        price: 24.99,
+        author: ": Douglas Adams"),
   ];
 
   @override
@@ -124,7 +138,13 @@ class _SearchScreenState extends State<SearchScreen> {
                                 NavigationService.navigateTo(
                                     Routes.filterScreen);
                               },
-                              child: SvgPicture.asset(Assets.icons.close)),
+                              child: InkWell(
+                                  onTap: () {
+                                    NavigationService.navigateTo(
+                                        Routes.filterScreen);
+                                  },
+                                  child:
+                                      SvgPicture.asset(Assets.icons.filter))),
                         ),
                       ),
                     ],
@@ -132,6 +152,7 @@ class _SearchScreenState extends State<SearchScreen> {
                 ),
               ],
             ),
+            UIHelper.verticalSpace(16.h),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -142,24 +163,18 @@ class _SearchScreenState extends State<SearchScreen> {
                 Row(
                   children: [
                     GestureDetector(
-                      onTap: _toggleState,
-                      child: SvgPicture.asset(
-                        Assets.icons.boxIcon,
-                        color:
-                            _isToogle ? AppColors.c743DFF : AppColors.c2B2B2B,
-                      ),
-                    ),
+                        onTap: _toggleState,
+                        child: _isToogle
+                            ? SvgPicture.asset(Assets.icons.boxBlue)
+                            : SvgPicture.asset(Assets.icons.boxWhite)),
                     SizedBox(
                       width: 12.w,
                     ),
                     GestureDetector(
-                      onTap: _toggleState,
-                      child: SvgPicture.asset(
-                        Assets.icons.sortblack,
-                        color:
-                            !_isToogle ? AppColors.c743DFF : AppColors.c2B2B2B,
-                      ),
-                    ),
+                        onTap: _toggleState,
+                        child: !_isToogle
+                            ? SvgPicture.asset(Assets.icons.sortBlue)
+                            : SvgPicture.asset(Assets.icons.sortblack)),
                   ],
                 ),
               ],
@@ -209,3 +224,8 @@ class _SearchScreenState extends State<SearchScreen> {
     );
   }
 }
+// SvgPicture.asset(
+//                         Assets.icons.boxIcon,
+//                         color:
+//                             _isToogle ? AppColors.c743DFF : AppColors.c2B2B2B,
+//                       ),

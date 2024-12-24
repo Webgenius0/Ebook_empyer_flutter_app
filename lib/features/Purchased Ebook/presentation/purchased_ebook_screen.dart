@@ -90,7 +90,6 @@ class _PurchasedEbookScreenState extends State<PurchasedEbookScreen> {
 
   @override
   Widget build(BuildContext context) {
-    bool isFinished = false;
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -124,7 +123,7 @@ class _PurchasedEbookScreenState extends State<PurchasedEbookScreen> {
                             child: SvgPicture.asset(Assets.icons.searchLogo))),
                   ],
                 ),
-                UIHelper.verticalSpace(20.h),
+                UIHelper.verticalSpace(24.h),
                 ListView.builder(
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),

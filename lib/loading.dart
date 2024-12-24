@@ -1,5 +1,3 @@
-import 'package:abdilahi/features/home/presentation/home_screen.dart';
-import 'package:abdilahi/navigation.dart';
 import 'package:abdilahi/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:abdilahi/helpers/helper_methods.dart';

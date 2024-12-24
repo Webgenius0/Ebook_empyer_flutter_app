@@ -10,7 +10,6 @@ Widget customElevatedButton({
 }) {
   return ElevatedButton(
     onPressed: onPressed,
-    child: child,
     style: ElevatedButton.styleFrom(
       // shadowColor: Colors.transparent,
       shape: RoundedRectangleBorder(
@@ -26,5 +25,6 @@ Widget customElevatedButton({
             )
           : null,
     ),
+    child: child,
   );
 }

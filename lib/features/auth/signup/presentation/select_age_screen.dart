@@ -1,9 +1,12 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:abdilahi/common_widgets/custom_button_one.dart';
 import 'package:abdilahi/constants/text_font_style.dart';
 import 'package:abdilahi/gen/assets.gen.dart';
 import 'package:abdilahi/gen/colors.gen.dart';
 import 'package:abdilahi/helpers/all_routes.dart';
 import 'package:abdilahi/helpers/navigation_service.dart';
+import 'package:abdilahi/helpers/ui_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -56,17 +59,17 @@ class _SelectAgeScreenState extends State<SelectAgeScreen> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 16.h),
+                      UIHelper.verticalSpace(16.h),
                       Text(
                         "Choose Your Age",
                         style: TextFontStyle.textStyle24c000000UrbanistW600,
                       ),
-                      SizedBox(height: 16.h),
+                      UIHelper.verticalSpace(16.h),
                       Text(
                         "Select age range for better content.",
                         style: TextFontStyle.textStyle14c4B586BUrbanistW400,
                       ),
-                      SizedBox(height: 20.h),
+                      UIHelper.verticalSpace(20.h),
                     ],
                   ),
                 ),

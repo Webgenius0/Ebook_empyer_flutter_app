@@ -56,7 +56,7 @@ class _NotificationEmptyScreenState extends State<NotificationEmptyScreen> {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  Container(
+                  SizedBox(
                       height: 240.h,
                       width: 240.w,
                       child: SvgPicture.asset(Assets.icons.emptyNotification)),

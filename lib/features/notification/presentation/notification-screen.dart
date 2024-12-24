@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:abdilahi/constants/text_font_style.dart';
 import 'package:abdilahi/gen/assets.gen.dart';
 import 'package:abdilahi/gen/colors.gen.dart';

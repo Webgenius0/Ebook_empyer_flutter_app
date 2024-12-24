@@ -74,6 +74,18 @@ class _HomeScreenState extends State<HomeScreen> {
       imageUrl: Assets.images.thriller.path,
       title: "Inspiration",
     ),
+    GenreModel(
+      imageUrl: Assets.images.romantic.path,
+      title: "Romantic",
+    ),
+    GenreModel(
+      imageUrl: Assets.images.thriller.path,
+      title: "Thriller",
+    ),
+    GenreModel(
+      imageUrl: Assets.images.thriller.path,
+      title: "Inspiration",
+    ),
   ];
 
   @override
@@ -109,7 +121,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 padding: EdgeInsets.only(right: 18.w),
                                 child:
                                     SvgPicture.asset(Assets.icons.searchLogo))),
-                        SizedBox(width: 16.h),
+                        UIHelper.verticalSpace(16.h),
                         InkWell(
                             onTap: () {
                               NavigationService.navigateTo(
@@ -124,7 +136,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ],
                 ),
-                UIHelper.verticalSpace(12.h),
+                UIHelper.verticalSpace(24.h),
 
                 SizedBox(
                   height: 302.h,
@@ -152,7 +164,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                   ),
                 ),
-                SizedBox(height: 20.h),
+
+                UIHelper.verticalSpace(20.h),
 
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -287,7 +300,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     SvgPicture.asset(Assets.icons.arrowforward)
                   ],
                 ),
-                SizedBox(height: 20.h),
+                UIHelper.verticalSpace(20.h),
                 SizedBox(
                   height: 302.h,
                   child: ListView.builder(
