@@ -1,3 +1,4 @@
+import 'package:abdilahi/helpers/ui_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:abdilahi/common_widgets/custom_button_one.dart';
 import 'package:abdilahi/common_widgets/custom_textformfield.dart';
@@ -13,6 +14,7 @@ class SigninScreen extends StatefulWidget {
   const SigninScreen({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _SigninScreenState createState() => _SigninScreenState();
 }
 
@@ -43,45 +45,35 @@ class _SigninScreenState extends State<SigninScreen> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 16.h),
+                    UIHelper.verticalSpace(16.h),
                     Text(
                       "Hello there 👋",
                       style: TextFontStyle.textStyle24c000000UrbanistW600,
                     ),
-                    SizedBox(height: 16.h),
+                    UIHelper.verticalSpace(16.h),
                     Text(
                       "Please enter your username/email and\npassword to sign in",
                       style: TextFontStyle.textStyle14c4B586BUrbanistW400,
                     ),
-                    SizedBox(height: 40.h),
+                    UIHelper.verticalSpace(40.h),
                     Text(
                       "User Name or Email",
                       style: TextFontStyle.textStyle14c212121UrbanistW600,
                     ),
-                    SizedBox(
-                      height: 16.h,
-                    ),
-                    CustomTextFormField(
+                    UIHelper.verticalSpace(16.h),
+                    const CustomTextFormField(
                       hintText: "Saklain",
                     ),
-                    SizedBox(
-                      height: 16.h,
-                    ),
-                    SizedBox(
-                      height: 16.h,
-                    ),
+                    UIHelper.verticalSpace(16.h),
+                    UIHelper.verticalSpace(16.h),
                     Text(
                       "Password",
                       style: TextFontStyle.textStyle14c212121UrbanistW600,
                     ),
-                    SizedBox(
-                      height: 16.h,
-                    ),
-                    CustomTextFormField(
+                    UIHelper.verticalSpace(16.h),
+                    const CustomTextFormField(
                         hintText: "************", isPasswordField: true),
-                    SizedBox(
-                      height: 16.h,
-                    ),
+                    UIHelper.verticalSpace(16.h),
                     Transform.translate(
                       offset: Offset(-10.w, 0),
                       child: Row(
@@ -110,7 +102,7 @@ class _SigninScreenState extends State<SigninScreen> {
                                 Divider(thickness: 1, color: AppColors.cECECEC))
                       ],
                     ),
-                    SizedBox(height: 30.h),
+                    UIHelper.verticalSpace(30.h),
                     Align(
                       alignment: Alignment.center,
                       child: InkWell(
@@ -124,7 +116,7 @@ class _SigninScreenState extends State<SigninScreen> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 30.h),
+                    UIHelper.verticalSpace(30.h),
                     Row(
                       children: [
                         const Expanded(
@@ -148,7 +140,7 @@ class _SigninScreenState extends State<SigninScreen> {
                         ),
                       ],
                     ),
-                    SizedBox(height: 30.h),
+                    UIHelper.verticalSpace(30.h),
                     GestureDetector(
                       onTap: () {},
                       child: Container(
@@ -166,7 +158,7 @@ class _SigninScreenState extends State<SigninScreen> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               SvgPicture.asset(Assets.icons.googleIcon),
-                              SizedBox(width: 8.w),
+                              UIHelper.horizontalSpace(8.w),
                               Text(
                                 "Continue with Google",
                                 style: TextFontStyle
@@ -177,7 +169,7 @@ class _SigninScreenState extends State<SigninScreen> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 50.h),
+                    UIHelper.verticalSpace(50.h),
                     CustomButtonOne(
                       text: "Sign In",
                       backgroundColor: AppColors.c743DFF,

@@ -1,5 +1,6 @@
 import 'package:abdilahi/helpers/all_routes.dart';
 import 'package:abdilahi/helpers/navigation_service.dart';
+import 'package:abdilahi/helpers/ui_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:abdilahi/common_widgets/custom_button_one.dart';
 import 'package:abdilahi/common_widgets/custom_textformfield.dart';
@@ -14,6 +15,7 @@ class ForgotPasswordScreen extends StatefulWidget {
   const ForgotPasswordScreen({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _ForgotPasswordScreenState createState() => _ForgotPasswordScreenState();
 }
 
@@ -43,28 +45,26 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 16.h),
+                    UIHelper.verticalSpace(16.h),
                     Text(
                       "Forgot Password",
                       style: TextFontStyle.textStyle24c000000UrbanistW600,
                     ),
-                    SizedBox(height: 16.h),
+                    UIHelper.verticalSpace(16.h),
                     Text(
                       "Enter your email address. We will send an OTP code\nfor verification in the next step.",
                       style: TextFontStyle.textStyle14c4B586BUrbanistW400,
                     ),
-                    SizedBox(height: 40.h),
+                    UIHelper.verticalSpace(40.h),
                     Text(
                       "Email",
                       style: TextFontStyle.textStyle14c212121UrbanistW600,
                     ),
-                    SizedBox(
-                      height: 16.h,
-                    ),
-                    CustomTextFormField(
+                    UIHelper.verticalSpace(16.h),
+                    const CustomTextFormField(
                       hintText: "abc@gmail.com",
                     ),
-                    SizedBox(height: 435.h),
+                    UIHelper.verticalSpace(435.h),
                     CustomButtonOne(
                       text: "Continue",
                       backgroundColor: AppColors.c743DFF,

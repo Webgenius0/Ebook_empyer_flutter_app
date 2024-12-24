@@ -117,7 +117,7 @@ class _HomeContentScreenState extends State<HomeContentScreen> {
                                 padding: EdgeInsets.only(right: 18.w),
                                 child:
                                     SvgPicture.asset(Assets.icons.searchLogo))),
-                        SizedBox(width: 16.h),
+                        UIHelper.horizontalSpace(16.w),
                         InkWell(
                             onTap: () {
                               // NavigationService.navigateTo(
@@ -156,7 +156,8 @@ class _HomeContentScreenState extends State<HomeContentScreen> {
                     },
                   ),
                 ),
-                SizedBox(height: 20.h),
+
+                UIHelper.verticalSpace(20.h),
 
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -236,7 +237,7 @@ class _HomeContentScreenState extends State<HomeContentScreen> {
                   ],
                 ),
 
-                SizedBox(height: 20.h),
+                UIHelper.verticalSpace(20.h),
                 SizedBox(
                   height: 302.h,
                   child: ListView.builder(
@@ -268,7 +269,7 @@ class _HomeContentScreenState extends State<HomeContentScreen> {
                     SvgPicture.asset(Assets.icons.arrowforward)
                   ],
                 ),
-                SizedBox(height: 20.h),
+                UIHelper.verticalSpace(20.h),
                 SizedBox(
                   height: 302.h,
                   child: ListView.builder(

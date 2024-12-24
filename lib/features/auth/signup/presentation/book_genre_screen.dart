@@ -1,8 +1,11 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:abdilahi/constants/text_font_style.dart';
 import 'package:abdilahi/gen/assets.gen.dart';
 import 'package:abdilahi/gen/colors.gen.dart';
 import 'package:abdilahi/helpers/all_routes.dart';
 import 'package:abdilahi/helpers/navigation_service.dart';
+import 'package:abdilahi/helpers/ui_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -55,7 +58,7 @@ class _BookGenreScreenState extends State<BookGenreScreen> {
                   children: [
                     Padding(
                       padding: EdgeInsets.symmetric(
-                          horizontal: 35.w, vertical: 25.h),
+                          horizontal: 24.w, vertical: 25.h),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -65,17 +68,18 @@ class _BookGenreScreenState extends State<BookGenreScreen> {
                             },
                             child: SvgPicture.asset(Assets.icons.arrowBack),
                           ),
-                          SizedBox(height: 16.h),
+                          UIHelper.verticalSpace(16.h),
                           Text(
                             "Choose the Book Genre\nYou Like",
                             style: TextFontStyle.textStyle24c000000UrbanistW600,
                           ),
-                          SizedBox(height: 16.h),
+                          UIHelper.verticalSpace(16.h),
                           Text(
                             "Select your preferred book genre for better\nrecommendations, or you can skip it.",
-                            style: TextFontStyle.textStyle14c4B586BUrbanistW400,
+                            style: TextFontStyle.textStyle14c4B586BUrbanistW400
+                                .copyWith(height: 1.6.h),
                           ),
-                          SizedBox(height: 20.h),
+                          UIHelper.verticalSpace(20.h),
                         ],
                       ),
                     ),
@@ -129,9 +133,7 @@ class _BookGenreScreenState extends State<BookGenreScreen> {
                         }),
                       ),
                     ),
-                    SizedBox(
-                      height: 180.h,
-                    ),
+                    UIHelper.verticalSpace(180.h),
                   ],
                 ),
               ),
@@ -162,7 +164,8 @@ class _BookGenreScreenState extends State<BookGenreScreen> {
                       },
                       child: Text(
                         "Skip",
-                        style: TextFontStyle.textStyle16cFFFFFFUrbanistW600,
+                        style: TextFontStyle.textStyle16cFFFFFFUrbanistW600
+                            .copyWith(color: AppColors.c743DFF),
                       ),
                     ),
                     ElevatedButton(

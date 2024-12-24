@@ -1,5 +1,6 @@
 import 'package:abdilahi/features/Purchased%20Ebook/presentation/purchased_ebook_screen.dart';
-import 'package:abdilahi/features/discover/presentation/discover_screen.dart';
+import 'package:abdilahi/features/account_and_setting/presentation/account_full_screen.dart';
+import 'package:abdilahi/features/discover_and_search/presentation/discover_screen.dart';
 import 'package:abdilahi/features/home/presentation/home_screen.dart';
 import 'package:abdilahi/features/wishlist/presentation/wishlist_screen.dart';
 import 'package:abdilahi/gen/assets.gen.dart';
@@ -11,6 +12,7 @@ class Navigation extends StatefulWidget {
   const Navigation({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _NavigationState createState() => _NavigationState();
 }
 
@@ -21,8 +23,9 @@ class _NavigationState extends State<Navigation> {
     const HomeScreen(),
     const DiscoverScreen(),
     const WishlistScreen(), // WishlistScreen
-    const PurchasedEbookScreen(), // PurchasedScreen
-    Placeholder(), // ProfileScreen
+    const PurchasedEbookScreen(),
+    const AccountFullScreen() // PurchasedScreen
+    // ProfileScreen
   ];
 
   void onItemTapped(int index) {
@@ -47,6 +50,7 @@ class _NavigationState extends State<Navigation> {
             icon: SvgPicture.asset(Assets.icons.homeIcon),
             activeIcon: SvgPicture.asset(
               Assets.icons.homeIcon,
+              // ignore: deprecated_member_use
               color: AppColors.c743DFF,
             ),
             label: "Home",
@@ -55,6 +59,7 @@ class _NavigationState extends State<Navigation> {
             icon: SvgPicture.asset(Assets.icons.discoverIcon),
             activeIcon: SvgPicture.asset(
               Assets.icons.discoverIcon,
+              // ignore: deprecated_member_use
               color: AppColors.c743DFF,
             ),
             label: "Discover",
@@ -63,6 +68,7 @@ class _NavigationState extends State<Navigation> {
             icon: SvgPicture.asset(Assets.icons.wishlistIcon),
             activeIcon: SvgPicture.asset(
               Assets.icons.wishlistIcon,
+              // ignore: deprecated_member_use
               color: AppColors.c743DFF,
             ),
             label: "Wishlist",
@@ -71,6 +77,7 @@ class _NavigationState extends State<Navigation> {
             icon: SvgPicture.asset(Assets.icons.purchasedIcon),
             activeIcon: SvgPicture.asset(
               Assets.icons.purchasedIcon,
+              // ignore: deprecated_member_use
               color: AppColors.c743DFF,
             ),
             label: "Purchased",
@@ -79,6 +86,7 @@ class _NavigationState extends State<Navigation> {
             icon: SvgPicture.asset(Assets.icons.profileIcon),
             activeIcon: SvgPicture.asset(
               Assets.icons.profileIcon,
+              // ignore: deprecated_member_use
               color: AppColors.c743DFF,
             ),
             label: "Profile",

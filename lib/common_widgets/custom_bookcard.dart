@@ -1,8 +1,9 @@
 import 'package:abdilahi/constants/text_font_style.dart';
-import 'package:abdilahi/gen/colors.gen.dart';
+import 'package:abdilahi/gen/assets.gen.dart';
 import 'package:abdilahi/helpers/ui_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 
 class BookCard extends StatelessWidget {
   final String imageUrl;
@@ -48,8 +49,9 @@ class BookCard extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  Icon(Icons.star, color: AppColors.c4B586B, size: 14.sp),
-                  SizedBox(width: 4.h),
+                  SvgPicture.asset(Assets.icons.star1),
+                  // Icon(Icons.star, color: AppColors.c4B586B, size: 14.sp),
+                  UIHelper.horizontalSpace(4.h),
                   Text(
                     rating.toStringAsFixed(1),
                     style: TextFontStyle.textStyle10c4B586BUrbanistW500,

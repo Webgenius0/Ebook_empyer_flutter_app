@@ -1,5 +1,9 @@
 import 'dart:io';
 import 'package:abdilahi/features/Purchased%20Ebook/presentation/purchased_ebook_screen.dart';
+import 'package:abdilahi/features/account_and_setting/presentation/faq_screen.dart';
+import 'package:abdilahi/features/account_and_setting/presentation/notification_screen.dart';
+import 'package:abdilahi/features/account_and_setting/presentation/payment_method_screen.dart';
+import 'package:abdilahi/features/account_and_setting/presentation/person_info_screen.dart';
 import 'package:abdilahi/features/auth/forgotPassword/presentation/create_new_Password_screen.dart';
 import 'package:abdilahi/features/auth/forgotPassword/presentation/forgot_password_screen.dart';
 import 'package:abdilahi/features/auth/forgotPassword/presentation/otp_verification_screen.dart';
@@ -9,13 +13,13 @@ import 'package:abdilahi/features/auth/signup/presentation/create_account_screen
 import 'package:abdilahi/features/auth/signup/presentation/book_genre_screen.dart';
 import 'package:abdilahi/features/auth/signup/presentation/select_age_screen.dart';
 import 'package:abdilahi/features/auth/signup/presentation/gender_screen.dart';
-import 'package:abdilahi/features/discover/presentation/discover_screen.dart';
+import 'package:abdilahi/features/discover_and_search/presentation/discover_screen.dart';
+import 'package:abdilahi/features/discover_and_search/presentation/filter_screen.dart';
 import 'package:abdilahi/features/ebook_details/presentaion/about_book_screen.dart';
 import 'package:abdilahi/features/ebook_details/presentaion/ebook_details_screen.dart';
 import 'package:abdilahi/features/ebook_details/presentaion/rating_and_review_screen.dart';
 import 'package:abdilahi/features/ebook_details/presentaion/write_review_screen.dart';
-import 'package:abdilahi/features/filter/presentation/filter_screen.dart';
-import 'package:abdilahi/features/filter/presentation/search_screen.dart';
+import 'package:abdilahi/features/discover_and_search/presentation/search_screen.dart';
 import 'package:abdilahi/features/home/presentation/explore_by_genre_screen.dart';
 import 'package:abdilahi/features/home/presentation/home_content_screen.dart';
 import 'package:abdilahi/features/home/presentation/home_screen.dart';
@@ -26,6 +30,7 @@ import 'package:abdilahi/features/payment/presentation/add_new_payment_screen.da
 import 'package:abdilahi/features/payment/presentation/payment_summary_screen.dart';
 import 'package:abdilahi/features/payment/presentation/select_payment_method_screen.dart';
 import 'package:abdilahi/features/payment/presentation/select_payment_two_screen.dart';
+import 'package:abdilahi/features/read_ebook/read_ebook_navigation_screen.dart';
 import 'package:abdilahi/features/wishlist/presentation/wishlist_screen.dart';
 import 'package:abdilahi/navigation.dart';
 import 'package:abdilahi/welcome_screen.dart';
@@ -70,6 +75,13 @@ final class Routes {
   static const String wishlistScreen = '/WishlistScreen';
   static const String purchasedEbookScreen = '/purchasedEbookScreen';
   static const String writeReviewScreen = '/writeReviewScreen';
+  static const String personalInfoScreen = '/personalInfoScreen';
+  static const String paymentMethodScreen = '/paymentMethodScreen';
+  static const String faqScreen = '/faqScreen';
+  static const String notificationScreeen = '/notificationScreeen';
+
+  static const String readEbookNavigaationScreen =
+      '/readEbookNavigaationScreen';
 }
 
 final class RouteGenerator {
@@ -202,10 +214,10 @@ final class RouteGenerator {
                 widget: const SearchScreen(), settings: settings)
             : CupertinoPageRoute(builder: (context) => const SearchScreen());
 
-      case Routes.filterScreen:
-        return Platform.isAndroid
-            ? _FadedTransitionRoute(widget: FilterScreen(), settings: settings)
-            : CupertinoPageRoute(builder: (context) => FilterScreen());
+      // case Routes.filterScreen:
+      //   return Platform.isAndroid
+      //       ? _FadedTransitionRoute(widget: FilterScreen(), settings: settings)
+      //       : CupertinoPageRoute(builder: (context) => FilterScreen());
 
       case Routes.ebookDetailsScreen:
         return Platform.isAndroid
@@ -279,6 +291,46 @@ final class RouteGenerator {
                 widget: const WriteReviewScreen(), settings: settings)
             : CupertinoPageRoute(
                 builder: (context) => const WriteReviewScreen());
+
+      case Routes.readEbookNavigaationScreen:
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(
+                widget: const ReadEbookNavigaationScreen(), settings: settings)
+            : CupertinoPageRoute(
+                builder: (context) => const ReadEbookNavigaationScreen());
+
+      case Routes.personalInfoScreen:
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(
+                widget: const PersonalInfoScreen(), settings: settings)
+            : CupertinoPageRoute(
+                builder: (context) => const PersonalInfoScreen());
+
+      case Routes.paymentMethodScreen:
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(
+                widget: const PaymentMethodScreen(), settings: settings)
+            : CupertinoPageRoute(
+                builder: (context) => const PaymentMethodScreen());
+
+      case Routes.faqScreen:
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(
+                widget: const FaqScreen(), settings: settings)
+            : CupertinoPageRoute(builder: (context) => const FaqScreen());
+
+      case Routes.notificationScreeen:
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(
+                widget: const NotificationScreeen(), settings: settings)
+            : CupertinoPageRoute(
+                builder: (context) => const NotificationScreeen());
+
+      case Routes.filterScreen:
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(
+                widget: const FilterScreen(), settings: settings)
+            : CupertinoPageRoute(builder: (context) => const FilterScreen());
 
       default:
         return null;

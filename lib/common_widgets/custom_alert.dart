@@ -18,7 +18,7 @@ class CustomAlert extends StatelessWidget {
             onPressed: () {
               Navigator.of(context).pop(); // Close the dialog
             },
-            child: Text("Close Alert"),
+            child: const Text("Close Alert"),
           ),
         ),
       ),

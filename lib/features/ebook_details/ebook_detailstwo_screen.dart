@@ -112,7 +112,12 @@ class _EbookDetailsScreenState extends State<EbookDetailsScreen> {
                 rating: 4.5,
                 price: 29.99,
                 author: 'Douglas Adams',
-                labels: [" Galaxy", "Comedy", "Science fiction", "Mystery"],
+                labels: const [
+                  " Galaxy",
+                  "Comedy",
+                  "Science fiction",
+                  "Mystery"
+                ],
                 releaseDate: 'Released on Dec, 2015',
               ),
               UIHelper.verticalSpace(16.h),
@@ -275,6 +280,7 @@ class _EbookDetailsScreenState extends State<EbookDetailsScreen> {
                         Icon(Icons.star, color: AppColors.cDDDDDD, size: 24.sp),
                         Icon(Icons.star, color: AppColors.cDDDDDD, size: 24.sp),
                         Icon(Icons.star, color: AppColors.cDDDDDD, size: 24.sp),
+                        Icon(Icons.star, color: AppColors.cDDDDDD, size: 24.sp),
                       ],
                     ),
                     //rate button
@@ -284,13 +290,11 @@ class _EbookDetailsScreenState extends State<EbookDetailsScreen> {
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20.r),
                           border: Border.all(color: AppColors.c743DFF)),
-                      child: Center(
-                        child: Text(
-                          'Write a Review',
-                          style: TextFontStyle.textStyle13c743DFFUrbanistW600
-                              .copyWith(
-                            fontSize: 12.sp,
-                          ),
+                      child: Text(
+                        'Write a Review',
+                        style: TextFontStyle.textStyle13c743DFFUrbanistW600
+                            .copyWith(
+                          fontSize: 12.sp,
                         ),
                       ),
                     )
@@ -309,7 +313,8 @@ class _EbookDetailsScreenState extends State<EbookDetailsScreen> {
                   SvgPicture.asset(Assets.icons.arrowforward)
                 ],
               ),
-              SizedBox(height: 20.h),
+
+              UIHelper.verticalSpace(20.h),
               SizedBox(
                 height: 302.h,
                 child: ListView.builder(
@@ -347,7 +352,7 @@ class _EbookDetailsScreenState extends State<EbookDetailsScreen> {
                   SvgPicture.asset(Assets.icons.arrowforward)
                 ],
               ),
-              SizedBox(height: 20.h),
+              UIHelper.verticalSpace(20.h),
               SizedBox(
                 height: 302.h,
                 child: ListView.builder(

@@ -34,6 +34,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/about.svg
   String get about => 'assets/icons/about.svg';
 
+  /// File path: assets/icons/aboutUs.svg
+  String get aboutUs => 'assets/icons/aboutUs.svg';
+
   /// File path: assets/icons/activity.svg
   String get activity => 'assets/icons/activity.svg';
 
@@ -46,9 +49,18 @@ class $AssetsIconsGen {
   /// File path: assets/icons/alert.svg
   String get alert => 'assets/icons/alert.svg';
 
+  /// File path: assets/icons/arrow-up.svg
+  String get arrowUp => 'assets/icons/arrow-up.svg';
+
+  /// File path: assets/icons/arrowBottom.svg
+  String get arrowBottom => 'assets/icons/arrowBottom.svg';
+
   /// File path: assets/icons/arrowRightNotification.svg
   String get arrowRightNotification =>
       'assets/icons/arrowRightNotification.svg';
+
+  /// File path: assets/icons/arrowRightTwo.svg
+  String get arrowRightTwo => 'assets/icons/arrowRightTwo.svg';
 
   /// File path: assets/icons/arrow_back.svg
   String get arrowBack => 'assets/icons/arrow_back.svg';
@@ -56,11 +68,23 @@ class $AssetsIconsGen {
   /// File path: assets/icons/arrowforward.svg
   String get arrowforward => 'assets/icons/arrowforward.svg';
 
-  /// File path: assets/icons/box_icon.svg
-  String get boxIcon => 'assets/icons/box_icon.svg';
+  /// File path: assets/icons/audio.svg
+  String get audio => 'assets/icons/audio.svg';
+
+  /// File path: assets/icons/box_blue.svg
+  String get boxBlue => 'assets/icons/box_blue.svg';
+
+  /// File path: assets/icons/box_white.svg
+  String get boxWhite => 'assets/icons/box_white.svg';
+
+  /// File path: assets/icons/chapter.svg
+  String get chapter => 'assets/icons/chapter.svg';
 
   /// File path: assets/icons/close.svg
   String get close => 'assets/icons/close.svg';
+
+  /// File path: assets/icons/dateOfBirth.svg
+  String get dateOfBirth => 'assets/icons/dateOfBirth.svg';
 
   /// File path: assets/icons/discover_icon.svg
   String get discoverIcon => 'assets/icons/discover_icon.svg';
@@ -71,8 +95,17 @@ class $AssetsIconsGen {
   /// File path: assets/icons/download.svg
   String get download => 'assets/icons/download.svg';
 
+  /// File path: assets/icons/email.svg
+  String get email => 'assets/icons/email.svg';
+
   /// File path: assets/icons/empty_notification.svg
   String get emptyNotification => 'assets/icons/empty_notification.svg';
+
+  /// File path: assets/icons/eyeProtection.svg
+  String get eyeProtection => 'assets/icons/eyeProtection.svg';
+
+  /// File path: assets/icons/filter.svg
+  String get filter => 'assets/icons/filter.svg';
 
   /// File path: assets/icons/finished.svg
   String get finished => 'assets/icons/finished.svg';
@@ -80,11 +113,20 @@ class $AssetsIconsGen {
   /// File path: assets/icons/google_icon.svg
   String get googleIcon => 'assets/icons/google_icon.svg';
 
+  /// File path: assets/icons/helpCenter.svg
+  String get helpCenter => 'assets/icons/helpCenter.svg';
+
   /// File path: assets/icons/home_icon.svg
   String get homeIcon => 'assets/icons/home_icon.svg';
 
   /// File path: assets/icons/like_icon.svg
   String get likeIcon => 'assets/icons/like_icon.svg';
+
+  /// File path: assets/icons/logout.svg
+  String get logout => 'assets/icons/logout.svg';
+
+  /// File path: assets/icons/notification.svg
+  String get notification => 'assets/icons/notification.svg';
 
   /// File path: assets/icons/notification_bell.svg
   String get notificationBell => 'assets/icons/notification_bell.svg';
@@ -92,8 +134,17 @@ class $AssetsIconsGen {
   /// File path: assets/icons/option.svg
   String get option => 'assets/icons/option.svg';
 
+  /// File path: assets/icons/payment.svg
+  String get payment => 'assets/icons/payment.svg';
+
   /// File path: assets/icons/pen.svg
   String get pen => 'assets/icons/pen.svg';
+
+  /// File path: assets/icons/profile.svg
+  String get profile => 'assets/icons/profile.svg';
+
+  /// File path: assets/icons/profileEdit.svg
+  String get profileEdit => 'assets/icons/profileEdit.svg';
 
   /// File path: assets/icons/profile_icon.svg
   String get profileIcon => 'assets/icons/profile_icon.svg';
@@ -110,17 +161,29 @@ class $AssetsIconsGen {
   /// File path: assets/icons/setting.svg
   String get setting => 'assets/icons/setting.svg';
 
+  /// File path: assets/icons/settings.svg
+  String get settings => 'assets/icons/settings.svg';
+
   /// File path: assets/icons/shield-tick.svg
   String get shieldTick => 'assets/icons/shield-tick.svg';
+
+  /// File path: assets/icons/sort_blue.svg
+  String get sortBlue => 'assets/icons/sort_blue.svg';
 
   /// File path: assets/icons/sortblack.svg
   String get sortblack => 'assets/icons/sortblack.svg';
 
-  /// File path: assets/icons/square blue.svg
-  String get squareBlue => 'assets/icons/square blue.svg';
+  /// File path: assets/icons/sortblue.svg
+  String get sortblue => 'assets/icons/sortblue.svg';
 
   /// File path: assets/icons/star.svg
   String get star => 'assets/icons/star.svg';
+
+  /// File path: assets/icons/star1.svg
+  String get star1 => 'assets/icons/star1.svg';
+
+  /// File path: assets/icons/subscriptionImg.svg
+  String get subscriptionImg => 'assets/icons/subscriptionImg.svg';
 
   /// File path: assets/icons/tik_blue.svg
   String get tikBlue => 'assets/icons/tik_blue.svg';
@@ -134,35 +197,56 @@ class $AssetsIconsGen {
         ebookSmall,
         frame,
         about,
+        aboutUs,
         activity,
         addFoloder,
         addIcon,
         alert,
+        arrowUp,
+        arrowBottom,
         arrowRightNotification,
+        arrowRightTwo,
         arrowBack,
         arrowforward,
-        boxIcon,
+        audio,
+        boxBlue,
+        boxWhite,
+        chapter,
         close,
+        dateOfBirth,
         discoverIcon,
         documentText,
         download,
+        email,
         emptyNotification,
+        eyeProtection,
+        filter,
         finished,
         googleIcon,
+        helpCenter,
         homeIcon,
         likeIcon,
+        logout,
+        notification,
         notificationBell,
         option,
+        payment,
         pen,
+        profile,
+        profileEdit,
         profileIcon,
         purchasedIcon,
         remove,
         searchLogo,
         setting,
+        settings,
         shieldTick,
+        sortBlue,
         sortblack,
-        squareBlue,
+        sortblue,
         star,
+        star1,
+        subscriptionImg,
         tikBlue,
         wishlistIcon
       ];
@@ -177,6 +261,10 @@ class $AssetsImagesGen {
 
   /// File path: assets/images/apple.png
   AssetGenImage get apple => const AssetGenImage('assets/images/apple.png');
+
+  /// File path: assets/images/applePay.png
+  AssetGenImage get applePay =>
+      const AssetGenImage('assets/images/applePay.png');
 
   /// File path: assets/images/calender.png
   AssetGenImage get calender =>
@@ -211,8 +299,15 @@ class $AssetsImagesGen {
   AssetGenImage get masterCard =>
       const AssetGenImage('assets/images/master_card.png');
 
+  /// File path: assets/images/mastercard.png
+  AssetGenImage get mastercard =>
+      const AssetGenImage('assets/images/mastercard.png');
+
   /// File path: assets/images/paypal.png
   AssetGenImage get paypal => const AssetGenImage('assets/images/paypal.png');
+
+  /// File path: assets/images/person.png
+  AssetGenImage get person => const AssetGenImage('assets/images/person.png');
 
   /// File path: assets/images/person1.png
   AssetGenImage get person1 => const AssetGenImage('assets/images/person1.png');
@@ -225,6 +320,13 @@ class $AssetsImagesGen {
 
   /// File path: assets/images/profile.png
   AssetGenImage get profile => const AssetGenImage('assets/images/profile.png');
+
+  /// File path: assets/images/profileEdit.svg
+  String get profileEdit => 'assets/images/profileEdit.svg';
+
+  /// File path: assets/images/profiles.png
+  AssetGenImage get profiles =>
+      const AssetGenImage('assets/images/profiles.png');
 
   /// File path: assets/images/purchase_successful.png
   AssetGenImage get purchaseSuccessful =>
@@ -250,6 +352,9 @@ class $AssetsImagesGen {
   AssetGenImage get thriller =>
       const AssetGenImage('assets/images/thriller.png');
 
+  /// File path: assets/images/visa.png
+  AssetGenImage get visa => const AssetGenImage('assets/images/visa.png');
+
   /// File path: assets/images/welcome2 screen.png
   AssetGenImage get welcome2Screen =>
       const AssetGenImage('assets/images/welcome2 screen.png');
@@ -262,6 +367,7 @@ class $AssetsImagesGen {
   List<dynamic> get values => [
         ebookEmpyreLogo13,
         apple,
+        applePay,
         calender,
         downArrow,
         e1,
@@ -272,11 +378,15 @@ class $AssetsImagesGen {
         e6,
         google,
         masterCard,
+        mastercard,
         paypal,
+        person,
         person1,
         person2,
         person3,
         profile,
+        profileEdit,
+        profiles,
         purchaseSuccessful,
         relax,
         reviewStar,
@@ -284,6 +394,7 @@ class $AssetsImagesGen {
         scarlet,
         setting,
         thriller,
+        visa,
         welcome2Screen,
         welcomePic
       ];

@@ -290,7 +290,7 @@ void showMaterialDialog(
                 borderRadius: BorderRadius.all(Radius.circular(16.r))),
             title: Column(
               children: [
-                Text(
+                const Text(
                   "Exit",
                   textAlign: TextAlign.center,
                   // style: TextFontStyle.text16c2F1E19StyleRobotoW600,
@@ -305,7 +305,7 @@ void showMaterialDialog(
                 //   ),
                 // ),
                 UIHelper.verticalSpace(16.h),
-                Text(
+                const Text(
                   "Do you want to exit this app?",
                   textAlign: TextAlign.center,
                   // style: TextFontStyle.text16c6C564CStyleRobotoW400,
@@ -332,7 +332,7 @@ void showMaterialDialog(
                                 //AppColors.cB18E5E
                                 border: Border.all(color: Colors.black)),
                             // alignment: Alignment.center,
-                            child: Row(
+                            child: const Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 // Text(
@@ -374,7 +374,7 @@ void showMaterialDialog(
                             //           .text16c2F1E19StyleRobotoW600
                             //AppColors.c2F1E19
 
-                            child: Row(
+                            child: const Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 // Text(
@@ -627,7 +627,7 @@ void showLogoutDialog(
                                 //AppColors.allPrimaryColor
                                 color: Colors.black),
                             // alignment: Alignment.center,
-                            child: Row(
+                            child: const Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 // Text(
@@ -656,7 +656,7 @@ void showLogoutDialog(
                                 //AppColors.allPrimaryColor
                                 border: Border.all(color: Colors.black)),
                             // alignment: Alignment.center,
-                            child: Row(
+                            child: const Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 // Text(
@@ -721,7 +721,7 @@ void showAccountDeleteDialog(
                                 //AppColors.allPrimaryColor
                                 color: Colors.black),
                             // alignment: Alignment.center,
-                            child: Row(
+                            child: const Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 // Text(
@@ -750,7 +750,7 @@ void showAccountDeleteDialog(
                                 // AppColors.allPrimaryColor
                                 border: Border.all(color: Colors.black)),
                             // alignment: Alignment.center,
-                            child: Row(
+                            child: const Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 // Text(

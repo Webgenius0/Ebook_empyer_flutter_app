@@ -7,6 +7,7 @@ import 'package:abdilahi/gen/assets.gen.dart';
 import 'package:abdilahi/gen/colors.gen.dart';
 import 'package:abdilahi/helpers/all_routes.dart';
 import 'package:abdilahi/helpers/navigation_service.dart';
+import 'package:abdilahi/helpers/ui_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -48,20 +49,18 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 16.h),
+                    UIHelper.verticalSpace(16.h),
                     Text(
                       "You've Got Mail",
                       style: TextFontStyle.textStyle24c000000UrbanistW600,
                     ),
-                    SizedBox(height: 16.h),
+                    UIHelper.verticalSpace(16.h),
                     Text(
                       "We Fave sent the OTP verification code to your\nemail address Chock your email and enter the\ncode below,",
                       style: TextFontStyle.textStyle14c4B586BUrbanistW400,
                     ),
-                    SizedBox(height: 40.h),
-                    SizedBox(
-                      height: 16.h,
-                    ),
+                    UIHelper.verticalSpace(40.h),
+                    UIHelper.verticalSpace(16.h),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
@@ -71,9 +70,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                         OTPBox(controller: otpController4),
                       ],
                     ),
-                    SizedBox(
-                      height: 22.h,
-                    ),
+                    UIHelper.verticalSpace(22.h),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -87,7 +84,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                         )
                       ],
                     ),
-                    SizedBox(height: 50.h),
+                    UIHelper.verticalSpace(50.h),
                     CustomButtonOne(
                       text: "Confirm",
                       backgroundColor: AppColors.c743DFF,

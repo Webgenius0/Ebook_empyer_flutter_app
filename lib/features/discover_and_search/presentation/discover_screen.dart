@@ -110,7 +110,7 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
                             child: SvgPicture.asset(Assets.icons.searchLogo))),
                   ],
                 ),
-                UIHelper.verticalSpace(20.h),
+                UIHelper.verticalSpace(22.h),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
