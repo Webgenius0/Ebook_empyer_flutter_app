@@ -1,4 +1,5 @@
 import 'package:abdilahi/common_widgets/custom_button_one.dart';
+import 'package:abdilahi/common_widgets/stepper_widget.dart';
 import 'package:abdilahi/constants/text_font_style.dart';
 import 'package:abdilahi/gen/assets.gen.dart';
 import 'package:abdilahi/gen/colors.gen.dart';
@@ -8,6 +9,8 @@ import 'package:abdilahi/helpers/ui_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
@@ -114,7 +117,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     text: "Get Started",
                     backgroundColor: AppColors.c743DFF,
                     onPressed: () {
-                      NavigationService.navigateTo(Routes.signUpGenderScreen);
+                      // NavigationService.navigateTo(Routes.signUpGenderScreen);
+                      NavigationService.navigateTo(Routes.stepperWidget);
                     },
                     style: TextFontStyle.textStyle14cFFFFFFUrbanistW500,
                   ),

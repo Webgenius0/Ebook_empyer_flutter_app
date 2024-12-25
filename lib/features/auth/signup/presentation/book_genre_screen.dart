@@ -62,13 +62,6 @@ class _BookGenreScreenState extends State<BookGenreScreen> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          InkWell(
-                            onTap: () {
-                              Navigator.pop(context);
-                            },
-                            child: SvgPicture.asset(Assets.icons.arrowBack),
-                          ),
-                          UIHelper.verticalSpace(16.h),
                           Text(
                             "Choose the Book Genre\nYou Like",
                             style: TextFontStyle.textStyle24c000000UrbanistW600,
@@ -139,58 +132,6 @@ class _BookGenreScreenState extends State<BookGenreScreen> {
               ),
             ),
             // Fixed buttons at the bottom
-            Positioned(
-              bottom: 0,
-              left: 0,
-              right: 0,
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 20.h),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: AppColors.cD7C8FF,
-                        fixedSize: const Size(145, 56),
-                        padding: EdgeInsets.symmetric(
-                            vertical: 14.h, horizontal: 40.w),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(50),
-                        ),
-                      ),
-                      onPressed: () {
-                        NavigationService.navigateTo(
-                            Routes.completeProfileScreen);
-                      },
-                      child: Text(
-                        "Skip",
-                        style: TextFontStyle.textStyle16cFFFFFFUrbanistW600
-                            .copyWith(color: AppColors.c743DFF),
-                      ),
-                    ),
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: AppColors.c743DFF,
-                        fixedSize: const Size(145, 56),
-                        padding: EdgeInsets.symmetric(
-                            vertical: 14.h, horizontal: 40.w),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(50),
-                        ),
-                      ),
-                      onPressed: () {
-                        NavigationService.navigateTo(
-                            Routes.completeProfileScreen);
-                      },
-                      child: Text(
-                        "Continue",
-                        style: TextFontStyle.textStyle16cFFFFFFUrbanistW600,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
           ],
         ),
       ),

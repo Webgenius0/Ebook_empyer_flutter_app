@@ -89,23 +89,23 @@ class _CreateAccountState extends State<CreateAccountScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 25.h),
+                padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 25.h),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Transform.translate(
-                      offset: Offset(-9.w, 0),
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.pop(context);
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: SvgPicture.asset(Assets.icons.arrowBack),
-                        ),
-                      ),
-                    ),
-                    UIHelper.verticalSpace(16.h),
+                    // Transform.translate(
+                    //   offset: Offset(-9.w, 0),
+                    //   child: InkWell(
+                    //     onTap: () {
+                    //       Navigator.pop(context);
+                    //     },
+                    //     child: Padding(
+                    //       padding: const EdgeInsets.all(8.0),
+                    //       child: SvgPicture.asset(Assets.icons.arrowBack),
+                    //     ),
+                    //   ),
+                    // ),
+                    // UIHelper.verticalSpace(16.h),
                     Text(
                       "Create an Account",
                       style: TextFontStyle.textStyle24c000000UrbanistW600,
@@ -171,16 +171,16 @@ class _CreateAccountState extends State<CreateAccountScreen> {
                         ],
                       ),
                     ),
-                    UIHelper.verticalSpace(60.h),
-                    CustomButtonOne(
-                      text: "Continue",
-                      backgroundColor: AppColors.c743DFF,
-                      onPressed: () {
-                        // NavigationService.navigateTo(Routes.signinScreen);
-                        showCustomAlert(context);
-                      },
-                      style: TextFontStyle.textStyle16cFFFFFFUrbanistW600,
-                    ),
+                    // UIHelper.verticalSpace(60.h),
+                    // CustomButtonOne(
+                    //   text: "Continue",
+                    //   backgroundColor: AppColors.c743DFF,
+                    //   onPressed: () {
+                    //     // NavigationService.navigateTo(Routes.signinScreen);
+                    // showCustomAlert(context);
+                    //   },
+                    //   style: TextFontStyle.textStyle16cFFFFFFUrbanistW600,
+                    // ),
                   ],
                 ),
               ),

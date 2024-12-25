@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:abdilahi/common_widgets/stepper_widget.dart';
 import 'package:abdilahi/features/Purchased%20Ebook/presentation/purchased_ebook_screen.dart';
 import 'package:abdilahi/features/account_and_setting/presentation/faq_screen.dart';
 import 'package:abdilahi/features/account_and_setting/presentation/notification_screen.dart';
@@ -46,6 +47,7 @@ final class Routes {
   static const String loadingScreen = '/Loading';
   static const String welcomeScreen = '/welcome_screen';
   static const String signUpGenderScreen = '/signup_gender_screen';
+  static const String stepperWidget = '/stepperWidget';
   static const String signupAgeScreen = '/signupAgeScreen';
   static const String signupBookGenre = '/signupBookGenre';
   static const String createAccountScreen = '/CreateAccountScreen';
@@ -331,6 +333,12 @@ final class RouteGenerator {
             ? _FadedTransitionRoute(
                 widget: const FilterScreen(), settings: settings)
             : CupertinoPageRoute(builder: (context) => const FilterScreen());
+
+      case Routes.stepperWidget:
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(
+                widget: const StepperWidget(), settings: settings)
+            : CupertinoPageRoute(builder: (context) => const StepperWidget());
 
       default:
         return null;

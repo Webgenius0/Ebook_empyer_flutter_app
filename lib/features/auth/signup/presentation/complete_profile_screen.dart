@@ -64,23 +64,23 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 35.w, vertical: 25.h),
+                padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 25.h),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Transform.translate(
-                      offset: Offset(-9.w, 0),
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.pop(context);
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: SvgPicture.asset(Assets.icons.arrowBack),
-                        ),
-                      ),
-                    ),
-                    UIHelper.verticalSpace(16.h),
+                    // Transform.translate(
+                    //   offset: Offset(-9.w, 0),
+                    //   child: InkWell(
+                    //     onTap: () {
+                    //       Navigator.pop(context);
+                    //     },
+                    //     child: Padding(
+                    //       padding: const EdgeInsets.all(8.0),
+                    //       child: SvgPicture.asset(Assets.icons.arrowBack),
+                    //     ),
+                    //   ),
+                    // ),
+                    // UIHelper.verticalSpace(16.h),
                     Text(
                       "Complete Your Profile.",
                       style: TextFontStyle.textStyle24c000000UrbanistW600,
@@ -153,16 +153,16 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                     CustomCountryPickerField(
                       countries: countries,
                     ),
-                    UIHelper.verticalSpace(120.h),
-                    CustomButtonOne(
-                      text: "Continue",
-                      backgroundColor: AppColors.c743DFF,
-                      onPressed: () {
-                        NavigationService.navigateTo(
-                            Routes.createAccountScreen);
-                      },
-                      style: TextFontStyle.textStyle16cFFFFFFUrbanistW600,
-                    ),
+                    // UIHelper.verticalSpace(120.h),
+                    // CustomButtonOne(
+                    //   text: "Continue",
+                    //   backgroundColor: AppColors.c743DFF,
+                    //   onPressed: () {
+                    //     NavigationService.navigateTo(
+                    //         Routes.createAccountScreen);
+                    //   },
+                    //   style: TextFontStyle.textStyle16cFFFFFFUrbanistW600,
+                    // ),
                   ],
                 ),
               ),
