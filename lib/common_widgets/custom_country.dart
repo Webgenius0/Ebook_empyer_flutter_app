@@ -12,9 +12,8 @@ class CustomCountryPickerField extends StatefulWidget {
   final Color textColor;
   final EdgeInsetsGeometry contentPadding;
   final TextEditingController? controller;
-  final List<String> countries; // List of countries to be passed from parent
+  final List<String> countries;
 
-  // Constructor with default values
   const CustomCountryPickerField({
     super.key,
     this.hintText = 'Select Country',
@@ -25,11 +24,10 @@ class CustomCountryPickerField extends StatefulWidget {
     this.controller,
     this.contentPadding =
         const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-    required this.countries, // Make sure countries list is passed when widget is created
+    required this.countries,
   });
 
   @override
-  // ignore: library_private_types_in_public_api
   _CustomCountryPickerFieldState createState() =>
       _CustomCountryPickerFieldState();
 }
@@ -43,7 +41,6 @@ class _CustomCountryPickerFieldState extends State<CustomCountryPickerField> {
     _controller = widget.controller ?? TextEditingController();
   }
 
-  // Function to show country picker dialog
   void _selectCountry(BuildContext context) async {
     String? selectedCountry = await showDialog<String>(
       context: context,
@@ -72,36 +69,42 @@ class _CustomCountryPickerFieldState extends State<CustomCountryPickerField> {
 
   @override
   Widget build(BuildContext context) {
-    // Define the custom TextStyle for hint text
-    TextStyle hintTextStyle = TextFontStyle.textStyle14c4B586BUrbanistW600;
+    TextStyle hintTextStyle = TextFontStyle.textStyle14c4B586BUrbanistW600
+        .copyWith(fontWeight: FontWeight.w400);
 
-    return Container(
-      width: 342.w,
-      height: 51.h,
-      decoration: BoxDecoration(
-        color: widget.backgroundColor,
-        border: Border.all(color: widget.borderColor),
-        borderRadius: BorderRadius.circular(8.r),
-      ),
-      child: TextFormField(
-        controller: _controller,
-        style: TextFontStyle.textStyle14c4B586BUrbanistW600,
-        readOnly: true, // To prevent typing
-        decoration: InputDecoration(
-          hintText: widget.hintText,
-          hintStyle: hintTextStyle, // Apply custom TextStyle to hintText
-          border: InputBorder.none, // Removes the default border
-          contentPadding: widget.contentPadding,
-          suffixIcon: GestureDetector(
-            onTap: () {
-              _selectCountry(context);
-            },
-            child: Padding(
-              padding: EdgeInsets.all(15.sp),
-              child: Image.asset(
-                Assets.images.downArrow.path,
+    return GestureDetector(
+      onTap: () {
+        _selectCountry(context);
+      },
+      child: Container(
+        width: 342.w,
+        height: 51.h,
+        decoration: BoxDecoration(
+          color: widget.backgroundColor,
+          border: Border.all(color: widget.borderColor),
+          borderRadius: BorderRadius.circular(8.r),
+        ),
+        child: AbsorbPointer(
+          child: TextFormField(
+            controller: _controller,
+            style: TextFontStyle.textStyle14c4B586BUrbanistW600
+                .copyWith(fontWeight: FontWeight.w400),
+            decoration: InputDecoration(
+              hintText: widget.hintText,
+              hintStyle: hintTextStyle,
+              border: InputBorder.none,
+              contentPadding: widget.contentPadding,
+              suffixIcon: Padding(
+                padding: EdgeInsets.all(15.sp),
+                child: Image.asset(
+                  Assets.images.downArrow.path,
+                ),
               ),
+              // Align the hint text vertically and horizontally
+              isCollapsed: true,
             ),
+            // Align text and hint to center
+            textAlignVertical: TextAlignVertical.center, // Center vertically
           ),
         ),
       ),

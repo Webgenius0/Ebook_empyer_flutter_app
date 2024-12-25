@@ -1,13 +1,10 @@
 import 'dart:io';
-import 'package:abdilahi/common_widgets/custom_button_one.dart';
 import 'package:abdilahi/common_widgets/custom_country.dart';
 import 'package:abdilahi/common_widgets/custom_datepicker_screen.dart';
 import 'package:abdilahi/common_widgets/custom_textformfield.dart';
 import 'package:abdilahi/constants/text_font_style.dart';
 import 'package:abdilahi/gen/assets.gen.dart';
 import 'package:abdilahi/gen/colors.gen.dart';
-import 'package:abdilahi/helpers/all_routes.dart';
-import 'package:abdilahi/helpers/navigation_service.dart';
 import 'package:abdilahi/helpers/ui_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -94,6 +91,7 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                     UIHelper.verticalSpace(30.h),
                     Center(
                       child: Stack(
+                        clipBehavior: Clip.none,
                         children: [
                           CircleAvatar(
                             radius: 60.r,
