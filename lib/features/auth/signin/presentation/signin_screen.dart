@@ -37,7 +37,7 @@ class _SigninScreenState extends State<SigninScreen> {
                       offset: Offset(-9.w, 0),
                       child: InkWell(
                         onTap: () {
-                          Navigator.pop(context);
+                          NavigationService.goBack;
                         },
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
