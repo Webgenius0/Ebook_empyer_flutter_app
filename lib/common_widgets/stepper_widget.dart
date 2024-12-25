@@ -1,7 +1,4 @@
-import 'dart:developer';
 import 'dart:ui';
-
-import 'package:abdilahi/common_widgets/custom_appbar.dart';
 import 'package:abdilahi/common_widgets/custom_button_one.dart';
 import 'package:abdilahi/constants/text_font_style.dart';
 import 'package:abdilahi/features/auth/signup/presentation/book_genre_screen.dart';

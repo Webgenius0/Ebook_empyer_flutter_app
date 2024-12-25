@@ -1,17 +1,11 @@
 // ignore_for_file: deprecated_member_use
 
-import 'package:abdilahi/common_widgets/custom_button_one.dart';
 import 'package:abdilahi/common_widgets/custom_horizontal_divider.dart';
-import 'package:abdilahi/common_widgets/stepper_bar.dart';
 import 'package:abdilahi/constants/text_font_style.dart';
-import 'package:abdilahi/gen/assets.gen.dart';
 import 'package:abdilahi/gen/colors.gen.dart';
-import 'package:abdilahi/helpers/all_routes.dart';
-import 'package:abdilahi/helpers/navigation_service.dart';
 import 'package:abdilahi/helpers/ui_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class GenderScreen extends StatefulWidget {
   const GenderScreen({super.key});
@@ -45,36 +39,10 @@ class _GenderScreenState extends State<GenderScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: 24.w,
-              ),
+              padding: EdgeInsets.symmetric(horizontal: 24.w),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Row(
-                  //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  //     children: [
-                  //       Transform.translate(
-                  //         offset: Offset(-9.w, 0),
-                  //         child: InkWell(
-                  //           onTap: () => NavigationService.goBack,
-                  //           child: Padding(
-                  //             padding: const EdgeInsets.all(8.0),
-                  //             child:
-                  //                 SvgPicture.asset(Assets.icons.arrowBack),
-                  //           ),
-                  //         ),
-                  //       ),
-                  //       // SizedBox(
-                  //       //   height: 10,
-                  //       //   child: PerformanceBar(
-                  //       //     fillColor: AppColors.c3689FD,
-                  //       //     width:
-                  //       //         calculateStepperPerformance(), // Pass the calculated width percentage
-                  //       //   ),
-                  //       // ),
-                  //       Container()
-                  //     ]),
                   UIHelper.verticalSpace(26.h),
                   Text(
                     "What is your gender?",

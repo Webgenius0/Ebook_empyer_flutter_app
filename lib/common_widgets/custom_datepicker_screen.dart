@@ -14,7 +14,6 @@ class CustomDatePickerField extends StatefulWidget {
   final EdgeInsetsGeometry contentPadding;
   final TextEditingController? controller;
 
-  // Constructor with default values
   const CustomDatePickerField({
     super.key,
     this.hintText = 'Select Date',
@@ -28,7 +27,6 @@ class CustomDatePickerField extends StatefulWidget {
   });
 
   @override
-  // ignore: library_private_types_in_public_api
   _CustomDatePickerFieldState createState() => _CustomDatePickerFieldState();
 }
 
@@ -62,37 +60,43 @@ class _CustomDatePickerFieldState extends State<CustomDatePickerField> {
 
   @override
   Widget build(BuildContext context) {
-    // Define the custom TextStyle for hint text
-    TextStyle hintTextStyle = TextFontStyle.textStyle14c4B586BUrbanistW600;
-    TextStyle textStyle = TextFontStyle.textStyle14c4B586BUrbanistW600;
+    TextStyle hintTextStyle = TextFontStyle.textStyle14c4B586BUrbanistW600
+        .copyWith(fontWeight: FontWeight.w400);
+    TextStyle textStyle = TextFontStyle.textStyle14c4B586BUrbanistW600
+        .copyWith(fontWeight: FontWeight.w400);
 
-    return Container(
-      width: 342.w,
-      height: 51.h,
-      decoration: BoxDecoration(
-        color: widget.backgroundColor,
-        border: Border.all(color: widget.borderColor),
-        borderRadius: BorderRadius.circular(8.r),
-      ),
-      child: TextFormField(
-        controller: _controller,
-        style: textStyle,
-        readOnly: true, // To prevent typing
-        decoration: InputDecoration(
-            hintText: widget.hintText,
-            hintStyle: hintTextStyle,
-            border: InputBorder.none,
-            contentPadding: widget.contentPadding,
-            suffixIcon: GestureDetector(
-                onTap: () {
-                  _selectDate(context);
-                },
-                child: Padding(
+    return GestureDetector(
+      onTap: () {
+        _selectDate(context);
+      },
+      child: Container(
+        width: 342.w,
+        height: 51.h,
+        decoration: BoxDecoration(
+          color: widget.backgroundColor,
+          border: Border.all(color: widget.borderColor),
+          borderRadius: BorderRadius.circular(8.r),
+        ),
+        child: AbsorbPointer(
+          // Prevents interaction with the TextFormField itself
+          child: TextFormField(
+              controller: _controller,
+              style: textStyle,
+              readOnly: true, // To prevent typing
+              decoration: InputDecoration(
+                hintText: widget.hintText,
+                hintStyle: hintTextStyle,
+                border: InputBorder.none,
+                contentPadding: widget.contentPadding,
+                suffixIcon: Padding(
                   padding: EdgeInsets.all(15.sp),
                   child: Image.asset(
                     Assets.images.calender.path,
                   ),
-                ))),
+                ),
+              ),
+              textAlignVertical: TextAlignVertical.center),
+        ),
       ),
     );
   }
