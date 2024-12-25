@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:abdilahi/constants/text_font_style.dart';
 import 'package:abdilahi/gen/assets.gen.dart';
 import 'package:abdilahi/gen/colors.gen.dart';
@@ -70,7 +72,6 @@ class _CustomDatePickerFieldState extends State<CustomDatePickerField> {
         _selectDate(context);
       },
       child: Container(
-        width: 342.w,
         height: 51.h,
         decoration: BoxDecoration(
           color: widget.backgroundColor,

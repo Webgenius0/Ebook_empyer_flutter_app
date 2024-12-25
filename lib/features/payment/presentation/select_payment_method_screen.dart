@@ -43,7 +43,7 @@ class _SelectPaymentMethodScreenState extends State<SelectPaymentMethodScreen> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          onPressed: () => Navigator.pop(context),
+          onPressed: () => NavigationService.goBack,
           icon: Padding(
             padding: const EdgeInsets.all(10.0),
             child: SvgPicture.asset(
@@ -135,8 +135,6 @@ class _SelectPaymentMethodScreenState extends State<SelectPaymentMethodScreen> {
                         height: 1.h,
                         color: AppColors.cE2E2E2,
                       ),
-
-
                     ],
                   );
                 },

@@ -1,10 +1,10 @@
+// ignore_for_file: library_private_types_in_public_api
 import 'package:abdilahi/common_widgets/custom_horizontal_divider.dart';
 import 'package:abdilahi/constants/text_font_style.dart';
 import 'package:abdilahi/gen/assets.gen.dart';
 import 'package:abdilahi/gen/colors.gen.dart';
 import 'package:abdilahi/helpers/navigation_service.dart';
 import 'package:abdilahi/helpers/ui_helpers.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -70,7 +70,7 @@ class _DummyDiscoverState extends State<DummyDiscover> {
                                 ),
                                 border: InputBorder.none,
                                 contentPadding:
-                                    EdgeInsets.symmetric(horizontal: 8),
+                                    const EdgeInsets.symmetric(horizontal: 8),
                               ),
                             ),
                           ),

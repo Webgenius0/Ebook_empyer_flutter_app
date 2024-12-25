@@ -21,18 +21,19 @@ class _EyeProtectionScreenState extends State<EyeProtectionScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: AppColors.cF4F5F6,
+        backgroundColor: AppColors.cD0D0A4.withOpacity(0.7),
         appBar: AppBar(
           elevation: 0,
-          leadingWidth: 85,
-          backgroundColor: AppColors.cF4F5F6,
+          backgroundColor: Colors.transparent,
           leading: IconButton(
-            onPressed: () {},
-            icon: SvgPicture.asset(
-              Assets.icons.arrowBack,
-              height: 24.h,
-              width: 24.w,
-              fit: BoxFit.contain,
+            onPressed: () => NavigationService.goBack,
+            icon: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: SvgPicture.asset(
+                Assets.icons.arrowBack,
+                height: 24.h,
+                width: 24.w,
+              ),
             ),
           ),
           centerTitle: true,

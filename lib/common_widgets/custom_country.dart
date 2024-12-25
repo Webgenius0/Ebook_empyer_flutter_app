@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:abdilahi/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -77,7 +79,6 @@ class _CustomCountryPickerFieldState extends State<CustomCountryPickerField> {
         _selectCountry(context);
       },
       child: Container(
-        width: 342.w,
         height: 51.h,
         decoration: BoxDecoration(
           color: widget.backgroundColor,

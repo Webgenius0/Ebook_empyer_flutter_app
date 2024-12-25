@@ -1,15 +1,10 @@
 // ignore_for_file: library_private_types_in_public_api
 
-import 'package:abdilahi/common_widgets/custom_button_one.dart';
 import 'package:abdilahi/constants/text_font_style.dart';
-import 'package:abdilahi/gen/assets.gen.dart';
 import 'package:abdilahi/gen/colors.gen.dart';
-import 'package:abdilahi/helpers/all_routes.dart';
-import 'package:abdilahi/helpers/navigation_service.dart';
 import 'package:abdilahi/helpers/ui_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class SelectAgeScreen extends StatefulWidget {
   const SelectAgeScreen({super.key});
@@ -36,7 +31,7 @@ class _SelectAgeScreenState extends State<SelectAgeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 25.h),
+        padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 25.h),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -67,51 +62,47 @@ class _SelectAgeScreenState extends State<SelectAgeScreen> {
                 ),
               ],
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.w),
-              child: GridView.builder(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 12.w,
-                  mainAxisSpacing: 12.h,
-                  childAspectRatio: 3.8,
-                ),
-                itemCount: ageRanges.length,
-                itemBuilder: (context, index) {
-                  final isSelected = index == selectedValue;
-                  return GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        selectedValue = index;
-                      });
-                    },
-                    child: Container(
-                      padding: EdgeInsets.symmetric(
-                          vertical: 12.h, horizontal: 16.w),
-                      decoration: BoxDecoration(
-                        color:
-                            isSelected ? AppColors.c743DFF : AppColors.cFFFFFF,
-                        borderRadius: BorderRadius.circular(70.r),
-                        border: Border.all(
-                          color: AppColors.c743DFF,
-                          width: 1.5,
-                        ),
-                      ),
-                      child: Center(
-                        child: Text(
-                          ageRanges[index],
-                          style: isSelected
-                              ? TextFontStyle.textStyle13cFFFFFFUrbanistW600
-                              : TextFontStyle.textStyle13c743DFFUrbanistW600,
-                          textAlign: TextAlign.center,
-                        ),
+            GridView.builder(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                crossAxisSpacing: 12.w,
+                mainAxisSpacing: 12.h,
+                childAspectRatio: 3.8,
+              ),
+              itemCount: ageRanges.length,
+              itemBuilder: (context, index) {
+                final isSelected = index == selectedValue;
+                return GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      selectedValue = index;
+                    });
+                  },
+                  child: Container(
+                    padding:
+                        EdgeInsets.symmetric(vertical: 12.h, horizontal: 16.w),
+                    decoration: BoxDecoration(
+                      color: isSelected ? AppColors.c743DFF : AppColors.cFFFFFF,
+                      borderRadius: BorderRadius.circular(70.r),
+                      border: Border.all(
+                        color: AppColors.c743DFF,
+                        width: 1.5,
                       ),
                     ),
-                  );
-                },
-              ),
+                    child: Center(
+                      child: Text(
+                        ageRanges[index],
+                        style: isSelected
+                            ? TextFontStyle.textStyle13cFFFFFFUrbanistW600
+                            : TextFontStyle.textStyle13c743DFFUrbanistW600,
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ),
+                );
+              },
             ),
           ],
         ),

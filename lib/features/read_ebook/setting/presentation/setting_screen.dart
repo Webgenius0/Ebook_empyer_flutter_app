@@ -1,6 +1,12 @@
+import 'package:abdilahi/constants/text_font_style.dart';
+import 'package:abdilahi/gen/assets.gen.dart';
+import 'package:abdilahi/gen/colors.gen.dart';
+import 'package:abdilahi/helpers/all_routes.dart';
+import 'package:abdilahi/helpers/navigation_service.dart';
 import 'package:abdilahi/helpers/ui_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -8,142 +14,42 @@ class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Settings Example')),
+      backgroundColor: AppColors.cF5F6F7,
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: AppColors.cF5F6F7,
+        title: Text('One Hundred Years.....',
+            style: TextFontStyle.textStyle20c212121UrbanistW600.copyWith(
+                fontSize: 20.sp,
+                letterSpacing: -0.4.sp,
+                color: AppColors.c2B2B2B)),
+        leading: IconButton(
+          onPressed: () => NavigationService.goBack,
+          icon: Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: SvgPicture.asset(
+              Assets.icons.arrowBack,
+              height: 24.h,
+              width: 24.w,
+            ),
+          ),
+        ),
+        actions: [
+          InkWell(
+              onTap: () {
+                NavigationService.navigateTo(Routes.searchScreen);
+              },
+              child: Padding(
+                  padding: EdgeInsets.only(right: 25.w),
+                  child: SvgPicture.asset(Assets.icons.searchLogo))),
+        ],
+      ),
       body: Center(
         child: ElevatedButton(
-          onPressed: () {
-            _showSettingsModal(context);
-          },
+          onPressed: () {},
           child: const Text('Open Settings'),
         ),
       ),
     );
   }
-
-  void _showSettingsModal(BuildContext context) {
-    showModalBottomSheet(
-      context: context,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(16.0)),
-      ),
-      builder: (BuildContext context) {
-        return Container(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              // Brightness Slider
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text('Brightness', style: TextStyle(fontSize: 16.0)),
-                  Expanded(
-                    child: Slider(
-                      value: 50,
-                      min: 0,
-                      max: 100,
-                      onChanged: (value) {},
-                    ),
-                  ),
-                  const Text('50%', style: TextStyle(fontSize: 14.0)),
-                ],
-              ),
-
-              UIHelper.verticalSpace(16.h),
-
-              // Background Color Selection
-              const Text(
-                'Background Color',
-                style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
-              ),
-
-              UIHelper.verticalSpace(8.h),
-
-              Wrap(
-                spacing: 8.0,
-                runSpacing: 8.0,
-                children: List.generate(8, (index) {
-                  return InkWell(
-                    onTap: () {},
-                    child: Container(
-                      width: 40.0,
-                      height: 40.0,
-                      decoration: BoxDecoration(
-                        color: _getBackgroundColor(index),
-                        shape: BoxShape.circle,
-                      ),
-                    ),
-                  );
-                }),
-              ),
-
-              UIHelper.verticalSpace(16.h),
-
-              // Font Size Slider
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text('Font Size', style: TextStyle(fontSize: 16.0)),
-                  Expanded(
-                    child: Slider(
-                      value: 18,
-                      min: 12,
-                      max: 30,
-                      onChanged: (value) {},
-                    ),
-                  ),
-                  const Text('18', style: TextStyle(fontSize: 14.0)),
-                ],
-              ),
-
-              UIHelper.verticalSpace(16.h),
-
-              // Layout Options
-              const Text(
-                'Font Alignment',
-                style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
-              ),
-
-              UIHelper.verticalSpace(8.h),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  _buildFontAlignmentButton(Icons.format_align_left),
-                  _buildFontAlignmentButton(Icons.format_align_center),
-                  _buildFontAlignmentButton(Icons.format_align_right),
-                  _buildFontAlignmentButton(Icons.format_align_justify),
-                ],
-              ),
-            ],
-          ),
-        );
-      },
-    );
-  }
-
-  // Helper method to get background colors
-  Color _getBackgroundColor(int index) {
-    const colors = [
-      Colors.white,
-      Colors.black,
-      Colors.grey,
-      Colors.blue,
-      Colors.green,
-      Colors.purple,
-      Colors.deepOrange,
-      Colors.teal,
-    ];
-    return colors[index % colors.length];
-  }
-
-  // Helper method for font alignment buttons
-  Widget _buildFontAlignmentButton(IconData icon) {
-    return IconButton(
-      icon: Icon(icon),
-      onPressed: () {},
-      color: Colors.black,
-    );
-  }
 }
-
-void main() => runApp(const MaterialApp(home: SettingsScreen()));
