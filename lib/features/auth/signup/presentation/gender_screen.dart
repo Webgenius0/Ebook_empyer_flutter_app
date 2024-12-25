@@ -23,109 +23,102 @@ class GenderScreen extends StatefulWidget {
 
 class _GenderScreenState extends State<GenderScreen> {
   int? selectedValue = 0;
-  final int currentIndex = 0;
-  final int totalSteps = 11;
+  int currentIndex = 0;
+  final int totalSteps = 5;
+
   final List<String> options = [
     'I am male',
     'I am female',
     'Rather not to say',
   ];
 
-  double calculatePerformanceBarWidth() {
-    return (currentIndex / totalSteps) * 100; // Returns percentage width
+  double calculateStepperPerformance() {
+    return (currentIndex / totalSteps) *
+        100; // Percentage width for the stepper
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Stack(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: 35.w, vertical: 25.h),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(children: [
-                        Transform.translate(
-                          offset: Offset(-9.w, 0),
-                          child: InkWell(
-                            onTap: () => NavigationService.goBack,
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: SvgPicture.asset(Assets.icons.arrowBack),
+            Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: 24.w,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // Row(
+                  //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  //     children: [
+                  //       Transform.translate(
+                  //         offset: Offset(-9.w, 0),
+                  //         child: InkWell(
+                  //           onTap: () => NavigationService.goBack,
+                  //           child: Padding(
+                  //             padding: const EdgeInsets.all(8.0),
+                  //             child:
+                  //                 SvgPicture.asset(Assets.icons.arrowBack),
+                  //           ),
+                  //         ),
+                  //       ),
+                  //       // SizedBox(
+                  //       //   height: 10,
+                  //       //   child: PerformanceBar(
+                  //       //     fillColor: AppColors.c3689FD,
+                  //       //     width:
+                  //       //         calculateStepperPerformance(), // Pass the calculated width percentage
+                  //       //   ),
+                  //       // ),
+                  //       Container()
+                  //     ]),
+                  UIHelper.verticalSpace(26.h),
+                  Text(
+                    "What is your gender?",
+                    style: TextFontStyle.textStyle24c000000UrbanistW600,
+                  ),
+                  UIHelper.verticalSpace(16.h),
+                  Text(
+                    "Select gender for better content.",
+                    style: TextFontStyle.textStyle14c4B586BUrbanistW400,
+                  ),
+                  UIHelper.verticalSpace(40.h),
+                  ListView.builder(
+                    itemCount: options.length,
+                    shrinkWrap: true,
+                    primary: false,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemBuilder: (context, idx) {
+                      return Column(
+                        children: [
+                          Transform.translate(
+                            offset: Offset(-20.w, 0),
+                            child: RadioListTile(
+                              title: Text(options[idx]),
+                              value: idx,
+                              groupValue: selectedValue,
+                              onChanged: (int? value) {
+                                setState(() {
+                                  selectedValue = value;
+                                });
+                              },
+                              activeColor: AppColors.c743DFF,
+                              fillColor:
+                                  MaterialStateProperty.all(AppColors.c743DFF),
                             ),
                           ),
-                        ),
-                        PerformanceBar(
-                          fillColor:
-                              AppColors.c3689FD, // You can choose any color
-                          width: calculatePerformanceBarWidth(),
-                        ),
-                      ]),
-                      UIHelper.verticalSpace(16.h),
-                      Text(
-                        "What is your gender?",
-                        style: TextFontStyle.textStyle24c000000UrbanistW600,
-                      ),
-                      UIHelper.verticalSpace(16.h),
-                      Text(
-                        "Select gender for better content.",
-                        style: TextFontStyle.textStyle14c4B586BUrbanistW400,
-                      ),
-                      UIHelper.verticalSpace(40.h),
-                      ListView.builder(
-                        itemCount: options.length,
-                        shrinkWrap: true,
-                        primary: false,
-                        physics: const NeverScrollableScrollPhysics(),
-                        itemBuilder: (context, idx) {
-                          return Column(
-                            children: [
-                              Transform.translate(
-                                offset: Offset(-20.w, 0),
-                                child: RadioListTile(
-                                  title: Text(options[idx]),
-                                  value: idx,
-                                  groupValue: selectedValue,
-                                  onChanged: (int? value) {
-                                    setState(() {
-                                      selectedValue = value;
-                                    });
-                                  },
-                                  activeColor: AppColors.c743DFF,
-                                  fillColor: MaterialStateProperty.all(
-                                      AppColors.c743DFF),
-                                ),
-                              ),
-                              UIHelper.verticalSpace(10.h),
-                              const CustomHorizontalDivider(), // Custom horizontal divider
-                              UIHelper.verticalSpace(10
-                                  .h), // Optional: Add space after the divider
-                            ],
-                          );
-                        },
-                      )
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            Positioned(
-              bottom: 40.h,
-              left: 20.w,
-              right: 20.w,
-              child: CustomButtonOne(
-                text: "Continue",
-                backgroundColor: AppColors.c743DFF,
-                onPressed: () {
-                  NavigationService.navigateTo(Routes.signupAgeScreen);
-                },
-                style: TextFontStyle.textStyle16cFFFFFFUrbanistW600,
+                          UIHelper.verticalSpace(10.h),
+                          const CustomHorizontalDivider(), // Custom horizontal divider
+                          UIHelper.verticalSpace(
+                              10.h), // Optional: Add space after the divider
+                        ],
+                      );
+                    },
+                  )
+                ],
               ),
             ),
           ],
