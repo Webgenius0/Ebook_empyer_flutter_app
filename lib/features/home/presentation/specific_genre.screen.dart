@@ -35,36 +35,66 @@ class _SpecificGenrescreenState extends State<SpecificGenrescreen> {
         title: "One Hundred Years of Solitude",
         rating: 4.5,
         price: 29.99,
+        labels: const [
+          " Galaxy",
+          "Comedy",
+          "Science fiction",
+        ],
         author: "Douglas Adams"),
     BookModel(
         imageUrl: Assets.images.e2.path,
         title: "Adventures of Huckleberry Finn",
         rating: 4.8,
         price: 39.99,
+        labels: const [
+          " Galaxy",
+          "Comedy",
+          "Science fiction",
+        ],
         author: "Douglas Adams"),
     BookModel(
         imageUrl: Assets.images.e3.path,
         title: "One Hundred Years of Solitude",
         rating: 4.3,
         price: 24.99,
+        labels: const [
+          " Galaxy",
+          "Comedy",
+          "Science fiction",
+        ],
         author: "Douglas Adams"),
     BookModel(
         imageUrl: Assets.images.e4.path,
         title: "One Hundred Years of Solitude",
         rating: 4.3,
         price: 24.99,
+        labels: const [
+          " Galaxy",
+          "Comedy",
+          "Science fiction",
+        ],
         author: "Douglas Adams"),
     BookModel(
         imageUrl: Assets.images.e5.path,
         title: "One Hundred Years of Solitude",
         rating: 4.3,
         price: 24.99,
+        labels: const [
+          " Galaxy",
+          "Comedy",
+          "Science fiction",
+        ],
         author: "Douglas Adams"),
     BookModel(
         imageUrl: Assets.images.e3.path,
         title: "One Hundred Years of Solitude",
         rating: 4.3,
         price: 24.99,
+        labels: const [
+          " Galaxy",
+          "Comedy",
+          "Science fiction",
+        ],
         author: "Douglas Adams"),
   ];
 
@@ -119,27 +149,21 @@ class _SpecificGenrescreenState extends State<SpecificGenrescreen> {
                     children: [
                       GestureDetector(
                         onTap: _toggleState,
-                        child: SvgPicture.asset(
-                          Assets.icons.boxBlue,
-                          color:
-                              _isToogle ? AppColors.c743DFF : AppColors.cFFFFFF,
-                        ),
+                        child: _isToogle
+                            ? SvgPicture.asset(Assets.icons.boxBlue)
+                            : SvgPicture.asset(Assets.icons.boxWhite),
                       ),
                       UIHelper.horizontalSpace(12.w),
                       GestureDetector(
-                        onTap: _toggleState,
-                        child: SvgPicture.asset(
-                          Assets.icons.sortblack,
-                          color: !_isToogle
-                              ? AppColors.c743DFF
-                              : AppColors.c2B2B2B,
-                        ),
-                      ),
+                          onTap: _toggleState,
+                          child: !_isToogle
+                              ? SvgPicture.asset(Assets.icons.sortBlue)
+                              : SvgPicture.asset(Assets.icons.sortblack)),
                     ],
                   ),
                 ],
               ),
-              UIHelper.verticalSpace(12.h),
+              UIHelper.verticalSpace(24.h),
               Expanded(
                   child: _isToogle
                       ? GridView.builder(
@@ -170,9 +194,7 @@ class _SpecificGenrescreenState extends State<SpecificGenrescreen> {
                               imagePath: book.imageUrl,
                               title: book.title,
                               author: book.author,
-                              labels:
-                                  book.genres?.map((g) => g.title).toList() ??
-                                      [],
+                              labels: book.labels ?? [],
                               rating: book.rating,
                               price: book.price,
                             );

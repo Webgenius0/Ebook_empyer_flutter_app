@@ -25,7 +25,7 @@ class _PurchasedEbookScreenState extends State<PurchasedEbookScreen> {
       title: "I Killed Zoe Spanos",
       rating: 4.7,
       price: 76.00,
-      author: "Author: Douglas Adams",
+      author: "Douglas Adams",
       labels: [
         " Galaxy",
         "Comedy",
@@ -37,7 +37,7 @@ class _PurchasedEbookScreenState extends State<PurchasedEbookScreen> {
       title: "The Scarlet Letter",
       rating: 4.8,
       price: 39.99,
-      author: "Author: Douglas Adams",
+      author: "Douglas Adams",
       labels: [
         " Galaxy",
         "Comedy",
@@ -49,7 +49,7 @@ class _PurchasedEbookScreenState extends State<PurchasedEbookScreen> {
       title: "The Scarlet Letter",
       rating: 4.3,
       price: 24.99,
-      author: "Author: Douglas Adams",
+      author: "Douglas Adams",
       labels: [
         " Galaxy",
         "Comedy",
@@ -61,7 +61,7 @@ class _PurchasedEbookScreenState extends State<PurchasedEbookScreen> {
       title: "One Hundred Years of Solitude",
       rating: 4.3,
       price: 24.99,
-      author: "Author: Douglas Adams",
+      author: "Douglas Adams",
       labels: [
         " Galaxy",
         "Comedy",
@@ -73,13 +73,13 @@ class _PurchasedEbookScreenState extends State<PurchasedEbookScreen> {
         title: "One Hundred Years of Solitude",
         rating: 4.3,
         price: 24.99,
-        author: "Author: Douglas Adams"),
+        author: "Douglas Adams"),
     BookModel(
       imageUrl: Assets.images.e3.path,
       title: "One Hundred Years of Solitude",
       rating: 4.3,
       price: 24.99,
-      author: "Author: Douglas Adams",
+      author: "Douglas Adams",
       labels: [
         " Galaxy",
         "Comedy",
@@ -155,7 +155,7 @@ class _PurchasedEbookScreenState extends State<PurchasedEbookScreen> {
                             }
                           },
                         ),
-                        UIHelper.verticalSpace(20.h),
+                        UIHelper.verticalSpace(12.h),
                       ],
                     );
                   },

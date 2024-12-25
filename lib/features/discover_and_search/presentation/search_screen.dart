@@ -22,7 +22,7 @@ class SearchScreen extends StatefulWidget {
 }
 
 class _SearchScreenState extends State<SearchScreen> {
-  bool _isToogle = false;
+  bool _isToogle = true;
   final TextEditingController _searchController = TextEditingController();
   String _searchQuery = '';
 
@@ -44,31 +44,36 @@ class _SearchScreenState extends State<SearchScreen> {
         title: "One Hundred Years of Solitude",
         rating: 4.5,
         price: 29.99,
+        labels: const [" Galaxy", "Comedy", "Science fiction", "Mystery"],
         author: " Douglas Adams"),
     BookModel(
         imageUrl: Assets.images.e2.path,
         title: "Adventures of Huckleberry Finn",
         rating: 4.8,
         price: 39.99,
+        labels: const [" Galaxy", "Comedy", "Science fiction", "Mystery"],
         author: "Douglas Adams"),
     BookModel(
         imageUrl: Assets.images.e2.path,
         title: "Adventures of Huckleberry Finn",
         rating: 4.8,
         price: 39.99,
+        labels: const [" Galaxy", "Comedy", "Science fiction", "Mystery"],
         author: "Douglas Adams"),
     BookModel(
         imageUrl: Assets.images.e3.path,
         title: "One Hundred Years of Solitude",
         rating: 4.3,
         price: 24.99,
-        author: ": Douglas Adams"),
+        labels: const [" Galaxy", "Comedy", "Science fiction", "Mystery"],
+        author: "Douglas Adams"),
     BookModel(
         imageUrl: Assets.images.e3.path,
         title: "One Hundred Years of Solitude",
         rating: 4.3,
         price: 24.99,
-        author: ": Douglas Adams"),
+        labels: const [" Galaxy", "Comedy", "Science fiction", "Mystery"],
+        author: "Douglas Adams"),
   ];
 
   @override
@@ -210,8 +215,7 @@ class _SearchScreenState extends State<SearchScreen> {
                           imagePath: book.imageUrl,
                           title: book.title,
                           author: book.author,
-                          labels:
-                              book.genres?.map((g) => g.title).toList() ?? [],
+                          labels: book.labels ?? [],
                           rating: book.rating,
                           price: book.price,
                         );
@@ -224,8 +228,3 @@ class _SearchScreenState extends State<SearchScreen> {
     );
   }
 }
-// SvgPicture.asset(
-//                         Assets.icons.boxIcon,
-//                         color:
-//                             _isToogle ? AppColors.c743DFF : AppColors.c2B2B2B,
-//                       ),
