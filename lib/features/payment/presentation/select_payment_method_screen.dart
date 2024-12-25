@@ -63,7 +63,9 @@ class _SelectPaymentMethodScreenState extends State<SelectPaymentMethodScreen> {
         centerTitle: true,
         actions: [
           GestureDetector(
-              onTap: () {},
+              onTap: () {
+                NavigationService.navigateTo(Routes.addNewPaymentScreen);
+              },
               child: Padding(
                 padding: EdgeInsets.only(right: 18.w),
                 child: SvgPicture.asset(Assets.icons.addFoloder),
@@ -105,7 +107,7 @@ class _SelectPaymentMethodScreenState extends State<SelectPaymentMethodScreen> {
                       InkWell(
                         onTap: () {
                           NavigationService.navigateTo(
-                              Routes.selectPaymentTwoScreen);
+                              Routes.paymentSummaryScreen);
                         },
                         child: Row(
                           children: [
