@@ -1,14 +1,10 @@
 // ignore_for_file: library_private_types_in_public_api
 
 import 'package:abdilahi/constants/text_font_style.dart';
-import 'package:abdilahi/gen/assets.gen.dart';
 import 'package:abdilahi/gen/colors.gen.dart';
-import 'package:abdilahi/helpers/all_routes.dart';
-import 'package:abdilahi/helpers/navigation_service.dart';
 import 'package:abdilahi/helpers/ui_helpers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 
 class BookGenreScreen extends StatefulWidget {
   const BookGenreScreen({Key? key}) : super(key: key);
@@ -58,7 +54,7 @@ class _BookGenreScreenState extends State<BookGenreScreen> {
                   children: [
                     Padding(
                       padding: EdgeInsets.symmetric(
-                          horizontal: 24.w, vertical: 25.h),
+                          horizontal: 25.w, vertical: 25.h),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [

@@ -18,21 +18,25 @@ class AudioScreen extends StatefulWidget {
 }
 
 class _AudioScreenState extends State<AudioScreen> {
+  String selectedText =
+      'The yew hedges muffled the sound of the men\'s footsteps. There was a rustle somewhere to their right: Yaxley drew his wand again, pointing it over his companion\'s head. but the source of the noise proved to be nothing more than a pure-white peacock, strutting majestically along the top of the hedge \n\n"He always did himself well, Lucius. Peacocks ... Yaxley thrust his wand back under his cloak with a snort.”\n\n A handsome manor house grew out of the darkness at the end of the straight drive, lights glinting in the diamond-paned downstairs windows Somewhere in the dark garden beyond the hedge a fountain was playing, Gravel crackled beneath their feet as Snape and Yaxley sped toward the front door. which swung inward at their approach, though nobody had visibly opened it. \n\n          The hallway was large, dimly lit, and sumptuously decorated, with a magnificent carpet covering most of the stone floor. The eyes Of the pale-faced portraits on the walls followed Snape and Yaxley as they strode';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: AppColors.cF4F5F6,
         appBar: AppBar(
           elevation: 0,
-          leadingWidth: 85,
           backgroundColor: AppColors.cF4F5F6,
           leading: IconButton(
-            onPressed: () {},
-            icon: SvgPicture.asset(
-              Assets.icons.arrowBack,
-              height: 24.h,
-              width: 24.w,
-              fit: BoxFit.contain,
+            onPressed: () => NavigationService.goBack,
+            icon: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: SvgPicture.asset(
+                Assets.icons.arrowBack,
+                height: 24.h,
+                width: 24.w,
+              ),
             ),
           ),
           centerTitle: true,
@@ -57,8 +61,7 @@ class _AudioScreenState extends State<AudioScreen> {
             child: Column(
               children: [
                 UIHelper.verticalSpace(14.h),
-                Text(
-                    'The yew hedges muffled the sound of the men\'s footsteps. There was a rustle somewhere to their right: Yaxley drew his wand again, pointing it over his companion\'s head. but the source of the noise proved to be nothing more than a pure-white peacock, strutting majestically along the top of the hedge \n\n"He always did himself well, Lucius. Peacocks ... Yaxley thrust his wand back under his cloak with a snort.”\n\n A handsome manor house grew out of the darkness at the end of the straight drive, lights glinting in the diamond-paned downstairs windows Somewhere in the dark garden beyond the hedge a fountain was playing, Gravel crackled beneath their feet as Snape and Yaxley sped toward the front door. which swung inward at their approach, though nobody had visibly opened it. \n\n          The hallway was large, dimly lit, and sumptuously decorated, with a magnificent carpet covering most of the stone floor. The eyes Of the pale-faced portraits on the walls followed Snape and Yaxley as they strode',
+                Text(selectedText,
                     style:
                         TextFontStyle.textStyle14c4B586BUrbanistW600.copyWith(
                       fontSize: 16.sp,

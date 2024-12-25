@@ -48,7 +48,6 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
     TextStyle hintTextStyle = TextFontStyle.textStyle14c4B586BUrbanistW600;
 
     return Container(
-      width: 342.w,
       height: 51.h,
       decoration: BoxDecoration(
         color: widget.backgroundColor,
