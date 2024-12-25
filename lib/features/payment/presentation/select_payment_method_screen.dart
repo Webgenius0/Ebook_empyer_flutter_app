@@ -105,7 +105,7 @@ class _SelectPaymentMethodScreenState extends State<SelectPaymentMethodScreen> {
                       InkWell(
                         onTap: () {
                           NavigationService.navigateTo(
-                              Routes.selectPaymentTwoScreen);
+                              Routes.addNewPaymentScreen);
                         },
                         child: Row(
                           children: [
@@ -135,8 +135,6 @@ class _SelectPaymentMethodScreenState extends State<SelectPaymentMethodScreen> {
                         height: 1.h,
                         color: AppColors.cE2E2E2,
                       ),
-
-
                     ],
                   );
                 },

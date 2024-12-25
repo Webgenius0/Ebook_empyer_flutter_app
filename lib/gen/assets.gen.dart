@@ -125,6 +125,13 @@ class $AssetsIconsGen {
   /// File path: assets/icons/logout.svg
   String get logout => 'assets/icons/logout.svg';
 
+  /// File path: assets/icons/mastercard.svg
+  String get mastercard => 'assets/icons/mastercard.svg';
+
+  /// File path: assets/icons/mastercard1.png
+  AssetGenImage get mastercard1 =>
+      const AssetGenImage('assets/icons/mastercard1.png');
+
   /// File path: assets/icons/notification.svg
   String get notification => 'assets/icons/notification.svg';
 
@@ -192,7 +199,7 @@ class $AssetsIconsGen {
   String get wishlistIcon => 'assets/icons/wishlist_icon.svg';
 
   /// List of all assets
-  List<String> get values => [
+  List<dynamic> get values => [
         ebookName,
         ebookSmall,
         frame,
@@ -227,6 +234,8 @@ class $AssetsIconsGen {
         homeIcon,
         likeIcon,
         logout,
+        mastercard,
+        mastercard1,
         notification,
         notificationBell,
         option,
@@ -258,6 +267,14 @@ class $AssetsImagesGen {
   /// File path: assets/images/Ebook empyre logo_1 3.png
   AssetGenImage get ebookEmpyreLogo13 =>
       const AssetGenImage('assets/images/Ebook empyre logo_1 3.png');
+
+  /// File path: assets/images/Paymentcard.png
+  AssetGenImage get paymentcard =>
+      const AssetGenImage('assets/images/Paymentcard.png');
+
+  /// File path: assets/images/Rectangle.png
+  AssetGenImage get rectangle =>
+      const AssetGenImage('assets/images/Rectangle.png');
 
   /// File path: assets/images/apple.png
   AssetGenImage get apple => const AssetGenImage('assets/images/apple.png');
@@ -366,6 +383,8 @@ class $AssetsImagesGen {
   /// List of all assets
   List<dynamic> get values => [
         ebookEmpyreLogo13,
+        paymentcard,
+        rectangle,
         apple,
         applePay,
         calender,

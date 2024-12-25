@@ -87,76 +87,84 @@ class _SearchScreenState extends State<SearchScreen> {
       extendBodyBehindAppBar: true,
       body: SafeArea(
           child: Padding(
-        padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 20.w),
+        padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 25.w),
         child: Column(
           children: [
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                IconButton(
-                  onPressed: () => Navigator.pop(context),
-                  icon: Padding(
-                    padding: const EdgeInsets.all(7.0),
-                    child: SvgPicture.asset(
-                      Assets.icons.arrowBack,
-                      height: 24.h,
-                      width: 24.w,
+                UIHelper.verticalSpace(24.h),
+                Transform.translate(
+                  offset: Offset(-8.w, 0),
+                  child: InkWell(
+                    onTap: () {
+                      NavigationService.goBack();
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Center(
+                        // Ensures vertical alignment
+                        child: SvgPicture.asset(Assets.icons.arrowBack),
+                      ),
                     ),
                   ),
                 ),
-                Container(
-                  width: 295.w,
-                  height: 37.h,
-                  decoration: BoxDecoration(
-                    border: Border.all(color: AppColors.c926BF4),
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  child: Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 8),
-                        child: SvgPicture.asset(
-                          Assets.icons.searchLogo,
-                          height: 16.h,
-                          width: 16.h,
-                        ),
-                      ),
-                      Expanded(
-                        child: TextField(
-                          controller: _searchController,
-                          onChanged: _updateSearchQuery,
-                          decoration: InputDecoration(
-                            hintText: 'Search...',
-                            border: InputBorder.none,
+                Expanded(
+                  child: Container(
+                    height: 40.h,
+                    decoration: BoxDecoration(
+                      color: AppColors.c926BF4.withOpacity(0.2),
+                      border: Border.all(color: AppColors.c926BF4),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 8),
+                          child: SvgPicture.asset(
+                            Assets.icons.searchLogo,
+                            height: 16.h,
+                            width: 16.h,
                           ),
                         ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                        child: GestureDetector(
-                          onTap: () {
-                            _searchController.clear();
-                            _updateSearchQuery('');
-                          },
-                          child: GestureDetector(
-                              onTap: () {
-                                NavigationService.navigateTo(
-                                    Routes.filterScreen);
-                              },
-                              child: InkWell(
-                                  onTap: () {
-                                    NavigationService.navigateTo(
-                                        Routes.filterScreen);
-                                  },
-                                  child:
-                                      SvgPicture.asset(Assets.icons.filter))),
+                        Expanded(
+                          child: TextField(
+                            controller: _searchController,
+                            onChanged: _updateSearchQuery,
+                            decoration: InputDecoration(
+                              hintText: 'Search...',
+                              border: InputBorder.none,
+                            ),
+                          ),
                         ),
-                      ),
-                    ],
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                          child: GestureDetector(
+                            onTap: () {
+                              _searchController.clear();
+                              _updateSearchQuery('');
+                            },
+                            child: GestureDetector(
+                                onTap: () {
+                                  NavigationService.navigateTo(
+                                      Routes.filterScreen);
+                                },
+                                child: InkWell(
+                                    onTap: () {
+                                      NavigationService.navigateTo(
+                                          Routes.filterScreen);
+                                    },
+                                    child:
+                                        SvgPicture.asset(Assets.icons.filter))),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],
             ),
+
+            //start here
             UIHelper.verticalSpace(16.h),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -165,6 +173,7 @@ class _SearchScreenState extends State<SearchScreen> {
                   "Show in",
                   style: TextFontStyle.textStyle20c2B2B2BUrbanistW600,
                 ),
+                UIHelper.verticalSpace(16.h),
                 Row(
                   children: [
                     GestureDetector(

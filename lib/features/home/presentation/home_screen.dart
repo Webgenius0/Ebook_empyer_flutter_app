@@ -115,7 +115,9 @@ class _HomeScreenState extends State<HomeScreen> {
                             onTap: () {
                               // NavigationService.navigateTo(
                               //     Routes.specificGenrescreen);
-                              NavigationService.navigateTo(Routes.searchScreen);
+                              // NavigationService.navigateTo(Routes.searchScreen);
+                              NavigationService.navigateTo(
+                                  Routes.searchTypeKeywordScreen);
                             },
                             child: Padding(
                                 padding: EdgeInsets.only(right: 18.w),

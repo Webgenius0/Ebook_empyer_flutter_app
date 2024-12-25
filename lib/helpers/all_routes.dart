@@ -16,6 +16,7 @@ import 'package:abdilahi/features/auth/signup/presentation/select_age_screen.dar
 import 'package:abdilahi/features/auth/signup/presentation/gender_screen.dart';
 import 'package:abdilahi/features/discover_and_search/presentation/discover_screen.dart';
 import 'package:abdilahi/features/discover_and_search/presentation/filter_screen.dart';
+import 'package:abdilahi/features/discover_and_search/presentation/search_type_keyword_screen.dart';
 import 'package:abdilahi/features/ebook_details/presentaion/about_book_screen.dart';
 import 'package:abdilahi/features/ebook_details/presentaion/ebook_details_screen.dart';
 import 'package:abdilahi/features/ebook_details/presentaion/rating_and_review_screen.dart';
@@ -81,6 +82,7 @@ final class Routes {
   static const String paymentMethodScreen = '/paymentMethodScreen';
   static const String faqScreen = '/faqScreen';
   static const String notificationScreeen = '/notificationScreeen';
+  static const String searchTypeKeywordScreen = '/searchTypeKeywordScreen';
 
   static const String readEbookNavigaationScreen =
       '/readEbookNavigaationScreen';
@@ -333,6 +335,13 @@ final class RouteGenerator {
             ? _FadedTransitionRoute(
                 widget: const FilterScreen(), settings: settings)
             : CupertinoPageRoute(builder: (context) => const FilterScreen());
+
+      case Routes.searchTypeKeywordScreen:
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(
+                widget: const SearchTypeKeywordScreen(), settings: settings)
+            : CupertinoPageRoute(
+                builder: (context) => const SearchTypeKeywordScreen());
 
       case Routes.stepperWidget:
         return Platform.isAndroid
