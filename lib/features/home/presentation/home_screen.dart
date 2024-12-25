@@ -165,7 +165,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
 
-                UIHelper.verticalSpace(20.h),
+                UIHelper.verticalSpace(24.h),
 
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -182,7 +182,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: SvgPicture.asset(Assets.icons.arrowforward))
                   ],
                 ),
-                UIHelper.verticalSpace(20.h),
+                UIHelper.verticalSpace(16.h),
                 SizedBox(
                   height: 74.h,
                   child: ListView.builder(
@@ -208,7 +208,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                   ),
                 ),
-                UIHelper.verticalSpace(20.h),
+                UIHelper.verticalSpace(24.h),
+
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -219,7 +220,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     SvgPicture.asset(Assets.icons.arrowforward)
                   ],
                 ),
-                UIHelper.verticalSpace(20.h),
+                UIHelper.verticalSpace(16.h),
 
                 SizedBox(
                   height: 650,
@@ -262,7 +263,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
 
-                UIHelper.verticalSpace(20),
+                UIHelper.verticalSpace(24),
                 SizedBox(
                   height: 302.h,
                   child: ListView.builder(
@@ -289,7 +290,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                   ),
                 ),
-
+                UIHelper.verticalSpace(24),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -300,7 +301,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     SvgPicture.asset(Assets.icons.arrowforward)
                   ],
                 ),
-                UIHelper.verticalSpace(20.h),
+                UIHelper.verticalSpace(16.h),
                 SizedBox(
                   height: 302.h,
                   child: ListView.builder(

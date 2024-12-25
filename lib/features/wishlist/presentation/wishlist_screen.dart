@@ -158,7 +158,7 @@ class _WishlistScreenState extends State<WishlistScreen> {
                             }
                           },
                         ),
-                        UIHelper.verticalSpace(20.h),
+                        UIHelper.verticalSpace(12.h),
                       ],
                     );
                   },

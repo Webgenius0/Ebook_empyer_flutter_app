@@ -28,6 +28,7 @@ class BookItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 226.h,
+      width: 342.w,
       child: Row(
         children: [
           SizedBox(
@@ -51,9 +52,19 @@ class BookItem extends StatelessWidget {
                   "Author: $author",
                   style: TextFontStyle.textStyle14c4B586BUrbanistW400,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: labels.map((label) => buildLabel(label)).toList(),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      for (int i = 0; i < labels.length; i++) ...[
+                        buildLabel(labels[i]),
+                        if (i != labels.length - 1)
+                          UIHelper.horizontalSpace(
+                              4.w), // Add width between labels
+                      ],
+                    ],
+                  ),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -83,20 +94,40 @@ class BookItem extends StatelessWidget {
     );
   }
 
-  Widget buildLabel(String label) {
-    return Container(
-      decoration: BoxDecoration(
-        color: AppColors.cF0F0F0,
-        borderRadius: BorderRadius.circular(5.0),
+  // Widget buildLabel(String label) {
+  //   return Container(
+  //     decoration: BoxDecoration(
+  //       color: AppColors.cF0F0F0,
+  //       borderRadius: BorderRadius.circular(5.0),
+  //     ),
+  //     height: 19.h,
+  //     width: 44.w,
+  //     child: Center(
+  //       child: Text(
+  //         label,
+  //         style: TextFontStyle.textStyle8c4B586BUrbanistW400,
+  //       ),
+  //     ),
+  //   );
+  // }
+}
+
+Widget buildLabel(String label) {
+  return Container(
+    decoration: BoxDecoration(
+      color: AppColors.cF0F0F0,
+      borderRadius: BorderRadius.circular(5.0),
+    ),
+    padding:
+        EdgeInsets.symmetric(horizontal: 8.w), // Add padding for better spacing
+    height: 19.h,
+    child: Center(
+      child: Text(
+        label,
+        style: TextFontStyle.textStyle8c4B586BUrbanistW400,
+        overflow: TextOverflow.ellipsis, // Ensure text doesn't overflow
+        maxLines: 1,
       ),
-      height: 19.h,
-      width: 44.w,
-      child: Center(
-        child: Text(
-          label,
-          style: TextFontStyle.textStyle8c4B586BUrbanistW400,
-        ),
-      ),
-    );
-  }
+    ),
+  );
 }
