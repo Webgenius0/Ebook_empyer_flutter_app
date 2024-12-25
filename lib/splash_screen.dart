@@ -1,3 +1,4 @@
+import 'package:abdilahi/gen/colors.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:abdilahi/gen/assets.gen.dart';
@@ -20,7 +21,9 @@ class SplashScreen extends StatelessWidget {
         Positioned(
             left: 180.w,
             bottom: 60.h,
-            child: const CircularProgressIndicator.adaptive())
+            child: const CircularProgressIndicator.adaptive(
+              backgroundColor: AppColors.c743DFF,
+            ))
       ],
     ));
   }

@@ -2,6 +2,7 @@
 
 import 'package:abdilahi/common_widgets/custom_button_one.dart';
 import 'package:abdilahi/common_widgets/custom_horizontal_divider.dart';
+import 'package:abdilahi/common_widgets/stepper_bar.dart';
 import 'package:abdilahi/constants/text_font_style.dart';
 import 'package:abdilahi/gen/assets.gen.dart';
 import 'package:abdilahi/gen/colors.gen.dart';
@@ -22,11 +23,17 @@ class GenderScreen extends StatefulWidget {
 
 class _GenderScreenState extends State<GenderScreen> {
   int? selectedValue = 0;
+  final int currentIndex = 0;
+  final int totalSteps = 11;
   final List<String> options = [
     'I am male',
     'I am female',
     'Rather not to say',
   ];
+
+  double calculatePerformanceBarWidth() {
+    return (currentIndex / totalSteps) * 100; // Returns percentage width
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -43,18 +50,23 @@ class _GenderScreenState extends State<GenderScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Transform.translate(
-                        offset: Offset(-9.w, 0),
-                        child: InkWell(
-                          onTap: () {
-                            Navigator.pop(context);
-                          },
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: SvgPicture.asset(Assets.icons.arrowBack),
+                      Row(children: [
+                        Transform.translate(
+                          offset: Offset(-9.w, 0),
+                          child: InkWell(
+                            onTap: () => NavigationService.goBack,
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: SvgPicture.asset(Assets.icons.arrowBack),
+                            ),
                           ),
                         ),
-                      ),
+                        PerformanceBar(
+                          fillColor:
+                              AppColors.c3689FD, // You can choose any color
+                          width: calculatePerformanceBarWidth(),
+                        ),
+                      ]),
                       UIHelper.verticalSpace(16.h),
                       Text(
                         "What is your gender?",
