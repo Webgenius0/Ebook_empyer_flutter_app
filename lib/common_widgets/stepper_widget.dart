@@ -101,6 +101,12 @@ class _StepperWidgetState extends State<StepperWidget> {
         extendBodyBehindAppBar: true,
         appBar: AppBar(
           leadingWidth: 70,
+          actions: [
+            Padding(
+                padding: EdgeInsets.only(
+              right: 60.w,
+            ))
+          ],
           leading: IconButton(
             onPressed: () {
               if (currentStep > 0) {
