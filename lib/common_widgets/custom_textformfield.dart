@@ -45,7 +45,13 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   @override
   Widget build(BuildContext context) {
     // Define the custom TextStyle for hint text
-    TextStyle hintTextStyle = TextFontStyle.textStyle14c4B586BUrbanistW600;
+    TextStyle hintTextStyle = TextFontStyle.textStyle14c4B586BUrbanistW600
+        .copyWith(fontWeight: FontWeight.w400);
+    TextStyle styleTxt = TextFontStyle.textStyle14c4B586BUrbanistW600
+        .copyWith(fontWeight: FontWeight.w400);
+
+    // TextStyle hintTextStyle = TextFontStyle.textStyle14c4B586BUrbanistW600
+    //     .copyWith(fontWeight: FontWeight.w400);
 
     return Container(
       height: 51.h,
@@ -57,7 +63,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       child: TextFormField(
         obscureText: _obscureText,
         controller: widget.controller,
-        style: TextStyle(color: widget.textColor),
+        style: styleTxt,
         decoration: InputDecoration(
           hintText: widget.hintText,
           hintStyle: hintTextStyle, // Apply custom TextStyle to hintText

@@ -78,7 +78,6 @@ class _SelectPaymentMethodScreenState extends State<SelectPaymentMethodScreen> {
         child: Column(
           children: [
             CustomPaymentBookCard(
-              hasOption: true,
               imagePath: Assets.images.relax.path,
               title: "I Killed Zoe Spanos",
               rating: 4.7,
@@ -104,32 +103,24 @@ class _SelectPaymentMethodScreenState extends State<SelectPaymentMethodScreen> {
                   return Column(
                     children: [
                       UIHelper.verticalSpace(20.h),
-                      InkWell(
-                        onTap: () {
-                          NavigationService.navigateTo(
-                              Routes.paymentSummaryScreen);
-                        },
-                        child: Row(
-                          children: [
-                            Image.asset(
-                              method['image'],
-                              width: 56.w,
-                              height: 56.h,
-                            ),
-                            UIHelper.horizontalSpace(10.w),
-                            Text(
-                              method['title'],
-                              style: TextFontStyle
-                                  .textStyle12c000000UrbanistW500
-                                  .copyWith(
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 14.sp),
-                            ),
-                            const Spacer(),
-                            SvgPicture.asset(
-                                Assets.icons.arrowRightNotification),
-                          ],
-                        ),
+                      Row(
+                        children: [
+                          Image.asset(
+                            method['image'],
+                            width: 56.w,
+                            height: 56.h,
+                          ),
+                          UIHelper.horizontalSpace(10.w),
+                          Text(
+                            method['title'],
+                            style: TextFontStyle.textStyle12c000000UrbanistW500
+                                .copyWith(
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 14.sp),
+                          ),
+                          const Spacer(),
+                          SvgPicture.asset(Assets.icons.arrowRightNotification),
+                        ],
                       ),
                       UIHelper.verticalSpace(20.h),
                       Container(

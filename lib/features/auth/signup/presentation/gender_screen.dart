@@ -39,11 +39,11 @@ class _GenderScreenState extends State<GenderScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 25.w),
+              padding: EdgeInsets.symmetric(horizontal: 24.w),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  UIHelper.verticalSpace(26.h),
+                  UIHelper.verticalSpace(16.h),
                   Text(
                     "What is your gender?",
                     style: TextFontStyle.textStyle24c000000UrbanistW600,
@@ -53,7 +53,7 @@ class _GenderScreenState extends State<GenderScreen> {
                     "Select gender for better content.",
                     style: TextFontStyle.textStyle14c4B586BUrbanistW400,
                   ),
-                  UIHelper.verticalSpace(40.h),
+                  UIHelper.verticalSpace(18.h),
                   ListView.builder(
                     itemCount: options.length,
                     shrinkWrap: true,
@@ -78,7 +78,7 @@ class _GenderScreenState extends State<GenderScreen> {
                                   MaterialStateProperty.all(AppColors.c743DFF),
                             ),
                           ),
-                          UIHelper.verticalSpace(10.h),
+                          UIHelper.verticalSpace(11.h),
                           const CustomHorizontalDivider(), // Custom horizontal divider
                           UIHelper.verticalSpace(
                               10.h), // Optional: Add space after the divider

@@ -205,11 +205,17 @@ class _SearchScreenState extends State<SearchScreen> {
                       itemCount: filteredBooks.length,
                       itemBuilder: (context, idx) {
                         final book = filteredBooks[idx];
-                        return BookCard(
-                          imageUrl: book.imageUrl,
-                          title: book.title,
-                          rating: book.rating,
-                          price: book.price,
+                        return InkWell(
+                          onTap: () {
+                            NavigationService.navigateTo(
+                                Routes.ebookDetailsScreen);
+                          },
+                          child: BookCard(
+                            imageUrl: book.imageUrl,
+                            title: book.title,
+                            rating: book.rating,
+                            price: book.price,
+                          ),
                         );
                       },
                     )
@@ -217,13 +223,19 @@ class _SearchScreenState extends State<SearchScreen> {
                       itemCount: filteredBooks.length,
                       itemBuilder: (context, idx) {
                         final book = filteredBooks[idx];
-                        return BookItem(
-                          imagePath: book.imageUrl,
-                          title: book.title,
-                          author: book.author,
-                          labels: book.labels ?? [],
-                          rating: book.rating,
-                          price: book.price,
+                        return InkWell(
+                          onTap: () {
+                            NavigationService.navigateTo(
+                                Routes.ebookDetailsScreen);
+                          },
+                          child: BookItem(
+                            imagePath: book.imageUrl,
+                            title: book.title,
+                            author: book.author,
+                            labels: book.labels ?? [],
+                            rating: book.rating,
+                            price: book.price,
+                          ),
                         );
                       },
                     ),
