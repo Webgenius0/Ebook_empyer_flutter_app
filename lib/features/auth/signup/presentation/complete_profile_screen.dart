@@ -61,23 +61,13 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 25.h),
+                padding: EdgeInsets.symmetric(
+                  horizontal: 24.w,
+                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Transform.translate(
-                    //   offset: Offset(-9.w, 0),
-                    //   child: InkWell(
-                    //     onTap: () {
-                    //       Navigator.pop(context);
-                    //     },
-                    //     child: Padding(
-                    //       padding: const EdgeInsets.all(8.0),
-                    //       child: SvgPicture.asset(Assets.icons.arrowBack),
-                    //     ),
-                    //   ),
-                    // ),
-                    // UIHelper.verticalSpace(16.h),
+                    UIHelper.verticalSpace(16.h),
                     Text(
                       "Complete Your Profile.",
                       style: TextFontStyle.textStyle24c000000UrbanistW600,
@@ -88,7 +78,7 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                       style: TextFontStyle.textStyle14c4B586BUrbanistW400
                           .copyWith(height: 1.5.h),
                     ),
-                    UIHelper.verticalSpace(30.h),
+                    UIHelper.verticalSpace(24.h),
                     Center(
                       child: Stack(
                         clipBehavior: Clip.none,
@@ -124,7 +114,7 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                         ],
                       ),
                     ),
-                    UIHelper.verticalSpace(12.h),
+                    UIHelper.verticalSpace(24.h),
                     Text(
                       "Full Name",
                       style: TextFontStyle.textStyle14c212121UrbanistW600,
@@ -133,21 +123,21 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                     const CustomTextFormField(
                       hintText: "Saklain Sarowor",
                     ),
-                    UIHelper.verticalSpace(16.h),
+                    UIHelper.verticalSpace(20.h),
                     Text(
                       "Date of Birth",
                       style: TextFontStyle.textStyle14c212121UrbanistW600,
                     ),
-                    UIHelper.verticalSpace(14.h),
+                    UIHelper.verticalSpace(12.h),
                     const CustomDatePickerField(
                       hintText: "1 January, 2003",
                     ),
-                    UIHelper.verticalSpace(16.h),
+                    UIHelper.verticalSpace(20.h),
                     Text(
                       "Country",
                       style: TextFontStyle.textStyle14c212121UrbanistW600,
                     ),
-                    UIHelper.verticalSpace(14.h),
+                    UIHelper.verticalSpace(12.h),
                     CustomCountryPickerField(
                       countries: countries,
                     ),

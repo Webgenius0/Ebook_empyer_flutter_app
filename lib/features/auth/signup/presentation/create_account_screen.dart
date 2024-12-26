@@ -86,23 +86,13 @@ class _CreateAccountState extends State<CreateAccountScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 25.h),
+                padding: EdgeInsets.symmetric(
+                  horizontal: 24.w,
+                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Transform.translate(
-                    //   offset: Offset(-9.w, 0),
-                    //   child: InkWell(
-                    //     onTap: () {
-                    //       Navigator.pop(context);
-                    //     },
-                    //     child: Padding(
-                    //       padding: const EdgeInsets.all(8.0),
-                    //       child: SvgPicture.asset(Assets.icons.arrowBack),
-                    //     ),
-                    //   ),
-                    // ),
-                    // UIHelper.verticalSpace(16.h),
+                    UIHelper.verticalSpace(16.h),
                     Text(
                       "Create an Account",
                       style: TextFontStyle.textStyle24c000000UrbanistW600,
@@ -110,43 +100,44 @@ class _CreateAccountState extends State<CreateAccountScreen> {
                     UIHelper.verticalSpace(16.h),
                     Text(
                       "Enter your username, email & password. If you\nforget it, then you have to do forgot password.",
-                      style: TextFontStyle.textStyle14c4B586BUrbanistW400,
+                      style: TextFontStyle.textStyle14c4B586BUrbanistW400
+                          .copyWith(height: 1.5),
                     ),
-                    UIHelper.verticalSpace(40.h),
+                    UIHelper.verticalSpace(24.h),
                     Text(
                       "User Name",
                       style: TextFontStyle.textStyle14c212121UrbanistW600,
                     ),
-                    UIHelper.verticalSpace(16.h),
+                    UIHelper.verticalSpace(12.h),
                     CustomTextFormField(
                       hintText: "Saklain",
                     ),
-                    UIHelper.verticalSpace(16.h),
+                    UIHelper.verticalSpace(20.h),
                     Text(
                       "Email",
                       style: TextFontStyle.textStyle14c212121UrbanistW600,
                     ),
-                    UIHelper.verticalSpace(16.h),
+                    UIHelper.verticalSpace(12.h),
                     CustomTextFormField(
                       hintText: "Email",
                     ),
-                    UIHelper.verticalSpace(16.h),
+                    UIHelper.verticalSpace(20.h),
                     Text(
                       "Password",
                       style: TextFontStyle.textStyle14c212121UrbanistW600,
                     ),
-                    UIHelper.verticalSpace(16.h),
+                    UIHelper.verticalSpace(12.h),
                     CustomTextFormField(
                         hintText: "************", isPasswordField: true),
-                    UIHelper.verticalSpace(16.h),
+                    UIHelper.verticalSpace(30.h),
                     Text(
                       "Confirm Password",
                       style: TextFontStyle.textStyle14c212121UrbanistW600,
                     ),
-                    UIHelper.verticalSpace(16.h),
+                    UIHelper.verticalSpace(12.h),
                     CustomTextFormField(
                         hintText: "************", isPasswordField: true),
-                    UIHelper.verticalSpace(10.h),
+                    UIHelper.verticalSpace(16.h),
                     Transform.translate(
                       offset: Offset(-10.w, 0),
                       child: Row(

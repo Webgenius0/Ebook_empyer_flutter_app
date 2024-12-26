@@ -3,6 +3,7 @@ import 'package:abdilahi/common_widgets/custom_button_one.dart';
 import 'package:abdilahi/common_widgets/custom_horizontal_divider.dart';
 import 'package:abdilahi/helpers/all_routes.dart';
 import 'package:abdilahi/helpers/navigation_service.dart';
+import 'package:abdilahi/navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:abdilahi/common_widgets/custom_payment_bookItem.dart';
 import 'package:abdilahi/constants/text_font_style.dart';
@@ -78,7 +79,8 @@ class _PaymentSummaryScreenState extends State<PaymentSummaryScreen> {
                         children: [
                           GestureDetector(
                             onTap: () {
-                              Navigator.of(context).pop();
+                              NavigationService.popAndReplaceWihArgs(
+                                  Routes.navigation, {"pageNum": 3});
                             },
                             child: Container(
                               width: 135.w,
@@ -293,10 +295,16 @@ class _PaymentSummaryScreenState extends State<PaymentSummaryScreen> {
                       .copyWith(fontWeight: FontWeight.w600, fontSize: 14.sp),
                 ),
                 const Spacer(),
-                Text(
-                  "Change",
-                  style: TextFontStyle.textStyle14c743DFFUrbanistW400.copyWith(
-                    fontWeight: FontWeight.w600,
+                TextButton(
+                  onPressed: () {
+                    NavigationService.navigateTo(Routes.selectPaymentTwoScreen);
+                  },
+                  child: Text(
+                    "Change",
+                    style:
+                        TextFontStyle.textStyle14c743DFFUrbanistW400.copyWith(
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
                 ),
               ],

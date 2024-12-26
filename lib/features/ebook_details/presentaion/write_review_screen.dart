@@ -4,6 +4,7 @@ import 'package:abdilahi/common_widgets/custom_horizontal_divider.dart';
 import 'package:abdilahi/constants/text_font_style.dart';
 import 'package:abdilahi/gen/assets.gen.dart';
 import 'package:abdilahi/gen/colors.gen.dart';
+import 'package:abdilahi/helpers/navigation_service.dart';
 
 import 'package:abdilahi/helpers/ui_helpers.dart';
 import 'package:flutter/material.dart';
@@ -60,9 +61,8 @@ class _WriteReviewScreenState extends State<WriteReviewScreen> {
                     UIHelper.verticalSpace(35.h),
                     GestureDetector(
                       onTap: () {
-                        // NavigationService.navigateTo(
-                        //     Routes.ratingAndReviewScreen);
-                        Navigator.pop(context);
+                        NavigationService.goBack;
+                        NavigationService.goBack;
                       },
                       child: Container(
                         height: 48.h,

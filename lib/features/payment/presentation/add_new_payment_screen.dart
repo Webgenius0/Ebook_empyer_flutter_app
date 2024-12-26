@@ -18,8 +18,8 @@ class AddNewPaymentScreen extends StatefulWidget {
 
 class _AddNewPaymentScreenState extends State<AddNewPaymentScreen> {
   String cardHolderName = "";
-  String cardNumber = "XXXX XXXX XXXX XXXX";
-  String expiryDate = "MM/YY";
+  String cardNumber = "* * * *  * * * *  * * * *  XXXX";
+  String expiryDate = "XX/XX";
   String cvv = "";
   @override
   Widget build(BuildContext context) {
@@ -53,7 +53,7 @@ class _AddNewPaymentScreenState extends State<AddNewPaymentScreen> {
             children: [
               // Card Preview
               Container(
-                height: 200,
+                height: 180.h,
                 decoration: BoxDecoration(
                   color: AppColors.c743DFF,
                   borderRadius: BorderRadius.circular(16),
@@ -61,16 +61,16 @@ class _AddNewPaymentScreenState extends State<AddNewPaymentScreen> {
                     BoxShadow(
                       color: Colors.black26,
                       blurRadius: 8.r,
-                      offset: Offset(0, 4),
+                      offset: const Offset(0, 4),
                     ),
                   ],
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.all(16.0),
+                  padding: EdgeInsets.only(left: 27.w, right: 44.w),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
+                      UIHelper.verticalSpace(22.h),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -78,44 +78,70 @@ class _AddNewPaymentScreenState extends State<AddNewPaymentScreen> {
                             Assets.images.masterCard.path,
                             height: 40.h,
                           ),
-                          Text(
-                            "XXXX",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
+                          // const Text(
+                          //   "XXXX",
+                          //   style: TextStyle(
+                          //     color: Colors.white,
+                          //     fontSize: 18,
+                          //     fontWeight: FontWeight.bold,
+                          //   ),
+                          // ),
                         ],
                       ),
+                      UIHelper.verticalSpace(18.h),
                       Text(
                         cardNumber,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 22,
-                          letterSpacing: 2,
-                          fontWeight: FontWeight.bold,
-                        ),
+                        style: TextFontStyle.textStyle16cFFFFFFBUrbanistW500
+                            .copyWith(fontSize: 20.sp),
                       ),
+                      UIHelper.verticalSpace(31.h),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
-                            cardHolderName.isNotEmpty
-                                ? cardHolderName
-                                : "Card Holder Name",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 16,
-                            ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("Card Holder Name",
+                                  style: TextFontStyle
+                                      .textStyle16cFFFFFFBUrbanistW500
+                                      .copyWith(
+                                    fontSize: 12.sp,
+                                    color: TextFontStyle
+                                        .textStyle16cFFFFFFBUrbanistW500.color
+                                        ?.withOpacity(0.8),
+                                  )),
+                              UIHelper.verticalSpace(6.5.h),
+                              Text(
+                                  cardHolderName.isNotEmpty
+                                      ? cardHolderName
+                                      : "XXXXXXXXX",
+                                  style: TextFontStyle
+                                      .textStyle16cFFFFFFBUrbanistW500
+                                      .copyWith(
+                                          fontSize: 14.sp,
+                                          fontWeight: FontWeight.w600)),
+                            ],
                           ),
-                          Text(
-                            expiryDate,
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 16,
-                            ),
-                          ),
+                          Column(
+                            children: [
+                              Text("Expiry Date",
+                                  style: TextFontStyle
+                                      .textStyle16cFFFFFFBUrbanistW500
+                                      .copyWith(
+                                    fontSize: 12.sp,
+                                    color: TextFontStyle
+                                        .textStyle16cFFFFFFBUrbanistW500.color
+                                        ?.withOpacity(0.8),
+                                  )),
+                              UIHelper.verticalSpace(6.5.h),
+                              Text(
+                                expiryDate,
+                                style: TextFontStyle
+                                    .textStyle16cFFFFFFBUrbanistW500
+                                    .copyWith(fontSize: 12.sp),
+                              ),
+                            ],
+                          )
                         ],
                       ),
                     ],
@@ -123,15 +149,30 @@ class _AddNewPaymentScreenState extends State<AddNewPaymentScreen> {
                 ),
               ),
 
-              UIHelper.verticalSpace(20.h),
+              UIHelper.verticalSpace(24.h),
+
               // Card Holder Name Input
-              TextField(
+
+              Text(
+                "Card Holder Name",
+                style: TextFontStyle.textStyle24c222222UrbanistW600
+                    .copyWith(fontSize: 16.sp),
+              ),
+              UIHelper.verticalSpace(10.h),
+
+              TextFormField(
                 decoration: InputDecoration(
-                  hintText: "Ex: Saklain Sarowor", // Replaces labelText
-                  border: OutlineInputBorder(
-                    borderRadius:
-                        BorderRadius.circular(12.0), // Rounded corners
+                  hintText: "Ex: Saklain Sarowor",
+                  hintStyle: TextFontStyle.textStyle14cD0D0D0UrbanistW400,
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: AppColors.c926BF4.withOpacity(0.5),
+                    ), // Border when not focused
+                    borderRadius: BorderRadius.circular(10.r),
                   ),
+                  focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.r),
+                      borderSide: const BorderSide(color: AppColors.c926BF4)),
                 ),
                 onChanged: (value) {
                   setState(() {
@@ -141,13 +182,31 @@ class _AddNewPaymentScreenState extends State<AddNewPaymentScreen> {
               ),
 
               UIHelper.verticalSpace(20.h),
+
+              Text(
+                "Card Number",
+                style: TextFontStyle.textStyle24c222222UrbanistW600
+                    .copyWith(fontSize: 16.sp),
+              ),
+
+              UIHelper.verticalSpace(10.h),
               // Card Number Input
-              TextField(
+              TextFormField(
                 decoration: InputDecoration(
                   hintText: "Ex: **** **** **** 3947",
+                  hintStyle: TextFontStyle.textStyle14cD0D0D0UrbanistW400,
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: AppColors.c926BF4.withOpacity(0.5),
+                    ), // Border when not focused
+                    borderRadius: BorderRadius.circular(10.r),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.r),
+                      borderSide: const BorderSide(color: AppColors.c926BF4)),
                   border: OutlineInputBorder(
                     borderRadius:
-                        BorderRadius.circular(12.0), // Rounded corners
+                        BorderRadius.circular(12.r), // Rounded corners
                   ),
                 ),
                 maxLength: 19,
@@ -155,49 +214,89 @@ class _AddNewPaymentScreenState extends State<AddNewPaymentScreen> {
                 onChanged: (value) {
                   setState(() {
                     cardNumber = value.isEmpty
-                        ? "XXXX XXXX XXXX XXXX"
+                        ? "* * * *  * * * *  * * * *  XXXX"
                         : value.replaceAllMapped(RegExp(r".{4}"), (match) {
                             return "${match.group(0)} ";
                           }).trim();
                   });
                 },
               ),
-              SizedBox(height: 20),
+              UIHelper.verticalSpace(7.h),
               // Expiry Date and CVV Inputs
               Row(
                 children: [
                   Expanded(
-                    child: TextField(
-                      decoration: InputDecoration(
-                        labelText: "CVV",
-                        border: OutlineInputBorder(),
+                      child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "CVV",
+                        style: TextFontStyle.textStyle24c222222UrbanistW600
+                            .copyWith(fontSize: 16.sp),
                       ),
-                      maxLength: 3,
-                      keyboardType: TextInputType.number,
-                      onChanged: (value) {
-                        setState(() {
-                          cvv = value;
-                        });
-                      },
-                    ),
-                  ),
-                  SizedBox(width: 16),
+                      UIHelper.verticalSpace(10.h),
+                      TextFormField(
+                        decoration: InputDecoration(
+                          hintText: "Ex: 1337",
+                          focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10.r),
+                              borderSide:
+                                  const BorderSide(color: AppColors.c926BF4)),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: AppColors.c926BF4.withOpacity(0.5),
+                            ), // Border when not focused
+                            borderRadius: BorderRadius.circular(10.r),
+                          ),
+                        ),
+                        maxLength: 3,
+                        keyboardType: TextInputType.number,
+                        onChanged: (value) {
+                          setState(() {
+                            cvv = value;
+                          });
+                        },
+                      ),
+                    ],
+                  )),
+                  UIHelper.horizontalSpace(16.h),
                   Expanded(
-                    child: TextField(
-                      decoration: InputDecoration(
-                        labelText: "Expiration Date",
-                        hintText: "MM/YY",
-                        border: OutlineInputBorder(),
+                      child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Expiration Date",
+                        style: TextFontStyle.textStyle24c222222UrbanistW600
+                            .copyWith(fontSize: 16.sp),
                       ),
-                      maxLength: 5,
-                      keyboardType: TextInputType.number,
-                      onChanged: (value) {
-                        setState(() {
-                          expiryDate = value;
-                        });
-                      },
-                    ),
-                  ),
+                      UIHelper.verticalSpace(10.h),
+                      TextField(
+                        decoration: InputDecoration(
+                          // labelText: "Expiration Date",
+                          hintText: "03/29",
+                          focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10.r),
+                              borderSide:
+                                  const BorderSide(color: AppColors.c926BF4)),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: AppColors.c926BF4.withOpacity(0.5),
+                            ), // Border when not focused
+                            borderRadius: BorderRadius.circular(10.r),
+                          ),
+                          border: const OutlineInputBorder(),
+                        ),
+                        maxLength: 5,
+                        keyboardType: TextInputType.number,
+                        onChanged: (value) {
+                          setState(() {
+                            expiryDate = value;
+                          });
+                        },
+                      ),
+                    ],
+                  )),
                 ],
               ),
 
@@ -210,13 +309,13 @@ class _AddNewPaymentScreenState extends State<AddNewPaymentScreen> {
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: AppColors.c6636EE,
-                  padding: EdgeInsets.symmetric(vertical: 16),
+                  padding: const EdgeInsets.symmetric(vertical: 16),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(
                         60.r), // Adjust the radius as needed
                   ),
                 ),
-                child: Text(
+                child: const Text(
                   "Add",
                   style: TextStyle(fontSize: 18, color: Colors.white),
                 ),

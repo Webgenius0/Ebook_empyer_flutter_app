@@ -82,6 +82,7 @@ final class Routes {
   static const String paymentMethodScreen = '/paymentMethodScreen';
   static const String faqScreen = '/faqScreen';
   static const String notificationScreeen = '/notificationScreeen';
+  static const String navigation = '/navigation';
 
   static const String readEbookNavigaationScreen =
       '/readEbookNavigaationScreen';
@@ -246,9 +247,8 @@ final class RouteGenerator {
 
       case Routes.navigationScreen:
         return Platform.isAndroid
-            ? _FadedTransitionRoute(
-                widget: const Navigation(), settings: settings)
-            : CupertinoPageRoute(builder: (context) => const Navigation());
+            ? _FadedTransitionRoute(widget: Navigation(), settings: settings)
+            : CupertinoPageRoute(builder: (context) => Navigation());
 
       case Routes.selectPaymentMethodScreen:
         return Platform.isAndroid
@@ -349,6 +349,19 @@ final class RouteGenerator {
                 widget: const SearchTypeKeywordScreen(), settings: settings)
             : CupertinoPageRoute(
                 builder: (context) => const SearchTypeKeywordScreen());
+
+      case Routes.navigation:
+        final args = settings.arguments as Map;
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(
+                widget: Navigation(
+                  pageNum: args["pageNum"],
+                ),
+                settings: settings)
+            : CupertinoPageRoute(
+                builder: (context) => Navigation(
+                      pageNum: args["pageNum"],
+                    ));
 
       default:
         return null;

@@ -46,85 +46,82 @@ class _BookGenreScreenState extends State<BookGenreScreen> {
           children: [
             // Scrollable content
             Positioned.fill(
-              child: SingleChildScrollView(
-                padding: EdgeInsets.only(
-                    bottom: 100.h), // Prevent overlap with buttons
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: 25.w, vertical: 25.h),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Choose the Book Genre\nYou Like",
-                            style: TextFontStyle.textStyle24c000000UrbanistW600,
-                          ),
-                          UIHelper.verticalSpace(16.h),
-                          Text(
-                            "Select your preferred book genre for better\nrecommendations, or you can skip it.",
-                            style: TextFontStyle.textStyle14c4B586BUrbanistW400
-                                .copyWith(height: 1.6.h),
-                          ),
-                          UIHelper.verticalSpace(20.h),
-                        ],
-                      ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 24.w,
                     ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 12.w),
-                      child: Wrap(
-                        spacing: 10.w,
-                        runSpacing: 10.h, // Adjusted runSpacing
-                        children: List.generate(genreList.length, (index) {
-                          final isSelected = selectedGenres.contains(index);
-                          return SizedBox(
-                            width: (MediaQuery.of(context).size.width - 50.w) /
-                                3, // Set a fixed width for each button
-                            child: GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  if (isSelected) {
-                                    selectedGenres.remove(index); // Deselect
-                                  } else {
-                                    selectedGenres.add(index); // Select
-                                  }
-                                });
-                              },
-                              child: Container(
-                                padding: EdgeInsets.symmetric(
-                                    vertical: 12.h, horizontal: 16.w),
-                                decoration: BoxDecoration(
-                                  color: isSelected
-                                      ? AppColors.c743DFF
-                                      : AppColors.cFFFFFF,
-                                  borderRadius: BorderRadius.circular(70),
-                                  border: Border.all(
-                                    color: AppColors.c743DFF,
-                                    width: 1.5,
-                                  ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        UIHelper.verticalSpace(16.h),
+                        Text(
+                          "Choose the Book Genre\nYou Like",
+                          style: TextFontStyle.textStyle24c000000UrbanistW600,
+                        ),
+                        UIHelper.verticalSpace(6.h),
+                        Text(
+                          "Select your preferred book genre for better\nrecommendations, or you can skip it.",
+                          style: TextFontStyle.textStyle14c4B586BUrbanistW400
+                              .copyWith(height: 1.6.h),
+                        ),
+                        UIHelper.verticalSpace(24.h),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 12.w),
+                    child: Wrap(
+                      spacing: 10.w,
+                      runSpacing: 10.h, // Adjusted runSpacing
+                      children: List.generate(genreList.length, (index) {
+                        final isSelected = selectedGenres.contains(index);
+                        return SizedBox(
+                          width: (MediaQuery.of(context).size.width - 50.w) /
+                              3, // Set a fixed width for each button
+                          child: GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                if (isSelected) {
+                                  selectedGenres.remove(index); // Deselect
+                                } else {
+                                  selectedGenres.add(index); // Select
+                                }
+                              });
+                            },
+                            child: Container(
+                              padding: EdgeInsets.symmetric(
+                                  vertical: 12.h, horizontal: 16.w),
+                              decoration: BoxDecoration(
+                                color: isSelected
+                                    ? AppColors.c743DFF
+                                    : AppColors.cFFFFFF,
+                                borderRadius: BorderRadius.circular(70),
+                                border: Border.all(
+                                  color: AppColors.c743DFF,
+                                  width: 1.5,
                                 ),
-                                child: Center(
-                                  child: Text(
-                                    genreList[index],
-                                    style: isSelected
-                                        ? TextFontStyle
-                                            .textStyle13cFFFFFFUrbanistW600
-                                        : TextFontStyle
-                                            .textStyle13c743DFFUrbanistW600,
-                                    textAlign: TextAlign.center,
-                                  ),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  genreList[index],
+                                  style: isSelected
+                                      ? TextFontStyle
+                                          .textStyle13cFFFFFFUrbanistW600
+                                      : TextFontStyle
+                                          .textStyle13c743DFFUrbanistW600,
+                                  textAlign: TextAlign.center,
                                 ),
                               ),
                             ),
-                          );
-                        }),
-                      ),
+                          ),
+                        );
+                      }),
                     ),
-                    UIHelper.verticalSpace(180.h),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
             // Fixed buttons at the bottom

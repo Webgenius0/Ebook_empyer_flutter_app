@@ -9,7 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class Navigation extends StatefulWidget {
-  const Navigation({super.key});
+  int? pageNum;
+  Navigation({super.key, this.pageNum});
 
   @override
   // ignore: library_private_types_in_public_api

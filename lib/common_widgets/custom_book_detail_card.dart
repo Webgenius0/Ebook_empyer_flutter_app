@@ -34,7 +34,7 @@ class CustomBookDetailCard extends StatelessWidget {
             child: Image.asset(imagePath),
           ),
           UIHelper.horizontalSpace(10.w),
-          Expanded(
+          Flexible(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.start,
