@@ -80,6 +80,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/chapter.svg
   String get chapter => 'assets/icons/chapter.svg';
 
+  /// File path: assets/icons/check.svg
+  String get check => 'assets/icons/check.svg';
+
   /// File path: assets/icons/close.svg
   String get close => 'assets/icons/close.svg';
 
@@ -212,6 +215,7 @@ class $AssetsIconsGen {
         boxBlue,
         boxWhite,
         chapter,
+        check,
         close,
         dateOfBirth,
         discoverIcon,
@@ -292,6 +296,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/e6.png
   AssetGenImage get e6 => const AssetGenImage('assets/images/e6.png');
 
+  /// File path: assets/images/empty_payment.png
+  AssetGenImage get emptyPayment =>
+      const AssetGenImage('assets/images/empty_payment.png');
+
   /// File path: assets/images/google.png
   AssetGenImage get google => const AssetGenImage('assets/images/google.png');
 
@@ -348,6 +356,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/setting.svg
   String get setting => 'assets/images/setting.svg';
 
+  /// File path: assets/images/subscription.png
+  AssetGenImage get subscription =>
+      const AssetGenImage('assets/images/subscription.png');
+
   /// File path: assets/images/thriller.png
   AssetGenImage get thriller =>
       const AssetGenImage('assets/images/thriller.png');
@@ -376,6 +388,7 @@ class $AssetsImagesGen {
         e4,
         e5,
         e6,
+        emptyPayment,
         google,
         masterCard,
         mastercard,
@@ -393,6 +406,7 @@ class $AssetsImagesGen {
         romantic,
         scarlet,
         setting,
+        subscription,
         thriller,
         visa,
         welcome2Screen,

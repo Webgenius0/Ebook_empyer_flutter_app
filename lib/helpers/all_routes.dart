@@ -32,6 +32,8 @@ import 'package:abdilahi/features/payment/presentation/add_new_payment_screen.da
 import 'package:abdilahi/features/payment/presentation/payment_summary_screen.dart';
 import 'package:abdilahi/features/payment/presentation/select_payment_method_screen.dart';
 import 'package:abdilahi/features/payment/presentation/select_payment_two_screen.dart';
+import 'package:abdilahi/features/payment/presentation/selected_subscription_screen.dart';
+import 'package:abdilahi/features/payment/presentation/subscription_screen.dart';
 import 'package:abdilahi/features/read_ebook/read_ebook_navigation_screen.dart';
 import 'package:abdilahi/features/wishlist/presentation/wishlist_screen.dart';
 import 'package:abdilahi/navigation.dart';
@@ -88,6 +90,9 @@ final class Routes {
       '/readEbookNavigaationScreen';
 
   static const String searchTypeKeywordScreen = '/searchTypeKeywordScreen';
+  static const String subscriptionPlanScreen = '/subscriptionPlanScreen';
+  static const String selectedSubscriptionScreen =
+      '/selectedSubscriptionScreen';
 }
 
 final class RouteGenerator {
@@ -349,6 +354,27 @@ final class RouteGenerator {
                 widget: const SearchTypeKeywordScreen(), settings: settings)
             : CupertinoPageRoute(
                 builder: (context) => const SearchTypeKeywordScreen());
+
+      case Routes.subscriptionPlanScreen:
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(
+                widget: const SubscriptionPlanScreen(), settings: settings)
+            : CupertinoPageRoute(
+                builder: (context) => const SubscriptionPlanScreen());
+
+      case Routes.selectedSubscriptionScreen:
+      final args = settings.arguments as Map;
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(
+                widget:  SelectedSubscriptionScreen(
+                  planName: args['plan_name'],
+                  planDetails: args['plan_list'],
+                ), settings: settings)
+            : CupertinoPageRoute(
+                builder: (context) => SelectedSubscriptionScreen(
+                   planName: args['plan_name'],
+                  planDetails: args['plan_list'],
+                ));
 
       case Routes.navigation:
         final args = settings.arguments as Map;

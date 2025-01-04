@@ -71,27 +71,9 @@ class _SelectPaymentTwoScreenState extends State<SelectPaymentTwoScreen> {
       ),
       body: SafeArea(
           child: Padding(
-        padding: EdgeInsets.all(20.sp),
+        padding: EdgeInsets.symmetric(horizontal: 24.w),
         child: Column(
           children: [
-            CustomPaymentBookCard(
-              imagePath: Assets.images.relax.path,
-              title: "I Killed Zoe Spanos",
-              rating: 4.7,
-              price: 76,
-              author: 'Douglas Adams',
-              labels: const [
-                " Galaxy",
-                "Comedy",
-                "Science fiction",
-              ],
-            ),
-            UIHelper.verticalSpace(20.h),
-            Container(
-              width: double.infinity,
-              height: 1.h,
-              color: AppColors.cE2E2E2,
-            ),
             Expanded(
               child: ListView.builder(
                 itemCount: paymentMethods.length,
@@ -99,7 +81,7 @@ class _SelectPaymentTwoScreenState extends State<SelectPaymentTwoScreen> {
                   final method = paymentMethods[index];
                   return Column(
                     children: [
-                      UIHelper.verticalSpace(20.h),
+                      UIHelper.verticalSpace(34.h),
                       InkWell(
                         onTap: () {
                           NavigationService.navigateTo(

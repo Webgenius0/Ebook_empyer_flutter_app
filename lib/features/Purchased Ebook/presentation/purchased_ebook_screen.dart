@@ -132,28 +132,34 @@ class _PurchasedEbookScreenState extends State<PurchasedEbookScreen> {
                     final book = books[idx];
                     return Column(
                       children: [
-                        CustomPurchasedCard(
-                          isDownloaded: book.isDownloaded,
-                          imagePath: book.imageUrl,
-                          title: book.title,
-                          author: book.author,
-                          labels: book.labels ?? [],
-                          rating: book.rating,
-                          price: book.price,
-                          onOptionSelected: (option) {
-                            if (option == 1) {
-                              setState(() {
-                                books[idx].isDownloaded = false;
-                              });
-                            } else if (option == 2) {
-                              setState(() {
-                                books[idx].isDownloaded = true;
-                              });
-                            } else if (option == 3) {
-                              NavigationService.navigateTo(
-                                  Routes.aboutBookScreen);
-                            }
+                        InkWell(
+                          onTap: () {
+                            NavigationService.navigateTo(
+                                Routes.ebookDetailsScreen);
                           },
+                          child: CustomPurchasedCard(
+                            isDownloaded: book.isDownloaded,
+                            imagePath: book.imageUrl,
+                            title: book.title,
+                            author: book.author,
+                            labels: book.labels ?? [],
+                            rating: book.rating,
+                            price: book.price,
+                            onOptionSelected: (option) {
+                              if (option == 1) {
+                                setState(() {
+                                  books[idx].isDownloaded = false;
+                                });
+                              } else if (option == 2) {
+                                setState(() {
+                                  books[idx].isDownloaded = true;
+                                });
+                              } else if (option == 3) {
+                                NavigationService.navigateTo(
+                                    Routes.aboutBookScreen);
+                              }
+                            },
+                          ),
                         ),
                         UIHelper.verticalSpace(12.h),
                       ],

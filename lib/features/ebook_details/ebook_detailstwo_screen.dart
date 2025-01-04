@@ -209,7 +209,7 @@ class _EbookDetailsScreenState extends State<EbookDetailsScreen> {
               //horizontal scroll
               UIHelper.verticalSpace(16.h),
               CustomButtonOne(
-                text: "Buy USD 9.99",
+                text: "Read Book",
                 backgroundColor: AppColors.c743DFF,
                 onPressed: () {
                   NavigationService.navigateTo(

@@ -19,7 +19,6 @@ class TextFontStyle {
 
   static final textStyle14c5312F8UrbanistW500 = GoogleFonts.urbanist(
       color: AppColors.c5312F8, fontSize: 14.sp, fontWeight: FontWeight.w500);
-      
 
   static final textStyle16c212121UrbanistW600 = GoogleFonts.urbanist(
       color: AppColors.c212121, fontSize: 16.sp, fontWeight: FontWeight.w600);
@@ -99,7 +98,7 @@ class TextFontStyle {
       color: AppColors.c333333, fontSize: 48.sp, fontWeight: FontWeight.w600);
 
   static final textStyle24c222222UrbanistW600 = GoogleFonts.urbanist(
-      color: AppColors.c2B2B2B, fontWeight: FontWeight.w600);
+      color: AppColors.c2B2B2B, fontSize: 24.sp, fontWeight: FontWeight.w600);
 
   static final textStylec212121OpenSansW600 = GoogleFonts.openSans(
       color: AppColors.c4D4D4D, fontSize: 14.sp, fontWeight: FontWeight.w600);
