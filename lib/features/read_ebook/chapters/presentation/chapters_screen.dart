@@ -238,8 +238,11 @@ class _ChaptersScreenState extends State<ChaptersScreen> {
           backgroundColor: AppColors.cF5F6F7,
           leading: Builder(
             builder: (context) => IconButton(
-              onPressed: () => Scaffold.of(context).openDrawer(),
-              icon: const Icon(Icons.menu, color: AppColors.c212121),
+              // onPressed: () => Scaffold.of(context).openDrawer(),
+              onPressed: () {
+                NavigationService.navigateTo(Routes.navigationScreen);
+              },
+              icon: const Icon(Icons.arrow_back, color: AppColors.c212121),
             ),
           ),
           centerTitle: true,

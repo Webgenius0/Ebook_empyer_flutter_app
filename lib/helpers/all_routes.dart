@@ -362,19 +362,25 @@ final class RouteGenerator {
             : CupertinoPageRoute(
                 builder: (context) => const SubscriptionPlanScreen());
 
+      case Routes.navigation:
+        return Platform.isAndroid
+            ? _FadedTransitionRoute(widget: Navigation(), settings: settings)
+            : CupertinoPageRoute(builder: (context) => Navigation());
+
       case Routes.selectedSubscriptionScreen:
-      final args = settings.arguments as Map;
+        final args = settings.arguments as Map;
         return Platform.isAndroid
             ? _FadedTransitionRoute(
-                widget:  SelectedSubscriptionScreen(
+                widget: SelectedSubscriptionScreen(
                   planName: args['plan_name'],
                   planDetails: args['plan_list'],
-                ), settings: settings)
+                ),
+                settings: settings)
             : CupertinoPageRoute(
                 builder: (context) => SelectedSubscriptionScreen(
-                   planName: args['plan_name'],
-                  planDetails: args['plan_list'],
-                ));
+                      planName: args['plan_name'],
+                      planDetails: args['plan_list'],
+                    ));
 
       case Routes.navigation:
         final args = settings.arguments as Map;
