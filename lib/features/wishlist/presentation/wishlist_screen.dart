@@ -140,23 +140,29 @@ class _WishlistScreenState extends State<WishlistScreen> {
                     final book = books[idx];
                     return Column(
                       children: [
-                        CustomWishlistCard(
-                          imagePath: book.imageUrl,
-                          title: book.title,
-                          author: book.author,
-                          labels: book.labels ?? [],
-                          rating: book.rating,
-                          price: book.price,
-                          onOptionSelected: (option) {
-                            if (option == 1) {
-                              setState(() {
-                                books.removeAt(idx);
-                              });
-                            } else if (option == 2) {
-                              NavigationService.navigateTo(
-                                  Routes.aboutBookScreen);
-                            }
+                        InkWell(
+                          onTap: () {
+                            NavigationService.navigateTo(
+                                Routes.ebookDetailsScreen);
                           },
+                          child: CustomWishlistCard(
+                            imagePath: book.imageUrl,
+                            title: book.title,
+                            author: book.author,
+                            labels: book.labels ?? [],
+                            rating: book.rating,
+                            price: book.price,
+                            onOptionSelected: (option) {
+                              if (option == 1) {
+                                setState(() {
+                                  books.removeAt(idx);
+                                });
+                              } else if (option == 2) {
+                                NavigationService.navigateTo(
+                                    Routes.aboutBookScreen);
+                              }
+                            },
+                          ),
                         ),
                         UIHelper.verticalSpace(12.h),
                       ],

@@ -134,13 +134,11 @@ class _StepperWidgetState extends State<StepperWidget> {
               padding: EdgeInsets.symmetric(horizontal: 20.w),
               child: ClipRRect(
                 borderRadius: BorderRadius.all(Radius.circular(10.r)),
-                child: Expanded(
-                  child: LinearProgressIndicator(
-                    value: progress,
-                    minHeight: 8.h,
-                    backgroundColor: AppColors.cEEEEEE,
-                    color: AppColors.c743DFF,
-                  ),
+                child: LinearProgressIndicator(
+                  value: progress,
+                  minHeight: 8.h,
+                  backgroundColor: AppColors.cEEEEEE,
+                  color: AppColors.c743DFF,
                 ),
               ),
             ),

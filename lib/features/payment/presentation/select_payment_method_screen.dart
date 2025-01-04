@@ -1,3 +1,4 @@
+import 'package:abdilahi/common_widgets/custom_button_one.dart';
 import 'package:abdilahi/common_widgets/custom_payment_bookItem.dart';
 import 'package:abdilahi/constants/text_font_style.dart';
 import 'package:abdilahi/gen/assets.gen.dart';
@@ -19,25 +20,6 @@ class SelectPaymentMethodScreen extends StatefulWidget {
 }
 
 class _SelectPaymentMethodScreenState extends State<SelectPaymentMethodScreen> {
-  final List<Map<String, dynamic>> paymentMethods = [
-    {
-      'image': Assets.images.paypal.path,
-      'title': "Paypal",
-    },
-    {
-      'image': Assets.images.google.path,
-      'title': "Google Pay",
-    },
-    {
-      'image': Assets.images.apple.path,
-      'title': "Apple Pay",
-    },
-    {
-      'image': Assets.images.masterCard.path,
-      'title': ".... .... .... 6578",
-    },
-    // Add more items here
-  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,61 +59,31 @@ class _SelectPaymentMethodScreenState extends State<SelectPaymentMethodScreen> {
         padding: EdgeInsets.all(20.sp),
         child: Column(
           children: [
-            CustomPaymentBookCard(
-              imagePath: Assets.images.relax.path,
-              title: "I Killed Zoe Spanos",
-              rating: 4.7,
-              price: 76,
-              author: 'Douglas Adams',
-              labels: const [
-                " Galaxy",
-                "Comedy",
-                "Science fiction",
-              ],
-            ),
-            UIHelper.verticalSpace(20.h),
-            Container(
-              width: double.infinity,
-              height: 1.h,
-              color: AppColors.cE2E2E2,
-            ),
-            Expanded(
-              child: ListView.builder(
-                itemCount: paymentMethods.length,
-                itemBuilder: (context, index) {
-                  final method = paymentMethods[index];
-                  return Column(
-                    children: [
-                      UIHelper.verticalSpace(20.h),
-                      Row(
-                        children: [
-                          Image.asset(
-                            method['image'],
-                            width: 56.w,
-                            height: 56.h,
-                          ),
-                          UIHelper.horizontalSpace(10.w),
-                          Text(
-                            method['title'],
-                            style: TextFontStyle.textStyle12c000000UrbanistW500
-                                .copyWith(
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 14.sp),
-                          ),
-                          const Spacer(),
-                          SvgPicture.asset(Assets.icons.arrowRightNotification),
-                        ],
-                      ),
-                      UIHelper.verticalSpace(20.h),
-                      Container(
-                        width: double.infinity,
-                        height: 1.h,
-                        color: AppColors.cE2E2E2,
-                      ),
-                    ],
-                  );
-                },
+            UIHelper.verticalSpace(185.h),
+            Center(
+              child: Image.asset(
+                Assets.images.emptyPayment.path,
+                width: 131.w,
+                height: 116.h,
               ),
+            ),
+            UIHelper.verticalSpace(6.h),
+            Center(
+              child: Text(
+                  'There is no card right now. you can Add\n   card by clicking the add card now.',
+                  style: TextFontStyle.textStyle20c2B2B2BUrbanistW600.copyWith(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                      height: 1.6.h)),
+            ),
+            UIHelper.verticalSpace(39.h),
+            CustomButtonOne(
+              text: "Add Card",
+              backgroundColor: AppColors.c743DFF,
+              onPressed: () {
+                NavigationService.navigateTo(Routes.addNewPaymentScreen);
+              },
+              style: TextFontStyle.textStyle16cFFFFFFUrbanistW600,
             ),
           ],
         ),
