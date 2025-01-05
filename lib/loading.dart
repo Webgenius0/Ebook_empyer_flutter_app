@@ -20,6 +20,7 @@ class _LoadingState extends State<Loading> {
   }
 
   loadInitialData() async {
+    _isLoading = true;
     await setInitValue();
 
     setState(() {
